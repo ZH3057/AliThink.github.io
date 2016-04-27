@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>IPA 企业证书重新签名 | AliThink&#39;s Blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="AliThink,iOS,xcode,blog,JavaScript" />
+  
+
+  <meta name="description" content="操作步骤
+Step1 : 解压IPA
+
+1unzip MYAPP.ipa
+
+Step2: 删除旧的代码签名
+
+1rm -rf Payload/ MYAPP.app/_CodeSignature
+
+Step3: 更换证书
+
+1cp MyEnterprise.mobileprovision Payload/ MYAPP.app/embedded.mobileprovision
+
+Step4: 重签名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IPA 企业证书重新签名">
+<meta property="og:url" content="http://blog.alithink.com/2014/07/21/IPA 企业证书重新签名/index.html">
+<meta property="og:site_name" content="AliThink's Blog">
+<meta property="og:description" content="操作步骤
+Step1 : 解压IPA
+
+1unzip MYAPP.ipa
+
+Step2: 删除旧的代码签名
+
+1rm -rf Payload/ MYAPP.app/_CodeSignature
+
+Step3: 更换证书
+
+1cp MyEnterprise.mobileprovision Payload/ MYAPP.app/embedded.mobileprovision
+
+Step4: 重签名">
+<meta property="og:updated_time" content="2015-04-24T09:55:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IPA 企业证书重新签名">
+<meta name="twitter:description" content="操作步骤
+Step1 : 解压IPA
+
+1unzip MYAPP.ipa
+
+Step2: 删除旧的代码签名
+
+1rm -rf Payload/ MYAPP.app/_CodeSignature
+
+Step3: 更换证书
+
+1cp MyEnterprise.mobileprovision Payload/ MYAPP.app/embedded.mobileprovision
+
+Step4: 重签名">
+
+  
+
+  
+
+  <link href="/css/styles.css?v=eaf5ab1e" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">≡</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作步骤"><span class="toc-text">操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在step4时有可能会报错：object-file-format-unrecognized-invalid-or-unsuitable-解决方法："><span class="toc-text">在step4时有可能会报错：object file format unrecognized, invalid, or unsuitable 解决方法：</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-IPA 企业证书重新签名" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">IPA 企业证书重新签名</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2014.07.21</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>AliThink</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/iOS开发/">iOS开发</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.alithink.com/2014/07/21/IPA 企业证书重新签名/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ul>
+<li>Step1 : 解压IPA</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip MYAPP.ipa</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Step2: 删除旧的代码签名</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf Payload/ MYAPP.app/_CodeSignature</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Step3: 更换证书</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp MyEnterprise.mobileprovision Payload/ MYAPP.app/embedded.mobileprovision</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Step4: 重签名</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/codesign -f -s <span class="string">"iPhone Distribution: YourCompanyName"</span> --resource-rules Payload/ MYAPP.app/ResourceRules.plist Payload/ MYAPP.app</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Step 5: 重新打包，生成新的ipa</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -r New_ MYAPP.ipa Payload</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：<br>MYAPP.ipa: 要重签名的ipa</p>
+<p>MyEnterprise.mobileprovision:要用来签名的provision文件</p>
+<p>YourCompanyName:指该签名对应的证书的名字，这个可以在钥匙串中找到</p>
+</blockquote>
+<h4 id="在step4时有可能会报错：object-file-format-unrecognized-invalid-or-unsuitable-解决方法："><a href="#在step4时有可能会报错：object-file-format-unrecognized-invalid-or-unsuitable-解决方法：" class="headerlink" title="在step4时有可能会报错：object file format unrecognized, invalid, or unsuitable 解决方法："></a>在step4时有可能会报错：object file format unrecognized, invalid, or unsuitable 解决方法：</h4><ul>
+<li>1）首先查看/usr/bin目录下是否存在codesign_allocate程序，如果存在，执行改名操作。 如果不存在，直接执行第二步</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /usr/bin/codesign_allocate /usr/bin/codesign_allocate_old</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2）将xcode目录下的codesign_allocate做一个软链接</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate /usr/bin</span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'alithinkblog';
+    
+    var disqus_url = 'http://blog.alithink.com/2014/07/21/IPA 企业证书重新签名/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//alithinkblog.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
