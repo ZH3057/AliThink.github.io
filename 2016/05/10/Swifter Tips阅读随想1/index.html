@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Swifter Tips阅读随想1 | AliThink&#39;s Blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="AliThink,iOS,xcode,blog,JavaScript" />
+  
+
+  <meta name="description" content="这样可以很自然的想到aaa ?? (abc)比var default = abcaaa ?? default  
+性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值在 Swift 中，其实 &amp;amp;&amp;amp; 和 || 这两个操作符里也用到了 @autoclosure。作为练习，不妨打开 Playground，试试看怎么实现这两个操作符按照这个思路，就可以轻松的定制操作符啦比如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swifter Tips阅读随想1">
+<meta property="og:url" content="http://blog.alithink.com/2016/05/10/Swifter Tips阅读随想1/index.html">
+<meta property="og:site_name" content="AliThink's Blog">
+<meta property="og:description" content="这样可以很自然的想到aaa ?? (abc)比var default = abcaaa ?? default  
+性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值在 Swift 中，其实 &amp;amp;&amp;amp; 和 || 这两个操作符里也用到了 @autoclosure。作为练习，不妨打开 Playground，试试看怎么实现这两个操作符按照这个思路，就可以轻松的定制操作符啦比如">
+<meta property="og:image" content="http://blog.alithink.com/img/1operator/1.png">
+<meta property="og:image" content="http://blog.alithink.com/img/1operator/2.png">
+<meta property="og:image" content="http://blog.alithink.com/img/1operator/3.png">
+<meta property="og:updated_time" content="2016-05-10T09:52:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swifter Tips阅读随想1">
+<meta name="twitter:description" content="这样可以很自然的想到aaa ?? (abc)比var default = abcaaa ?? default  
+性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值在 Swift 中，其实 &amp;amp;&amp;amp; 和 || 这两个操作符里也用到了 @autoclosure。作为练习，不妨打开 Playground，试试看怎么实现这两个操作符按照这个思路，就可以轻松的定制操作符啦比如">
+<meta name="twitter:image" content="http://blog.alithink.com/img/1operator/1.png">
+
+  
+
+  
+
+  <link href="/css/styles.css?v=eaf5ab1e" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">≡</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值"><span class="toc-text">性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Swifter Tips阅读随想1" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Swifter Tips阅读随想1</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.05.10</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>AliThink</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Swift/">Swift</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.alithink.com/2016/05/10/Swifter Tips阅读随想1/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><img src="img/1operator/1.png" alt=""></p>
+<p>这样可以很自然的想到<br>aaa ?? (a<em>b</em>c)<br>比<br>var default = a<em>b</em>c<br>aaa ?? default  </p>
+<h2 id="性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值"><a href="#性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值" class="headerlink" title="性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值"></a>性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值</h2><p>在 Swift 中，其实 &amp;&amp; 和 || 这两个操作符里也用到了 @autoclosure。作为练习，不妨打开 Playground，试试看怎么实现这两个操作符<br><img src="img/1operator/2.png" alt=""><br>按照这个思路，就可以轻松的定制操作符啦<br>比如这个&amp;&amp;的就这么简单<br>swift这个操作符只能接受bool类型<br>那么其实知道怎么实现的了就可以尝试给他扩展<br><img src="img/1operator/3.png" alt=""><br>默认的是不支持的<br>这样这一块的知识点就通过一轮探索就都搞通了，还能加强记忆</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'alithinkblog';
+    
+    var disqus_url = 'http://blog.alithink.com/2016/05/10/Swifter Tips阅读随想1/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//alithinkblog.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
