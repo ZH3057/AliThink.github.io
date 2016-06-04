@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.alithink.com/"/>
-  <updated>2016-05-24T14:21:17.000Z</updated>
+  <updated>2016-06-04T14:40:17.000Z</updated>
   <id>http://blog.alithink.com/</id>
   
   <author>
@@ -14,6 +14,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cocoapods私有仓库封装过程中的思考</title>
+    <link href="http://blog.alithink.com/2016/06/04/cocoapods%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%B0%81%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%80%9D%E8%80%83/"/>
+    <id>http://blog.alithink.com/2016/06/04/cocoapods私有仓库封装过程中的思考/</id>
+    <published>2016-06-04T13:33:11.000Z</published>
+    <updated>2016-06-04T14:40:17.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Why&quot;&gt;&lt;a href=&quot;#Why&quot; class=&quot;headerlink&quot; title=&quot;Why&quot;&gt;&lt;/a&gt;Why&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;给工作中封装的组件一个沉淀的地方。&lt;/li&gt;
+&lt;li&gt;为新项目的开展提供高效的支撑。&lt;/li&gt;
+&lt;li&gt;框架代码单独维护，功能点升级更新快捷。&lt;/li&gt;
+&lt;li&gt;一定程度督促自己代码的组织与优化。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;知识储备&quot;&gt;&lt;a href=&quot;#知识储备&quot; class=&quot;headerlink&quot; title=&quot;知识储备&quot;&gt;&lt;/a&gt;知识储备&lt;/h2&gt;&lt;p&gt;搭建的过程大致参考了这篇教程：&lt;a href=&quot;http://blog.wtlucky.com/blog/2015/02/26/create-private-podspec/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;使用Cocoapods创建私有podspec&lt;/a&gt;&lt;br&gt;教程非常的细致，很赞的分享。其中有几个地方可能会有点疑惑：&lt;/p&gt;
+&lt;h3 id=&quot;Podfile中specs引入方式&quot;&gt;&lt;a href=&quot;#Podfile中specs引入方式&quot; class=&quot;headerlink&quot; title=&quot;Podfile中specs引入方式&quot;&gt;&lt;/a&gt;Podfile中specs引入方式&lt;/h3&gt;&lt;h4 id=&quot;1-path-gt-的引入方式&quot;&gt;&lt;a href=&quot;#1-path-gt-的引入方式&quot; class=&quot;headerlink&quot; title=&quot;1. :path =&amp;gt;的引入方式&quot;&gt;&lt;/a&gt;1. :path =&amp;gt;的引入方式&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;会添加到Development Pods中，并且复制整个私有库的文件组织结构（文件夹嵌套关系都会保留）,这种引入方式非常适合于私有库的开发阶段，因为这种方式引入的其实就是实际私有库的源文件，在demo项目中通过这种方式引入，充分测试私有库的相关功能会非常方便快捷。&lt;/li&gt;
+&lt;li&gt;对强迫症患者来说可能会觉得有点不完美的地方，就是当specs中包含subspecs的时候，用这种方式引入时，会出现一些多余的文件层次嵌套。。。感兴趣的患者们可以去试一下。。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;2-常规的引入方式&quot;&gt;&lt;a href=&quot;#2-常规的引入方式&quot; class=&quot;headerlink&quot; title=&quot;2. 常规的引入方式&quot;&gt;&lt;/a&gt;2. 常规的引入方式&lt;/h4&gt;&lt;p&gt;常规的引入方式这里就不多说了，它走的是另一个极端，会剔除库中的文件组织结构，而简单的划分了源文件与资源文件，如果包含subspecs，只保留子模块名一级的文件层次，模块内部的文件结构将不复存在，这里暂时没有找到合适的解决办法保留原有组织结构。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2197993-2351d20028c5c20f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;222.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;比如上图的结构，发布之后将改变为：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2197993-2755277763573e42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;1111.png&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;子模块划分思路&quot;&gt;&lt;a href=&quot;#子模块划分思路&quot; class=&quot;headerlink&quot; title=&quot;子模块划分思路&quot;&gt;&lt;/a&gt;子模块划分思路&lt;/h3&gt;&lt;p&gt;先说结果，大致是按照这个思路进行划分的：  &lt;/p&gt;
+&lt;h4 id=&quot;1-网络（剔除具体API调用部分）&quot;&gt;&lt;a href=&quot;#1-网络（剔除具体API调用部分）&quot; class=&quot;headerlink&quot; title=&quot;1. 网络（剔除具体API调用部分）&quot;&gt;&lt;/a&gt;1. 网络（剔除具体API调用部分）&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;添加样例&lt;/li&gt;
+&lt;li&gt;包含常用插件（network状态标识等）&lt;/li&gt;
+&lt;li&gt;缓存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;2-模型映射&quot;&gt;&lt;a href=&quot;#2-模型映射&quot; class=&quot;headerlink&quot; title=&quot;2. 模型映射&quot;&gt;&lt;/a&gt;2. 模型映射&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;统一API调用规则&lt;/li&gt;
+&lt;li&gt;封装公共响应处理逻辑&lt;/li&gt;
+&lt;li&gt;对于错误类型的统一处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;3-Hybrid&quot;&gt;&lt;a href=&quot;#3-Hybrid&quot; class=&quot;headerlink&quot; title=&quot;3. Hybrid&quot;&gt;&lt;/a&gt;3. Hybrid&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;资源的预加载（js, css等）&lt;/li&gt;
+&lt;li&gt;native能力开放&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;4-UI&quot;&gt;&lt;a href=&quot;#4-UI&quot; class=&quot;headerlink&quot; title=&quot;4. UI&quot;&gt;&lt;/a&gt;4. UI&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;HUD&lt;/li&gt;
+&lt;li&gt;Tab&lt;/li&gt;
+&lt;li&gt;侧边栏&lt;/li&gt;
+&lt;li&gt;Nav常用操作&lt;/li&gt;
+&lt;li&gt;下拉上拉&lt;/li&gt;
+&lt;li&gt;Autolayout封装&lt;/li&gt;
+&lt;li&gt;datasource封装&lt;/li&gt;
+&lt;li&gt;常用动画转场&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;5-安全&quot;&gt;&lt;a href=&quot;#5-安全&quot; class=&quot;headerlink&quot; title=&quot;5. 安全&quot;&gt;&lt;/a&gt;5. 安全&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;加密解密&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;6-统计&quot;&gt;&lt;a href=&quot;#6-统计&quot; class=&quot;headerlink&quot; title=&quot;6. 统计&quot;&gt;&lt;/a&gt;6. 统计&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;swizzling添加打点入口&lt;/li&gt;
+&lt;li&gt;日志记录模块封装&lt;/li&gt;
+&lt;li&gt;bug收集分析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;7-动态性&quot;&gt;&lt;a href=&quot;#7-动态性&quot; class=&quot;headerlink&quot; title=&quot;7. 动态性&quot;&gt;&lt;/a&gt;7. 动态性&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;热部署方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;主要基于目前涉及项目主要关注的部分进行了一些拆解，每个模块直接可能存在依赖关系，这块cocoapods也贴心的帮忙搞定了，例如:&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;s.subspec &lt;span class=&quot;string&quot;&gt;&#39;APIModule&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|ss|&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ss.source_files = &lt;span class=&quot;string&quot;&gt;&#39;Classes/APIModule/**/*.&amp;#123;swift,h,m&amp;#125;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ss.dependency &lt;span class=&quot;string&quot;&gt;&#39;Moya&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;~&amp;gt; 6.5.0&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ss.dependency &lt;span class=&quot;string&quot;&gt;&#39;HanekeSwift&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;~&amp;gt; 0.10.1&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ss.dependency &lt;span class=&quot;string&quot;&gt;&#39;NetworkActivityIndicator&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;~&amp;gt; 0.1.6&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ss.dependency &lt;span class=&quot;string&quot;&gt;&#39;MonkeyKit/UtilModule&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ss.dependency &lt;span class=&quot;string&quot;&gt;&#39;MonkeyKit/ModelMapperModule&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ss.dependency &lt;span class=&quot;string&quot;&gt;&#39;MonkeyKit/SecurityModule&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;框架会根据将来的实际使用情况再进行优化调整，逐渐完善起来。  &lt;/p&gt;
+&lt;h3 id=&quot;下一步&quot;&gt;&lt;a href=&quot;#下一步&quot; class=&quot;headerlink&quot; title=&quot;下一步&quot;&gt;&lt;/a&gt;下一步&lt;/h3&gt;&lt;p&gt;本轮主要是基于基础功能模块的拆分封装，其实对于APP群常用的业务模块也可以做相同的工作，比如登录验证模块或者逻辑的封装等。通过对于公用业务场景的思考，逐渐提炼出可以产品化的地方，然后塞入公用库，将大大提升相关APP群的开发效率与产品质量。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 i
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://blog.alithink.com/categories/iOS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>理性的你和猴子还有惊慌怪兽</title>
@@ -187,7 +268,7 @@
     <link href="http://blog.alithink.com/2014/07/17/cocos2d%E6%95%99%E7%A8%8B/"/>
     <id>http://blog.alithink.com/2014/07/17/cocos2d教程/</id>
     <published>2014-07-17T09:33:40.000Z</published>
-    <updated>2016-04-27T12:55:13.000Z</updated>
+    <updated>2016-06-04T13:33:47.000Z</updated>
     
     <content type="html">&lt;p&gt;我想没有什么比更新入门教程更适合用来庆祝具有标志性的Cocos2D 3.0的诞生了。&lt;/p&gt;
 &lt;p&gt;Cocos2D 3.0是iOS平台一款2D游戏开发框架的最新版本。App Store上数以千计的游戏不乏一些排行前十的游戏都是用它来进行开发的。&lt;/p&gt;
@@ -386,7 +467,7 @@
     
     </summary>
     
-      <category term="iOS开发" scheme="http://blog.alithink.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS" scheme="http://blog.alithink.com/categories/iOS/"/>
     
     
   </entry>
