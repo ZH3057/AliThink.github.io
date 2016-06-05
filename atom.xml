@@ -212,7 +212,7 @@
     <link href="http://blog.alithink.com/2014/07/21/IPA%20%E4%BC%81%E4%B8%9A%E8%AF%81%E4%B9%A6%E9%87%8D%E6%96%B0%E7%AD%BE%E5%90%8D/"/>
     <id>http://blog.alithink.com/2014/07/21/IPA 企业证书重新签名/</id>
     <published>2014-07-21T09:33:40.000Z</published>
-    <updated>2015-04-24T09:55:50.000Z</updated>
+    <updated>2016-06-05T13:32:34.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;操作步骤&quot;&gt;&lt;a href=&quot;#操作步骤&quot; class=&quot;headerlink&quot; title=&quot;操作步骤&quot;&gt;&lt;/a&gt;操作步骤&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Step1 : 解压IPA&lt;/li&gt;
@@ -258,7 +258,7 @@
     
     </summary>
     
-      <category term="iOS开发" scheme="http://blog.alithink.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS" scheme="http://blog.alithink.com/categories/iOS/"/>
     
     
   </entry>
@@ -477,7 +477,7 @@
     <link href="http://blog.alithink.com/2014/07/14/NSNull%E6%89%A9%E5%B1%95/"/>
     <id>http://blog.alithink.com/2014/07/14/NSNull扩展/</id>
     <published>2014-07-14T09:33:40.000Z</published>
-    <updated>2015-04-24T09:21:27.000Z</updated>
+    <updated>2016-06-05T13:32:40.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;近期遇到一个问题：&quot;&gt;&lt;a href=&quot;#近期遇到一个问题：&quot; class=&quot;headerlink&quot; title=&quot;近期遇到一个问题：&quot;&gt;&lt;/a&gt;近期遇到一个问题：&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;由于后台人员对于接口数据没有做空值处理，导致客户端接收到的有些数据为空（NSNull），而针对此类数据恰好客户端的存储结构为int和float类型，类型转换时报出了[NSNull intValue]或者[NSNull floatValue] unrecognized selector sent to instance 的错误。&lt;/p&gt;
@@ -497,7 +497,7 @@
     
     </summary>
     
-      <category term="iOS开发" scheme="http://blog.alithink.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+      <category term="iOS" scheme="http://blog.alithink.com/categories/iOS/"/>
     
     
   </entry>
