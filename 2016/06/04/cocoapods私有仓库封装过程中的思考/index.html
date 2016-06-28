@@ -37,9 +37,9 @@ Why
 一定程度督促自己代码的组织与优化。
 
 知识储备搭建的过程大致参考了这篇教程：使">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2197993-2351d20028c5c20f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2197993-2755277763573e42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-06-04T14:40:17.000Z">
+<meta property="og:image" content="http://alithink.com/img/1.png">
+<meta property="og:image" content="http://alithink.com/img/2.png">
+<meta property="og:updated_time" content="2016-06-28T07:03:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cocoapods私有仓库封装过程中的思考">
 <meta name="twitter:description" content="背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。
@@ -51,7 +51,7 @@ Why
 一定程度督促自己代码的组织与优化。
 
 知识储备搭建的过程大致参考了这篇教程：使">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2197993-2351d20028c5c20f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://alithink.com/img/1.png">
 
   
 
@@ -214,9 +214,9 @@ Why
 <li>对强迫症患者来说可能会觉得有点不完美的地方，就是当specs中包含subspecs的时候，用这种方式引入时，会出现一些多余的文件层次嵌套。。。感兴趣的患者们可以去试一下。。。</li>
 </ul>
 <h4 id="2-常规的引入方式"><a href="#2-常规的引入方式" class="headerlink" title="2. 常规的引入方式"></a>2. 常规的引入方式</h4><p>常规的引入方式这里就不多说了，它走的是另一个极端，会剔除库中的文件组织结构，而简单的划分了源文件与资源文件，如果包含subspecs，只保留子模块名一级的文件层次，模块内部的文件结构将不复存在，这里暂时没有找到合适的解决办法保留原有组织结构。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2197993-2351d20028c5c20f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="222.png"></p>
+<p><img src="http://alithink.com/img/1.png" alt="1.png"></p>
 <p>比如上图的结构，发布之后将改变为：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2197993-2755277763573e42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1111.png"></p>
+<p><img src="http://alithink.com/img/2.png" alt="2.png"></p>
 <h3 id="子模块划分思路"><a href="#子模块划分思路" class="headerlink" title="子模块划分思路"></a>子模块划分思路</h3><p>先说结果，大致是按照这个思路进行划分的：  </p>
 <h4 id="1-网络（剔除具体API调用部分）"><a href="#1-网络（剔除具体API调用部分）" class="headerlink" title="1. 网络（剔除具体API调用部分）"></a>1. 网络（剔除具体API调用部分）</h4><ul>
 <li>添加样例</li>
