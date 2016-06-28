@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>BI APP图形库选型 | AliThink&#39;s Blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="AliThink,iOS,xcode,blog,JavaScript" />
+  
+
+  <meta name="description" content="背景BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。
+涉及的图形类型
+BI 中的各种图形图表都封装成了对应的卡片类型，根据接口的卡片类型描述动态生成对应的数据卡片进行展示。
+开源库选型1.Charts
+传送门：https://github.com/daniel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BI APP图形库选型">
+<meta property="og:url" content="http://blog.alithink.com/2016/06/28/BI APP图形库选型/index.html">
+<meta property="og:site_name" content="AliThink's Blog">
+<meta property="og:description" content="背景BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。
+涉及的图形类型
+BI 中的各种图形图表都封装成了对应的卡片类型，根据接口的卡片类型描述动态生成对应的数据卡片进行展示。
+开源库选型1.Charts
+传送门：https://github.com/daniel">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2197993-56be7d5de8fb2f85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2197993-af7ac3bba82a33f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2197993-0dcab1ec1cdcf8dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2197993-16cc873651ef1891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-06-28T03:29:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BI APP图形库选型">
+<meta name="twitter:description" content="背景BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。
+涉及的图形类型
+BI 中的各种图形图表都封装成了对应的卡片类型，根据接口的卡片类型描述动态生成对应的数据卡片进行展示。
+开源库选型1.Charts
+传送门：https://github.com/daniel">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2197993-56be7d5de8fb2f85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  
+
+  
+
+  <link href="/css/styles.css?v=eaf5ab1e" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?ddd5ea8fb6af25af228cf11a240076e8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">≡</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#涉及的图形类型"><span class="toc-text">涉及的图形类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开源库选型"><span class="toc-text">开源库选型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Charts"><span class="toc-text">1.Charts</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#应用场景："><span class="toc-text">应用场景：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优势："><span class="toc-text">优势：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-ESArcProgressView"><span class="toc-text">2.ESArcProgressView</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#应用场景：-1"><span class="toc-text">应用场景：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优势：-1"><span class="toc-text">优势：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-XCL-Charts"><span class="toc-text">3.XCL-Charts</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#应用场景：-2"><span class="toc-text">应用场景：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-展示图形中的最后几个元素"><span class="toc-text">1. 展示图形中的最后几个元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-完整显示x轴所有的元素标签"><span class="toc-text">2. 完整显示x轴所有的元素标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-设置为可拖动的图形与tableview的滑动存在冲突"><span class="toc-text">3. 设置为可拖动的图形与tableview的滑动存在冲突</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存在的不足"><span class="toc-text">存在的不足</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-组合图包含grouped柱状图是存在bug"><span class="toc-text">1. 组合图包含grouped柱状图是存在bug</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-堆积图缺失线性堆积图"><span class="toc-text">2. 堆积图缺失线性堆积图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-ChartMarker堆积图功能缺失"><span class="toc-text">3. ChartMarker堆积图功能缺失</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-BI APP图形库选型" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">BI APP图形库选型</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.06.28</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>AliThink</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.alithink.com/2016/06/28/BI APP图形库选型/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。</p>
+<h3 id="涉及的图形类型"><a href="#涉及的图形类型" class="headerlink" title="涉及的图形类型"></a>涉及的图形类型</h3><p><img src="http://upload-images.jianshu.io/upload_images/2197993-56be7d5de8fb2f85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="BI show.png"></p>
+<p>BI 中的各种图形图表都封装成了对应的卡片类型，根据接口的卡片类型描述动态生成对应的数据卡片进行展示。</p>
+<h3 id="开源库选型"><a href="#开源库选型" class="headerlink" title="开源库选型"></a>开源库选型</h3><h4 id="1-Charts"><a href="#1-Charts" class="headerlink" title="1.Charts"></a>1.Charts</h4><blockquote>
+<p>传送门：<a href="https://github.com/danielgindi/Charts" target="_blank" rel="external">https://github.com/danielgindi/Charts</a>  </p>
+</blockquote>
+<h5 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h5><p>主力图形库，常规图形的展示。</p>
+<h5 id="优势："><a href="#优势：" class="headerlink" title="优势："></a>优势：</h5><ul>
+<li>图形类型支持覆盖率较高，基本涵盖了所有常用的图形类型（组合图待完善中…）。</li>
+<li>文档较完备，且iOS、Android平台接口一致，迁移成本低</li>
+<li>图形库热度高，持续更新中。</li>
+<li>较为优雅的动画支持、默认数据展示区域的控制、各种展示细节的灵活控制等。</li>
+</ul>
+<h4 id="2-ESArcProgressView"><a href="#2-ESArcProgressView" class="headerlink" title="2.ESArcProgressView"></a>2.ESArcProgressView</h4><blockquote>
+<p>传送门：<a href="https://github.com/e-sites/ESArcProgressView" target="_blank" rel="external">https://github.com/e-sites/ESArcProgressView</a>  </p>
+</blockquote>
+<h5 id="应用场景：-1"><a href="#应用场景：-1" class="headerlink" title="应用场景："></a>应用场景：</h5><p><img src="http://upload-images.jianshu.io/upload_images/2197993-af7ac3bba82a33f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Circle.png"></p>
+<p>多层环形图（暂时这么称呼她吧）<br>其实是仿照的Apple Watch的Activity，不过确实比纯粹的柱状图更具美感一些^_^。</p>
+<h5 id="优势：-1"><a href="#优势：-1" class="headerlink" title="优势："></a>优势：</h5><ul>
+<li>其它的类似轮子还真没找到。。。</li>
+<li>支持简单动画，不过需要手动处理下timer的runloop mode的问题。</li>
+</ul>
+<h4 id="3-XCL-Charts"><a href="#3-XCL-Charts" class="headerlink" title="3.XCL-Charts"></a>3.XCL-Charts</h4><blockquote>
+<p>传送门：<a href="https://github.com/xcltapestry/XCL-Charts" target="_blank" rel="external">https://github.com/xcltapestry/XCL-Charts</a> </p>
+</blockquote>
+<h5 id="应用场景：-2"><a href="#应用场景：-2" class="headerlink" title="应用场景："></a>应用场景：</h5><p><img src="http://upload-images.jianshu.io/upload_images/2197993-0dcab1ec1cdcf8dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="android circle.png"></p>
+<p>Android的多层环形图解决方案，XCL也是一个较为完备的Android图形库，不过相较来说库的成熟度没有Charts高，一些细节功能也存在一定程度的缺失。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>这里主要就Charts的问题解决方案进行一些分享：</p>
+<h4 id="1-展示图形中的最后几个元素"><a href="#1-展示图形中的最后几个元素" class="headerlink" title="1. 展示图形中的最后几个元素"></a>1. 展示图形中的最后几个元素</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示可视区域的元素个数</span></span><br><span class="line">chartView?.setVisibleXRangeMaximum(<span class="number">6</span>)</span><br><span class="line">            </span><br><span class="line"><span class="comment">/*</span><br><span class="line"> * moveViewToX存在bug无法正确切换位置</span><br><span class="line"> * 调用此方法的前提条件是需要预先提供一个确定的frame</span><br><span class="line"> * xIndex为显示到的x元素的序列</span><br><span class="line"> */</span></span><br><span class="line">chartView?.moveViewToAnimated(xIndex: <span class="type">CGFloat</span>(xVals.<span class="built_in">count</span> - <span class="number">1</span>), yValue: <span class="number">0</span>, axis: <span class="type">ChartYAxis</span>.<span class="type">AxisDependency</span>.<span class="type">Left</span>, duration: <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>这里setVisibleXRangeMaximum设置的数目在grouped柱状图配置的时候记得要乘以单位组内柱子的数目并包含组之间间隔的空间（往往间隔的空间也算做一个柱子）。</p>
+<h4 id="2-完整显示x轴所有的元素标签"><a href="#2-完整显示x轴所有的元素标签" class="headerlink" title="2. 完整显示x轴所有的元素标签"></a>2. 完整显示x轴所有的元素标签</h4><p>Charts默认自动计算相邻x轴元素标签的距离, 控制x轴部分标签的隐藏以达到较好的现实效果。但实际需求中往往会要求展示所有x轴的元素标签，那么就可以通过以下配置禁用默认的计算。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xAxis?.setLabelsToSkip(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-设置为可拖动的图形与tableview的滑动存在冲突"><a href="#3-设置为可拖动的图形与tableview的滑动存在冲突" class="headerlink" title="3. 设置为可拖动的图形与tableview的滑动存在冲突"></a>3. 设置为可拖动的图形与tableview的滑动存在冲突</h4><p>暂时的解决办法是在可拖动的图形顶部覆盖一层隐藏层，需要看全局数据的用户需要先进行一步点击才能进行图形的拖动操作。</p>
+<h3 id="存在的不足"><a href="#存在的不足" class="headerlink" title="存在的不足"></a>存在的不足</h3><h4 id="1-组合图包含grouped柱状图是存在bug"><a href="#1-组合图包含grouped柱状图是存在bug" class="headerlink" title="1. 组合图包含grouped柱状图是存在bug"></a>1. 组合图包含grouped柱状图是存在bug</h4><p><img src="http://upload-images.jianshu.io/upload_images/2197993-16cc873651ef1891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="problem.png"></p>
+<p>尚未解决，暂时只能将grouped柱状图跟线形图分开成两个图进行展示。。。</p>
+<h4 id="2-堆积图缺失线性堆积图"><a href="#2-堆积图缺失线性堆积图" class="headerlink" title="2. 堆积图缺失线性堆积图"></a>2. 堆积图缺失线性堆积图</h4><p>目前只提供柱状堆积图的支持。</p>
+<h4 id="3-ChartMarker堆积图功能缺失"><a href="#3-ChartMarker堆积图功能缺失" class="headerlink" title="3. ChartMarker堆积图功能缺失"></a>3. ChartMarker堆积图功能缺失</h4><p>堆积图的ChartMarker目前只能展示堆积后的总值，而不能展示分项的值。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>目前的这套方案可以满足基本的数据可视化需求，对于一些较为复杂灵活的图形展示需求，也可以封装一个单独的web类型的卡片，对于这部分需求采用web相关的图形可视化解决方案进行处理。</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'alithinkblog';
+    
+    var disqus_url = 'http://blog.alithink.com/2016/06/28/BI APP图形库选型/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//alithinkblog.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
