@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>《禅与 Objective-C 编程艺术》读书杂记 | AliThink&#39;s Blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="AliThink,iOS,xcode,blog,JavaScript" />
+  
+
+  <meta name="description" content="纯粹拾遗性质的读书笔记，只记录知识体系尚模糊的内容原文链接：《禅与 Objective-C 编程艺术》
+
+1.条件语句
+善用return, 将主流程从分支中脱离
+
+2.命名
+常量 static NSString * const ZOCCacheNotification(尽量避免使用宏，除非真的需要用到她)
+with连接 取代and
+字面量
+不可变集合尽量使用字面量赋值
+可变集合避免[@[] mu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《禅与 Objective-C 编程艺术》读书杂记">
+<meta property="og:url" content="http://blog.alithink.com/2016/07/01/《禅与 Objective-C 编程艺术》读书杂记/index.html">
+<meta property="og:site_name" content="AliThink's Blog">
+<meta property="og:description" content="纯粹拾遗性质的读书笔记，只记录知识体系尚模糊的内容原文链接：《禅与 Objective-C 编程艺术》
+
+1.条件语句
+善用return, 将主流程从分支中脱离
+
+2.命名
+常量 static NSString * const ZOCCacheNotification(尽量避免使用宏，除非真的需要用到她)
+with连接 取代and
+字面量
+不可变集合尽量使用字面量赋值
+可变集合避免[@[] mu">
+<meta property="og:updated_time" content="2016-07-01T08:50:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《禅与 Objective-C 编程艺术》读书杂记">
+<meta name="twitter:description" content="纯粹拾遗性质的读书笔记，只记录知识体系尚模糊的内容原文链接：《禅与 Objective-C 编程艺术》
+
+1.条件语句
+善用return, 将主流程从分支中脱离
+
+2.命名
+常量 static NSString * const ZOCCacheNotification(尽量避免使用宏，除非真的需要用到她)
+with连接 取代and
+字面量
+不可变集合尽量使用字面量赋值
+可变集合避免[@[] mu">
+
+  
+
+  
+
+  <link href="/css/styles.css?v=eaf5ab1e" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?ddd5ea8fb6af25af228cf11a240076e8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">≡</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-条件语句"><span class="toc-text">1.条件语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-命名"><span class="toc-text">2.命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-类"><span class="toc-text">3.类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Category"><span class="toc-text">4.Category</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Protocols"><span class="toc-text">5.Protocols</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-NSNotification"><span class="toc-text">6.NSNotification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-代码组织"><span class="toc-text">7.代码组织</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-对象间的通讯"><span class="toc-text">8.对象间的通讯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-面向切面编程"><span class="toc-text">9.面向切面编程</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-《禅与 Objective-C 编程艺术》读书杂记" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">《禅与 Objective-C 编程艺术》读书杂记</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.07.01</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>AliThink</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.alithink.com/2016/07/01/《禅与 Objective-C 编程艺术》读书杂记/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <blockquote>
+<p>纯粹拾遗性质的读书笔记，只记录知识体系尚模糊的内容<br>原文链接：<a href="https://github.com/oa414/objc-zen-book-cn#%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B" target="_blank" rel="external">《禅与 Objective-C 编程艺术》</a></p>
+</blockquote>
+<h3 id="1-条件语句"><a href="#1-条件语句" class="headerlink" title="1.条件语句"></a>1.条件语句</h3><ul>
+<li>善用return, 将主流程从分支中脱离</li>
+</ul>
+<h3 id="2-命名"><a href="#2-命名" class="headerlink" title="2.命名"></a>2.命名</h3><ul>
+<li>常量 static NSString * const ZOCCacheNotification(尽量避免使用宏，除非真的需要用到她)</li>
+<li>with连接 取代and</li>
+<li>字面量<ul>
+<li>不可变集合尽量使用字面量赋值</li>
+<li>可变集合避免[@[] mutableCopy]</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-类"><a href="#3-类" class="headerlink" title="3.类"></a>3.类</h3><ul>
+<li>类命名规范：ZOC(前缀)+Twitter(子类)+NetworkClient(父类)</li>
+<li>推荐代码组织顺序：<ul>
+<li>dealloc(MRC)</li>
+<li>init<ul>
+<li>designated initializer</li>
+<li>secondary initializer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>init的可失败性</li>
+<li>提供自己的初始化函数的三个步骤<ul>
+<li>定义你的designated initializer, 确保调用了直接超类designated initializer</li>
+<li>重载直接超类的designated initializer。调用你的新的designated initializer</li>
+<li>为新的designated initializer写文档</li>
+</ul>
+</li>
+<li><p>类簇：</p>
+<ul>
+<li><p>简单示例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@implementation ZOCKintsugiPhotoViewController</span><br><span class="line"></span><br><span class="line">- (id)initWithPhotos:(NSArray *)photos</span><br><span class="line">&#123;</span><br><span class="line">  		if ([self isMemberOfClass:ZOCKintsugiPhotoViewController.class]) &#123;</span><br><span class="line">      		self = nil;</span><br><span class="line"></span><br><span class="line">      		if ([UIDevice isPad]) &#123;</span><br><span class="line">          		self = [[ZOCKintsugiPhotoViewController_iPad alloc] initWithPhotos:photos];</span><br><span class="line">      		&#125;</span><br><span class="line">      		else &#123;</span><br><span class="line">          		self = [[ZOCKintsugiPhotoViewController_iPhone alloc] initWithPhotos:photos];</span><br><span class="line">      		&#125;</span><br><span class="line">      		return self;</span><br><span class="line">  		&#125;</span><br><span class="line">  		return [super initWithNibName:nil bundle:nil];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>单例模式应该运用于类及类的接口趋向于作为单例来使用的情况</p>
+</li>
+<li>属性：<ul>
+<li>NSString *text</li>
+<li>总应该使用getter和setter</li>
+<li>永远不要在init方法里面用getter和setter(dealloc中同样需要注意)</li>
+<li>使用点符号会让表达更加清晰并且帮助区分属性访问和方法调用</li>
+<li>属性定义推荐格式：@property (nonatomic, readwrite, copy) NSString *name;</li>
+<li>BOOL类型推荐格式：@property (assign, getter=isEditable) BOOL editable;</li>
+<li>通过readonly的属性暴露类内部可变属性的值</li>
+</ul>
+</li>
+<li><p>相等性示例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)isEqual:(id)object &#123;</span><br><span class="line">   	if (self == object) &#123;</span><br><span class="line">     		return YES;</span><br><span class="line">   	&#125;</span><br><span class="line"></span><br><span class="line">   	if (![object isKindOfClass:[ZOCPerson class]]) &#123;</span><br><span class="line">     		return NO;</span><br><span class="line">   	&#125;</span><br><span class="line"></span><br><span class="line">   	return [self isEqualToPerson:(ZOCPerson *)object];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (BOOL)isEqualToPerson:(Person *)person &#123;</span><br><span class="line">   	if (!person) &#123;</span><br><span class="line">       	return NO;</span><br><span class="line">   	&#125;</span><br><span class="line"></span><br><span class="line">   	BOOL namesMatch = (!self.name &amp;&amp; !person.name) ||</span><br><span class="line">                      [self.name isEqualToString:person.name];</span><br><span class="line">   	BOOL birthdaysMatch = (!self.birthday &amp;&amp; !person.birthday) ||</span><br><span class="line">                          [self.birthday isEqualToDate:person.birthday];</span><br><span class="line"></span><br><span class="line"> 		return haveEqualNames &amp;&amp; haveEqualBirthdays;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-Category"><a href="#4-Category" class="headerlink" title="4.Category"></a>4.Category</h3><ul>
+<li>category方法前加上自己的小写前缀以及下划线，避免重名的category方法的覆盖不确定性</li>
+<li>利用category创建方法分组可以用来更好地进行不同功能的表示，并且把类打破在更多自我包含的组成部分里</li>
+</ul>
+<h3 id="5-Protocols"><a href="#5-Protocols" class="headerlink" title="5.Protocols"></a>5.Protocols</h3><ul>
+<li>当实现一个protocol你总应该坚持里氏替换原则。这个原则是：你应该可以取代任意接口实现，而不用改变客户端或者相关实现</li>
+</ul>
+<h3 id="6-NSNotification"><a href="#6-NSNotification" class="headerlink" title="6.NSNotification"></a>6.NSNotification</h3><ul>
+<li>通知名定义示例：extern NSString * const ZOCFooDidBecomeBarNotification;</li>
+</ul>
+<h3 id="7-代码组织"><a href="#7-代码组织" class="headerlink" title="7.代码组织"></a>7.代码组织</h3><ul>
+<li>清晰地组织代码和规范地进行定义，是你对自己以及其他阅读代码的人的尊重</li>
+<li>善用代码块({})</li>
+<li><p>pragma示例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">- (void)dealloc &#123; /* ... */ &#125;</span><br><span class="line">- (instancetype)init &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - View Lifecycle （View 的生命周期）</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123; /* ... */ &#125;</span><br><span class="line">- (void)viewWillAppear:(BOOL)animated &#123; /* ... */ &#125;</span><br><span class="line">- (void)didReceiveMemoryWarning &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - Custom Accessors （自定义访问器）</span><br><span class="line"></span><br><span class="line">- (void)setCustomProperty:(id)value &#123; /* ... */ &#125;</span><br><span class="line">- (id)customProperty &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - IBActions  </span><br><span class="line"></span><br><span class="line">- (IBAction)submitData:(id)sender &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - Public</span><br><span class="line"></span><br><span class="line">- (void)publicMethod &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - Private</span><br><span class="line"></span><br><span class="line">- (void)zoc_privateMethod &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - UITableViewDataSource</span><br><span class="line"></span><br><span class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">#pragma mark - ZOCSuperclass</span><br><span class="line"></span><br><span class="line">// ... 重载来自 ZOCSuperclass 的方法</span><br><span class="line"></span><br><span class="line">#pragma mark - NSObject</span><br><span class="line"></span><br><span class="line">- (NSString *)description &#123; /* ... */ &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>#pragma unused</p>
+</li>
+<li>#error #warning</li>
+</ul>
+<h3 id="8-对象间的通讯"><a href="#8-对象间的通讯" class="headerlink" title="8.对象间的通讯"></a>8.对象间的通讯</h3><ul>
+<li>Block<ul>
+<li>把需要提供的数据和错误信息整合到一个单独block中，比分别提供成功和失败的block要好<ul>
+<li>若objects不为nil,则error必须为nil</li>
+<li>若objects为nil,则error必须不为nil</li>
+</ul>
+</li>
+<li>三种方案的讨论（循环引用相关）</li>
+</ul>
+</li>
+<li>委托和数据源<ul>
+<li>委托模式：事件发生的时候，委托者需要通知代理者</li>
+<li>数据源模式：委托者需要从数据源对象拉去数据<ul>
+<li>重载代理方法：instancesRespondToSelector</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-面向切面编程"><a href="#9-面向切面编程" class="headerlink" title="9.面向切面编程"></a>9.面向切面编程</h3><ul>
+<li>aspects</li>
+<li>应用举例 统计与日志：<ul>
+<li>预先留一个统计的配置文件，记录需要统计的类、方法跟标签</li>
+<li>初始化时统一埋点</li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'alithinkblog';
+    
+    var disqus_url = 'http://blog.alithink.com/2016/07/01/《禅与 Objective-C 编程艺术》读书杂记/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//alithinkblog.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

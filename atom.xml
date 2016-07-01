@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.alithink.com/"/>
-  <updated>2016-06-28T07:09:34.000Z</updated>
+  <updated>2016-07-01T08:50:00.000Z</updated>
   <id>http://blog.alithink.com/</id>
   
   <author>
@@ -14,6 +14,128 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《禅与 Objective-C 编程艺术》读书杂记</title>
+    <link href="http://blog.alithink.com/2016/07/01/%E3%80%8A%E7%A6%85%E4%B8%8E%20Objective-C%20%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%9D%82%E8%AE%B0/"/>
+    <id>http://blog.alithink.com/2016/07/01/《禅与 Objective-C 编程艺术》读书杂记/</id>
+    <published>2016-07-01T02:49:23.000Z</published>
+    <updated>2016-07-01T08:50:00.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;纯粹拾遗性质的读书笔记，只记录知识体系尚模糊的内容&lt;br&gt;原文链接：&lt;a href=&quot;https://github.com/oa414/objc-zen-book-cn#%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《禅与 Objective-C 编程艺术》&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;1-条件语句&quot;&gt;&lt;a href=&quot;#1-条件语句&quot; class=&quot;headerlink&quot; title=&quot;1.条件语句&quot;&gt;&lt;/a&gt;1.条件语句&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;善用return, 将主流程从分支中脱离&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-命名&quot;&gt;&lt;a href=&quot;#2-命名&quot; class=&quot;headerlink&quot; title=&quot;2.命名&quot;&gt;&lt;/a&gt;2.命名&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;常量 static NSString * const ZOCCacheNotification(尽量避免使用宏，除非真的需要用到她)&lt;/li&gt;
+&lt;li&gt;with连接 取代and&lt;/li&gt;
+&lt;li&gt;字面量&lt;ul&gt;
+&lt;li&gt;不可变集合尽量使用字面量赋值&lt;/li&gt;
+&lt;li&gt;可变集合避免[@[] mutableCopy]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;3-类&quot;&gt;&lt;a href=&quot;#3-类&quot; class=&quot;headerlink&quot; title=&quot;3.类&quot;&gt;&lt;/a&gt;3.类&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;类命名规范：ZOC(前缀)+Twitter(子类)+NetworkClient(父类)&lt;/li&gt;
+&lt;li&gt;推荐代码组织顺序：&lt;ul&gt;
+&lt;li&gt;dealloc(MRC)&lt;/li&gt;
+&lt;li&gt;init&lt;ul&gt;
+&lt;li&gt;designated initializer&lt;/li&gt;
+&lt;li&gt;secondary initializer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;init的可失败性&lt;/li&gt;
+&lt;li&gt;提供自己的初始化函数的三个步骤&lt;ul&gt;
+&lt;li&gt;定义你的designated initializer, 确保调用了直接超类designated initializer&lt;/li&gt;
+&lt;li&gt;重载直接超类的designated initializer。调用你的新的designated initializer&lt;/li&gt;
+&lt;li&gt;为新的designated initializer写文档&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;类簇：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;简单示例：&lt;/p&gt;
+  &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@implementation ZOCKintsugiPhotoViewController&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (id)initWithPhotos:(NSArray *)photos&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  		if ([self isMemberOfClass:ZOCKintsugiPhotoViewController.class]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      		self = nil;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      		if ([UIDevice isPad]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          		self = [[ZOCKintsugiPhotoViewController_iPad alloc] initWithPhotos:photos];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      		else &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          		self = [[ZOCKintsugiPhotoViewController_iPhone alloc] initWithPhotos:photos];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      		return self;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  		return [super initWithNibName:nil bundle:nil];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;单例模式应该运用于类及类的接口趋向于作为单例来使用的情况&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;属性：&lt;ul&gt;
+&lt;li&gt;NSString *text&lt;/li&gt;
+&lt;li&gt;总应该使用getter和setter&lt;/li&gt;
+&lt;li&gt;永远不要在init方法里面用getter和setter(dealloc中同样需要注意)&lt;/li&gt;
+&lt;li&gt;使用点符号会让表达更加清晰并且帮助区分属性访问和方法调用&lt;/li&gt;
+&lt;li&gt;属性定义推荐格式：@property (nonatomic, readwrite, copy) NSString *name;&lt;/li&gt;
+&lt;li&gt;BOOL类型推荐格式：@property (assign, getter=isEditable) BOOL editable;&lt;/li&gt;
+&lt;li&gt;通过readonly的属性暴露类内部可变属性的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;相等性示例：&lt;/p&gt;
+  &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (BOOL)isEqual:(id)object &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	if (self == object) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     		return YES;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	if (![object isKindOfClass:[ZOCPerson class]]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     		return NO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	return [self isEqualToPerson:(ZOCPerson *)object];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (BOOL)isEqualToPerson:(Person *)person &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	if (!person) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       	return NO;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	BOOL namesMatch = (!self.name &amp;amp;&amp;amp; !person.name) ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                      [self.name isEqualToString:person.name];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   	BOOL birthdaysMatch = (!self.birthday &amp;amp;&amp;amp; !person.birthday) ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                          [self.birthday isEqualToDate:person.birthday];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; 		return haveEqualNames &amp;amp;&amp;amp; haveEqualBirthdays;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;4-Category&quot;&gt;&lt;a href=&quot;#4-Category&quot; class=&quot;headerlink&quot; title=&quot;4.Category&quot;&gt;&lt;/a&gt;4.Category&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;category方法前加上自己的小写前缀以及下划线，避免重名的category方法的覆盖不确定性&lt;/li&gt;
+&lt;li&gt;利用category创建方法分组可以用来更好地进行不同功能的表示，并且把类打破在更多自我包含的组成部分里&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;5-Protocols&quot;&gt;&lt;a href=&quot;#5-Protocols&quot; class=&quot;headerlink&quot; title=&quot;5.Protocols&quot;&gt;&lt;/a&gt;5.Protocols&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;当实现一个protocol你总应该坚持里氏替换原则。这个原则是：你应该可以取代任意接口实现，而不用改变客户端或者相关实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;6-NSNotification&quot;&gt;&lt;a href=&quot;#6-NSNotification&quot; class=&quot;headerlink&quot; title=&quot;6.NSNotification&quot;&gt;&lt;/a&gt;6.NSNotification&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;通知名定义示例：extern NSString * const ZOCFooDidBecomeBarNotification;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;7-代码组织&quot;&gt;&lt;a href=&quot;#7-代码组织&quot; class=&quot;headerlink&quot; title=&quot;7.代码组织&quot;&gt;&lt;/a&gt;7.代码组织&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;清晰地组织代码和规范地进行定义，是你对自己以及其他阅读代码的人的尊重&lt;/li&gt;
+&lt;li&gt;善用代码块({})&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pragma示例：&lt;/p&gt;
+  &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (void)dealloc &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (instancetype)init &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#pragma mark - View Lifecycle （View 的生命周期）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewDidLoad &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewWillAppear:(BOOL)animated &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)didReceiveMemoryWarning &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#pragma mark - Custom Accessors （自定义访问器）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)setCustomProperty:(id)value &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (id)customProperty &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#pragma mark - IBActions  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (IBAction)submitData:(id)sender &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#pragma mark - Public&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)publicMethod &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#pragma mark - Private&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)zoc_privateMethod &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#pragma mark - UITableViewDataSource&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#pragma mark - ZOCSuperclass&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// ... 重载来自 ZOCSuperclass 的方法&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#pragma mark - NSObject&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (NSString *)description &amp;#123; /* ... */ &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;#pragma unused&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;#error #warning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;8-对象间的通讯&quot;&gt;&lt;a href=&quot;#8-对象间的通讯&quot; class=&quot;headerlink&quot; title=&quot;8.对象间的通讯&quot;&gt;&lt;/a&gt;8.对象间的通讯&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Block&lt;ul&gt;
+&lt;li&gt;把需要提供的数据和错误信息整合到一个单独block中，比分别提供成功和失败的block要好&lt;ul&gt;
+&lt;li&gt;若objects不为nil,则error必须为nil&lt;/li&gt;
+&lt;li&gt;若objects为nil,则error必须不为nil&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;三种方案的讨论（循环引用相关）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;委托和数据源&lt;ul&gt;
+&lt;li&gt;委托模式：事件发生的时候，委托者需要通知代理者&lt;/li&gt;
+&lt;li&gt;数据源模式：委托者需要从数据源对象拉去数据&lt;ul&gt;
+&lt;li&gt;重载代理方法：instancesRespondToSelector&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;9-面向切面编程&quot;&gt;&lt;a href=&quot;#9-面向切面编程&quot; class=&quot;headerlink&quot; title=&quot;9.面向切面编程&quot;&gt;&lt;/a&gt;9.面向切面编程&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;aspects&lt;/li&gt;
+&lt;li&gt;应用举例 统计与日志：&lt;ul&gt;
+&lt;li&gt;预先留一个统计的配置文件，记录需要统计的类、方法跟标签&lt;/li&gt;
+&lt;li&gt;初始化时统一埋点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;纯粹拾遗性质的读书笔记，只记录知识体系尚模糊的内容&lt;br&gt;原文链接：&lt;a href=&quot;https://github.com/oa414/objc-zen-book-cn#%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>BI APP图形库选型</title>
