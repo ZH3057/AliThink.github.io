@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.alithink.com/"/>
-  <updated>2016-07-01T08:54:31.000Z</updated>
+  <updated>2016-07-11T05:55:01.000Z</updated>
   <id>http://blog.alithink.com/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>联通旧事</title>
+    <link href="http://blog.alithink.com/2016/07/08/%E8%81%94%E9%80%9A%E6%97%A7%E4%BA%8B/"/>
+    <id>http://blog.alithink.com/2016/07/08/联通旧事/</id>
+    <published>2016-07-08T12:37:56.000Z</published>
+    <updated>2016-07-11T05:55:01.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;2011.3~2013.6&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;初来乍到&quot;&gt;&lt;a href=&quot;#初来乍到&quot; class=&quot;headerlink&quot; title=&quot;初来乍到&quot;&gt;&lt;/a&gt;初来乍到&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;出场人物代号简介：&lt;br&gt;我：刚出茅庐的Java小菜鸟&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　那是一个属于Java的年代（^_^其实现在依然如此）。但造化弄人一直没有长时间从事相关工作。在浪潮实习的时候用了C#，在另一个伤心之地（实在不想提。。唉。。）用了一盏茶的J2EE和PB，而后我来到了联通。&lt;br&gt;　　面试时问的问题都是J2EE相关的，于是顺利的加入了经分数据组😂（跟J2EE几乎没半毛钱关系，这就是命吧，不过现在回想，还是要感谢一下命运之神）。时间太久，忘记当时的心情了，只依稀记得当时坐到工位上，时而会慨叹：“也许我就要跟数据库、etl和shell搞一辈子了吧”。&lt;/p&gt;
+&lt;h3 id=&quot;误打误撞&quot;&gt;&lt;a href=&quot;#误打误撞&quot; class=&quot;headerlink&quot; title=&quot;误打误撞&quot;&gt;&lt;/a&gt;误打误撞&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;出场人物代号简介:&lt;br&gt;川哥：掌分项目的发起者&lt;br&gt;老孟：掌分项目组长以及同甘共苦过的兄弟&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　同事领导都挺好，身边也有不少同学，所以日子过得还算温馨舒适。然后突然有一天命运的轨迹就发生了改变，在集团常驻的川哥发起了掌上经分项目（仅限iOS端）。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;回想当时iOS生态圈的境况为：&lt;br&gt;目标设备：iPhone3G、3GS、iPad1&lt;br&gt;iOS版本: iOS4.x&lt;br&gt;开发设备：iMac、黑苹果(t410黑)&lt;br&gt;开发环境：那是一个Xcode与Interface builder分离的时代&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　迷迷瞪瞪的就跟老孟被安排进了掌分项目组，当时对于OSX（现在应该叫macOS啦）和iOS一无所知，唯一的学习资料是一本iPhone开发书籍（名字忘掉了，这本书其中之一的作者以外包团队领头人的身份加入了项目）。项目的第一个版本主要由外包团队负责研发，但是我跟老孟需要尽快的融入进来，借助项目快速上手iOS开发，然后将项目接手过来（最大限度的节省外包费用，😂据说最后也没有把外包团队的费用完全结清）。&lt;/p&gt;
+&lt;h3 id=&quot;小有所成&quot;&gt;&lt;a href=&quot;#小有所成&quot; class=&quot;headerlink&quot; title=&quot;小有所成&quot;&gt;&lt;/a&gt;小有所成&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;军军：外包团队主力开发&lt;br&gt;苟工：外包团队领头人&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　那是一个几乎没有轮子的时代，或者说当时都还没有使用过github的我没有具备找轮子的能力。所以几乎所有的东西都是从零做起，走过的坑不少，但是收获也很大，很快就可以上手一些简单模块的开发了。说起成长的喜悦，记得兄弟们一起加班时的免费餐补报销，加班九点之后的打车报销以及写出bug后大家开玩笑的声讨书（那超大字号的白底黑字，打开屏幕吓出一身冷汗来）。&lt;br&gt;　　这里要感谢下苟工当时对于delegate的悉心讲解，感谢军军同志对于我冒出的各种问题的耐心解答。
+　　&lt;/p&gt;
+&lt;h3 id=&quot;北京你好&quot;&gt;&lt;a href=&quot;#北京你好&quot; class=&quot;headerlink&quot; title=&quot;北京你好&quot;&gt;&lt;/a&gt;北京你好&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;博士：名副其实的博士，会议室加班常客，只因为大家都叫他博士，导致往往有些人都不记得他叫什么名字了，但是我记得，因为他跟托塔李天王重名^_^&lt;br&gt;文哥：目前公司的领导&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　当领导让你出差，但是又不明确说多少天的时候，你就应该明白我可能一时半会回不来了😂。就这样，北京，我来了。&lt;br&gt;　　在项目的初版汇报通过之后，我们来到了北京金融街21号-联通集团总部，开始了现场开发支持工作。想象过一个人提着iMac盒子出差的感受吗，回想起来，好心酸，胳膊也好酸。。。&lt;br&gt;　　常驻联通会议室之后，发现一个真相，原来工作之后需要掌握的一项重要技能就是做PPT。逐级的汇报，不停的过片子，修改字眼与内容的组织是博士经常加班到很晚的原因。记得我们晚上从集团运动区打完球回来，还能经常享受到博士亲切地问候。&lt;br&gt;　　博士给我留下了很深刻的印象，跟现在的文哥有一拼，为人温文尔雅，专业知识过硬，处事细致全面，知识面很广，仿佛所有的东西都有所涉猎并且见解独特。（这里声明下，绝无拍马屁之嫌）&lt;br&gt;　　集团的食堂也给我留下了不少美味的回忆，超值的早餐、便宜好吃的肉龙等等，现在想想当时没有胖起来真是个奇迹。（然而在我的不懈努力下，现在终于还是胖起来了）
+　　&lt;/p&gt;
+&lt;h3 id=&quot;重新来过&quot;&gt;&lt;a href=&quot;#重新来过&quot; class=&quot;headerlink&quot; title=&quot;重新来过&quot;&gt;&lt;/a&gt;重新来过&lt;/h3&gt;&lt;p&gt;　　终于热更新这个问题被提出来了，Native开发的最大不足其实就是这里了。当时没有如今大行其道的JSPatch、风风火火的React Native，于是开发一时进入了瓶颈。想过不少方案都没有很好的解决这个问题，于是川哥决定借助现有的成熟平台换一个架构重新来过。&lt;br&gt;　　经过几轮讨论之后，确定了MicroStrategy的方案，至今跟厂商的几个伙伴还保持着联系，毕竟国内懂得定制化改造MSTR SDK的iOS开发者估计不算多，当时一起讨论了不少问题，还乔装成他们的技术人员去帮他们紧急搞定了一个项目^_^。&lt;br&gt;　　实体、事实、度量、选择器、报表、文档、智能立方体、缓存、权限。。。接触了不少商业智能常见的概念与功能。起初是比较排斥的，因为借助第三方平台就基本失去了实际编写功能代码的机会了（因为涉及二次开发，针对MSTR SDK套壳的部分还是需要编写的）。但转念一想既然改变的势头已无法扭转，那只有硬着头皮顺流而行了。因为处女座的特质，让我在很短的时间内就掌握了MSTR的基本功能，有疑惑的地方就联系厂商技术支持，所以很快MSTR版本的掌分就搞出来了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;心里话：&lt;br&gt;不知道现在掌分的状况如何了，个人一直觉得中途换成MSTR的方案并不是一个明智的选择，原因如下：  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;APP其实往往不需要彻底的动态性，内容的动态性往往可以通过产品向的方案进行解决。  &lt;/li&gt;
+&lt;li&gt;MSTR的权限以及缓存模型是基于用户的，而用户又涉及到license的费用计算，一旦涉及到费用就会衍生出不少扯皮的事情；反观自主开发的APP这部分配置就非常灵活。  &lt;/li&gt;
+&lt;li&gt;这点我觉得最重要，那就是APP存在的重要意义之一其实就是她极致的用户体验，如果在动态性与极致用户体验之一做个权衡的话，会毫不犹豫的以保证后者为先。（尤其在企业应用的范畴内，省掉了App Store的审核成本，版本的迭代速度可以非常快，版本的更新提示反而可以算作是对于用户的一种引导）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;北京再见&quot;&gt;&lt;a href=&quot;#北京再见&quot; class=&quot;headerlink&quot; title=&quot;北京再见&quot;&gt;&lt;/a&gt;北京再见&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;朋友们：东儿、芳芳*2、小杜、传奇、夺儿等（排名不分先后）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　来到北京最开心的回忆就是跟一起出差的朋友们几乎游遍了京城所有可玩的地方。故宫、天坛、长城、颐和园、南锣鼓巷、后海、雍和宫、国家博物馆、国家图书馆、鸟巢、水立方、清华北大、前门、王府井、西单、三里屯（优衣库试衣间）等。借老孟跟东儿的单反留下了不少记忆的片段，现在还经常看一下当时的照片，回味当初那份单纯的快乐，这份快乐只属于那段日子，那个年纪。（着重提一下，菜市口附近教子胡同里面的一个麻辣烫小店，里面的辣椒太tm过瘾了。。。）&lt;br&gt;　　唯一不变的就是变化，突然因为项目成本的原因（还有一些其他原因）研发团队就回到了济南。模式变为了济南团队研发结束提交变更，留守在集团的老孟负责向领导进行汇报安装。&lt;br&gt;　　说说这段日子的收获的话：  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;扩展视野、吃喝玩乐、结交朋友算是一方面😜。  &lt;/li&gt;
+&lt;li&gt;中途也参加了一些iOS精通类以及用户体验类的培训，总算是给我这个自学党补了补漏。  &lt;/li&gt;
+&lt;li&gt;接触MSTR，熟悉了主流报表平台的常用概念以及构建流程；通过对SDK的二次开发，为了实现一些奇葩需求，了解了不少iOS相关的黑魔法（swizzling、runtime等）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;联通再见&quot;&gt;&lt;a href=&quot;#联通再见&quot; class=&quot;headerlink&quot; title=&quot;联通再见&quot;&gt;&lt;/a&gt;联通再见&lt;/h3&gt;&lt;p&gt;　　人忙起来往往没时间去想太多其他事情，可一旦闲下来，然后再有不爽的任务压过来时，就往往会思考权衡下自己将来要走的路了。当掌分的工作暂时告一段落，领导打算安排去做其他数据加工审核相关工作的时候，心里总是有种排斥感。那段时间心里总是有个声音在问自己，将来到底想做什么。联通的生活确实很安逸舒适，但自己内心坚持移动端研发方向，所以最后还是选择了离开。    &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;后记：&lt;br&gt;在联通工作的这段日子，结识了伙伴，扩展了视野，最重要的是确定了自己下一步该走的路。&lt;br&gt;感谢那段时光，感谢那段日子有你们相伴。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;2011.3~2013.6&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;初来乍到&quot;&gt;&lt;a href=&quot;#初来乍到&quot; class=&quot;headerlink&quot; title=&quot;初来乍到&quot;&gt;&lt;/a&gt;初来乍到&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;出
+    
+    </summary>
+    
+      <category term="回忆录" scheme="http://blog.alithink.com/categories/%E5%9B%9E%E5%BF%86%E5%BD%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>《禅与 Objective-C 编程艺术》读书拾遗</title>
