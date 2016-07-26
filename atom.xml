@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.alithink.com/"/>
-  <updated>2016-07-11T06:04:31.000Z</updated>
+  <updated>2016-07-26T06:52:21.000Z</updated>
   <id>http://blog.alithink.com/</id>
   
   <author>
@@ -14,6 +14,122 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Charts诊疗日志</title>
+    <link href="http://blog.alithink.com/2016/07/25/Charts%E8%AF%8A%E7%96%97%E6%97%A5%E5%BF%97/"/>
+    <id>http://blog.alithink.com/2016/07/25/Charts诊疗日志/</id>
+    <published>2016-07-25T07:41:16.000Z</published>
+    <updated>2016-07-26T06:52:21.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;病症1-组合图-CombinedChartView-弹出MarkerView位置不对&quot;&gt;&lt;a href=&quot;#病症1-组合图-CombinedChartView-弹出MarkerView位置不对&quot; class=&quot;headerlink&quot; title=&quot;病症1.组合图(CombinedChartView)弹出MarkerView位置不对&quot;&gt;&lt;/a&gt;病症1.组合图(CombinedChartView)弹出MarkerView位置不对&lt;/h3&gt;&lt;h4 id=&quot;病症表象如下图：&quot;&gt;&lt;a href=&quot;#病症表象如下图：&quot; class=&quot;headerlink&quot; title=&quot;病症表象如下图：&quot;&gt;&lt;/a&gt;病症表象如下图：&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://alithink.com/img/4charts/combine.png&quot; alt=&quot;combine.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;截图为想要的结果（修复后的效果），实际情况为弹出的Marker没有显示在对应折线图的数据点上。&lt;/p&gt;
+&lt;h4 id=&quot;患病位置如下图：&quot;&gt;&lt;a href=&quot;#患病位置如下图：&quot; class=&quot;headerlink&quot; title=&quot;患病位置如下图：&quot;&gt;&lt;/a&gt;患病位置如下图：&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://alithink.com/img/4charts/chart_marker.png&quot; alt=&quot;chart_marker.png&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;治疗方案：&quot;&gt;&lt;a href=&quot;#治疗方案：&quot; class=&quot;headerlink&quot; title=&quot;治疗方案：&quot;&gt;&lt;/a&gt;治疗方案：&lt;/h4&gt;&lt;p&gt;BarLineChartViewBase -&amp;gt; getMarkerPosition  &lt;/p&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; pt = &lt;span class=&quot;type&quot;&gt;CGPoint&lt;/span&gt;(x: xPos, y: yPos * _animator.phaseY)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在pt初始化之后添加如下分支：&lt;/p&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;CombinedChartView&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; combinedChartView = &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt;! &lt;span class=&quot;type&quot;&gt;CombinedChartView&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; combinedChartData = _data &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt;! &lt;span class=&quot;type&quot;&gt;CombinedChartData&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; highlight.dataIndex &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &amp;amp;&amp;amp; highlight.dataIndex &amp;lt; combinedChartView.drawOrder.&lt;span class=&quot;built_in&quot;&gt;count&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; chartType =  &lt;span class=&quot;type&quot;&gt;CombinedChartView&lt;/span&gt;.&lt;span class=&quot;type&quot;&gt;DrawOrder&lt;/span&gt;(rawValue: combinedChartView.drawOrder.&lt;span class=&quot;built_in&quot;&gt;reverse&lt;/span&gt;()[highlight.dataIndex])!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; axisDependency = &lt;span class=&quot;type&quot;&gt;ChartYAxis&lt;/span&gt;.&lt;span class=&quot;type&quot;&gt;AxisDependency&lt;/span&gt;.&lt;span class=&quot;type&quot;&gt;Left&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;switch&lt;/span&gt; chartType &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; .&lt;span class=&quot;type&quot;&gt;Bar&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            axisDependency = combinedChartData.barData.getDataSetByIndex(dataSetIndex)!.axisDependency&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; .&lt;span class=&quot;type&quot;&gt;Line&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            axisDependency = combinedChartData.lineData.getDataSetByIndex(dataSetIndex)!.axisDependency&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; .&lt;span class=&quot;type&quot;&gt;Bubble&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            axisDependency = combinedChartData.bubbleData.getDataSetByIndex(dataSetIndex)!.axisDependency&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; .&lt;span class=&quot;type&quot;&gt;Candle&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            axisDependency = combinedChartData.candleData.getDataSetByIndex(dataSetIndex)!.axisDependency&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; .&lt;span class=&quot;type&quot;&gt;Scatter&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            axisDependency = combinedChartData.scatterData.getDataSetByIndex(dataSetIndex)!.axisDependency&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        getTransformer(axisDependency).pointValueToPixel(&amp;amp;pt)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    getTransformer(data.getDataSetByIndex(dataSetIndex)!.axisDependency).pointValueToPixel(&amp;amp;pt)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此处drawOrder.reverse()要做reverse的原因是highlight里面记录的dataIndex的顺序正好与drawOrder数组的顺序相反，例如drawOrder为[Bar, Line],那么对应的Bar的dataIndex为1，Line的dataIndex为0。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;总结分析&quot;&gt;&lt;a href=&quot;#总结分析&quot; class=&quot;headerlink&quot; title=&quot;总结分析&quot;&gt;&lt;/a&gt;总结分析&lt;/h4&gt;&lt;p&gt;CombinedChartView中包含的各类图形的数据会保存在独立的data属性中，例如柱状图的barData,折线图的lineData。因此原有的从统一data属性取得dataSet对应参考轴的操作就会返回错误的结果，以致因为选错了参考轴计算出了错误的Marker绘制位置。&lt;/p&gt;
+&lt;h3 id=&quot;病症2-堆积图弹出MarkerView数值不对&quot;&gt;&lt;a href=&quot;#病症2-堆积图弹出MarkerView数值不对&quot; class=&quot;headerlink&quot; title=&quot;病症2.堆积图弹出MarkerView数值不对&quot;&gt;&lt;/a&gt;病症2.堆积图弹出MarkerView数值不对&lt;/h3&gt;&lt;h4 id=&quot;病症表象如下图：-1&quot;&gt;&lt;a href=&quot;#病症表象如下图：-1&quot; class=&quot;headerlink&quot; title=&quot;病症表象如下图：&quot;&gt;&lt;/a&gt;病症表象如下图：&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://alithink.com/img/4charts/stack.png&quot; alt=&quot;stack.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;截图为想要的结果（修复后的效果），实际情况为弹出的Marker总是显示所有柱子的叠加值。&lt;/p&gt;
+&lt;h4 id=&quot;治疗方案：-1&quot;&gt;&lt;a href=&quot;#治疗方案：-1&quot; class=&quot;headerlink&quot; title=&quot;治疗方案：&quot;&gt;&lt;/a&gt;治疗方案：&lt;/h4&gt;&lt;p&gt;BalloonMarker -&amp;gt; refreshContent&lt;/p&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; entry &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;BarChartDataEntry&lt;/span&gt; &amp;amp;&amp;amp; highlight.stackIndex != -&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; chartEntry = entry &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt;! &lt;span class=&quot;type&quot;&gt;BarChartDataEntry&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; values = chartEntry.values &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        configLabelns(entry, value: values[highlight.stackIndex])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    configLabelns(entry)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;首先目前只有柱状图支持堆积展现，并且进行堆积展示的BarChartDataEntry有一个values属性用于存放该列的所有堆积值；stackIndex用于标示当前点击的柱子从下往上的序列，例如最下面的柱子为0，之上一个为1，依次递增。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;总结分析-1&quot;&gt;&lt;a href=&quot;#总结分析-1&quot; class=&quot;headerlink&quot; title=&quot;总结分析&quot;&gt;&lt;/a&gt;总结分析&lt;/h4&gt;&lt;p&gt;默认的Marker处理值展示的时候，没有考虑到堆积图的特殊性，统一从entry的value属性进行取值，导致最终展现的数值不是我们想要的结果。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;病症1-组合图-CombinedChartView-弹出MarkerView位置不对&quot;&gt;&lt;a href=&quot;#病症1-组合
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://blog.alithink.com/categories/iOS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《世界简史》略读</title>
+    <link href="http://blog.alithink.com/2016/07/20/%E3%80%8A%E4%B8%96%E7%95%8C%E7%AE%80%E5%8F%B2%E3%80%8B%E7%95%A5%E8%AF%BB/"/>
+    <id>http://blog.alithink.com/2016/07/20/《世界简史》略读/</id>
+    <published>2016-07-20T12:50:49.000Z</published>
+    <updated>2016-07-25T07:30:16.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;生命的起源&quot;&gt;&lt;a href=&quot;#生命的起源&quot; class=&quot;headerlink&quot; title=&quot;生命的起源&quot;&gt;&lt;/a&gt;生命的起源&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;沉积岩（岩石记录）大致可以了解到16亿年前的生命形态。&lt;/li&gt;
+&lt;li&gt;包含着生命迹象的最初的岩石称为原生岩。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;古生代早期：比较低等的生物遗迹如水生贝类的贝壳、植物状动物的花状头、海藻、沙蚕类的甲壳类生物足迹和骨骼化石。&lt;br&gt;三叶虫：最早出生的生物，跟蚜虫十分相似，他们能像蚜虫那样把身体卷成球状。&lt;br&gt;海蝎：过了几百万年出现，比之前的生物更灵活有力&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;鱼类时期&quot;&gt;&lt;a href=&quot;#鱼类时期&quot; class=&quot;headerlink&quot; title=&quot;鱼类时期&quot;&gt;&lt;/a&gt;鱼类时期&lt;/h3&gt;&lt;h4 id=&quot;生物区别于非生命体的两个特征：&quot;&gt;&lt;a href=&quot;#生物区别于非生命体的两个特征：&quot; class=&quot;headerlink&quot; title=&quot;生物区别于非生命体的两个特征：&quot;&gt;&lt;/a&gt;生物区别于非生命体的两个特征：&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;能够通化其他物质，使其成为自身的一部分（吃东西）。&lt;/li&gt;
+&lt;li&gt;可以再造自己（繁衍后代）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;鱼类时期（泥盆季）：大约在5亿年以前，已知的最早的脊椎动物。他们起初的样子跟现在的鲨鱼、鲟鱼有些相似。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;石炭纪沼泽期&quot;&gt;&lt;a href=&quot;#石炭纪沼泽期&quot; class=&quot;headerlink&quot; title=&quot;石炭纪沼泽期&quot;&gt;&lt;/a&gt;石炭纪沼泽期&lt;/h3&gt;&lt;p&gt;植物先于动物移居到陆地上。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;植物：大型湿地木质植物，如木质苔藓、木质蕨类、巨型木贼等。&lt;br&gt;动物：蜈蚣、马路、原生昆虫（体型较大，如巨型蜻蜓）、蜘蛛蝎子的祖先，随后脊椎动物登陆。&lt;br&gt;肺的进化。&lt;br&gt;末期温度剧烈变化，沼泽地植物完全消失，煤炭层的形成基础。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;爬行动物时期&quot;&gt;&lt;a href=&quot;#爬行动物时期&quot; class=&quot;headerlink&quot; title=&quot;爬行动物时期&quot;&gt;&lt;/a&gt;爬行动物时期&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;卵生，在孵化完成前就已经接近发育的成熟阶段。&lt;/li&gt;
+&lt;li&gt;出现了结籽植物。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;爬行动物时期（中生代）：持续到距今大约8000万年以前，之前称为古生代和无生代（共14亿年）。中生代大约持续了两亿年以上。之后称为新生代。&lt;br&gt;动物：各种恐龙以及其他爬行动物。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;哺乳动物时期&quot;&gt;&lt;a href=&quot;#哺乳动物时期&quot; class=&quot;headerlink&quot; title=&quot;哺乳动物时期&quot;&gt;&lt;/a&gt;哺乳动物时期&lt;/h3&gt;&lt;p&gt;此时的地图版图和现在的世界地图看起来有些大致相似了。&lt;br&gt;新生代与中生代生物的最根本区别，在于它们的精神生活不同。这种差别就其本质来说，主要是来源于母体和后代之间不同程度的接触。爬行动物和后代几乎没有接触。除个别特例之外，爬行动物在产卵之后就会自行离开，任其自生自灭。新生代以哺育和抚养后代为特点。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;灵长目：狐猿、猿、类人猿和人（解刨学上的相似性）&lt;br&gt;一共四次冰河时期。第一次距今60万年，最后一次距今约5万年。最后一次冰河时期，类人猿开始出现。&lt;br&gt;新石器时代：大约在10000到12000年以前。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;文明雏形&quot;&gt;&lt;a href=&quot;#文明雏形&quot; class=&quot;headerlink&quot; title=&quot;文明雏形&quot;&gt;&lt;/a&gt;文明雏形&lt;/h3&gt;&lt;p&gt;大约公元前6000年&lt;/p&gt;
+&lt;h4 id=&quot;文字&quot;&gt;&lt;a href=&quot;#文字&quot; class=&quot;headerlink&quot; title=&quot;文字&quot;&gt;&lt;/a&gt;文字&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;字母文字&lt;ul&gt;
+&lt;li&gt;苏美尔：楔形文字&lt;/li&gt;
+&lt;li&gt;埃及：象形文字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;中国：象形文字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;汉谟拉比法典&quot;&gt;&lt;a href=&quot;#汉谟拉比法典&quot; class=&quot;headerlink&quot; title=&quot;汉谟拉比法典&quot;&gt;&lt;/a&gt;汉谟拉比法典&lt;/h4&gt;&lt;p&gt;公元前2100年巴比伦帝国&lt;/p&gt;
+&lt;h3 id=&quot;犹太人&quot;&gt;&lt;a href=&quot;#犹太人&quot; class=&quot;headerlink&quot; title=&quot;犹太人&quot;&gt;&lt;/a&gt;犹太人&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;希伯来人-闪米特系的民族。&lt;/li&gt;
+&lt;li&gt;公元前1000年之前，就定居在犹地亚，首都一直是耶路撒冷。&lt;/li&gt;
+&lt;li&gt;《旧约》（希伯来圣经），公元前4世纪或5世纪。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;希腊文明&quot;&gt;&lt;a href=&quot;#希腊文明&quot; class=&quot;headerlink&quot; title=&quot;希腊文明&quot;&gt;&lt;/a&gt;希腊文明&lt;/h3&gt;&lt;p&gt;促使希腊各个城邦形成一个整体的原因： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;史诗&lt;/li&gt;
+&lt;li&gt;每四年在奥林匹亚举行一次奥运会&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;生命的起源&quot;&gt;&lt;a href=&quot;#生命的起源&quot; class=&quot;headerlink&quot; title=&quot;生命的起源&quot;&gt;&lt;/a&gt;生命的起源&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;沉积岩（岩石记录）大致可以了解到16亿年前的生命形态。&lt;/li&gt;
+&lt;li&gt;包含着生命迹象的最初的岩石称为
+    
+    </summary>
+    
+      <category term="读过的书" scheme="http://blog.alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>联通旧事</title>
