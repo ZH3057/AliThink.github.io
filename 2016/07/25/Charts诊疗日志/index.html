@@ -15,34 +15,34 @@
     <meta name="keywords" content="AliThink,iOS,xcode,blog,JavaScript" />
   
 
-  <meta name="description" content="用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。
+  <meta name="description" content="用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。Charts传送门
 
 病症1.组合图(CombinedChartView)弹出MarkerView位置不对病症表象如下图：
 截图为想要的结果（修复后的效果），实际情况为弹出的Marker没有显示在对应折线图的数据点上。
 患病位置如下图：
-治疗方案：BarLineChartViewBase -&amp;gt; getMarkerPosition">
+治疗方案：BarLineChartViewBase -&amp;gt; getMarkerPo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Charts诊疗日志">
 <meta property="og:url" content="http://blog.alithink.com/2016/07/25/Charts诊疗日志/index.html">
 <meta property="og:site_name" content="AliThink's Blog">
-<meta property="og:description" content="用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。
+<meta property="og:description" content="用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。Charts传送门
 
 病症1.组合图(CombinedChartView)弹出MarkerView位置不对病症表象如下图：
 截图为想要的结果（修复后的效果），实际情况为弹出的Marker没有显示在对应折线图的数据点上。
 患病位置如下图：
-治疗方案：BarLineChartViewBase -&amp;gt; getMarkerPosition">
+治疗方案：BarLineChartViewBase -&amp;gt; getMarkerPo">
 <meta property="og:image" content="http://alithink.com/img/4charts/combine.png">
 <meta property="og:image" content="http://alithink.com/img/4charts/chart_marker.png">
 <meta property="og:image" content="http://alithink.com/img/4charts/stack.png">
-<meta property="og:updated_time" content="2016-07-26T06:52:21.000Z">
+<meta property="og:updated_time" content="2016-07-26T06:57:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Charts诊疗日志">
-<meta name="twitter:description" content="用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。
+<meta name="twitter:description" content="用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。Charts传送门
 
 病症1.组合图(CombinedChartView)弹出MarkerView位置不对病症表象如下图：
 截图为想要的结果（修复后的效果），实际情况为弹出的Marker没有显示在对应折线图的数据点上。
 患病位置如下图：
-治疗方案：BarLineChartViewBase -&amp;gt; getMarkerPosition">
+治疗方案：BarLineChartViewBase -&amp;gt; getMarkerPo">
 <meta name="twitter:image" content="http://alithink.com/img/4charts/combine.png">
 
   
@@ -148,7 +148,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#病症1-组合图-CombinedChartView-弹出MarkerView位置不对"><span class="toc-text">病症1.组合图(CombinedChartView)弹出MarkerView位置不对</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#病症表象如下图："><span class="toc-text">病症表象如下图：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#患病位置如下图："><span class="toc-text">患病位置如下图：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#治疗方案："><span class="toc-text">治疗方案：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结分析"><span class="toc-text">总结分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#病症2-堆积图弹出MarkerView数值不对"><span class="toc-text">病症2.堆积图弹出MarkerView数值不对</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#病症表象如下图：-1"><span class="toc-text">病症表象如下图：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#治疗方案：-1"><span class="toc-text">治疗方案：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结分析-1"><span class="toc-text">总结分析</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#病症1-组合图-CombinedChartView-弹出MarkerView位置不对"><span class="toc-text">病症1.组合图(CombinedChartView)弹出MarkerView位置不对</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#病症表象如下图："><span class="toc-text">病症表象如下图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#患病位置如下图："><span class="toc-text">患病位置如下图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#治疗方案："><span class="toc-text">治疗方案：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结分析"><span class="toc-text">总结分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#病症2-堆积图弹出MarkerView数值不对"><span class="toc-text">病症2.堆积图弹出MarkerView数值不对</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#病症表象如下图：-1"><span class="toc-text">病症表象如下图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#治疗方案：-1"><span class="toc-text">治疗方案：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结分析-1"><span class="toc-text">总结分析</span></a></li></ol></li></ol>
   </div>
 
 
@@ -192,27 +192,27 @@
   <div class="article-content">
     
       <blockquote>
-<p>用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。</p>
+<p>用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。<br><a href="https://github.com/danielgindi/Charts" target="_blank" rel="external">Charts传送门</a></p>
 </blockquote>
-<h3 id="病症1-组合图-CombinedChartView-弹出MarkerView位置不对"><a href="#病症1-组合图-CombinedChartView-弹出MarkerView位置不对" class="headerlink" title="病症1.组合图(CombinedChartView)弹出MarkerView位置不对"></a>病症1.组合图(CombinedChartView)弹出MarkerView位置不对</h3><h4 id="病症表象如下图："><a href="#病症表象如下图：" class="headerlink" title="病症表象如下图："></a>病症表象如下图：</h4><p><img src="http://alithink.com/img/4charts/combine.png" alt="combine.png"></p>
+<h2 id="病症1-组合图-CombinedChartView-弹出MarkerView位置不对"><a href="#病症1-组合图-CombinedChartView-弹出MarkerView位置不对" class="headerlink" title="病症1.组合图(CombinedChartView)弹出MarkerView位置不对"></a>病症1.组合图(CombinedChartView)弹出MarkerView位置不对</h2><h3 id="病症表象如下图："><a href="#病症表象如下图：" class="headerlink" title="病症表象如下图："></a>病症表象如下图：</h3><p><img src="http://alithink.com/img/4charts/combine.png" alt="combine.png"></p>
 <p>截图为想要的结果（修复后的效果），实际情况为弹出的Marker没有显示在对应折线图的数据点上。</p>
-<h4 id="患病位置如下图："><a href="#患病位置如下图：" class="headerlink" title="患病位置如下图："></a>患病位置如下图：</h4><p><img src="http://alithink.com/img/4charts/chart_marker.png" alt="chart_marker.png"></p>
-<h4 id="治疗方案："><a href="#治疗方案：" class="headerlink" title="治疗方案："></a>治疗方案：</h4><p>BarLineChartViewBase -&gt; getMarkerPosition  </p>
+<h3 id="患病位置如下图："><a href="#患病位置如下图：" class="headerlink" title="患病位置如下图："></a>患病位置如下图：</h3><p><img src="http://alithink.com/img/4charts/chart_marker.png" alt="chart_marker.png"></p>
+<h3 id="治疗方案："><a href="#治疗方案：" class="headerlink" title="治疗方案："></a>治疗方案：</h3><p>BarLineChartViewBase -&gt; getMarkerPosition  </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pt = <span class="type">CGPoint</span>(x: xPos, y: yPos * _animator.phaseY)</span><br></pre></td></tr></table></figure>
 <p>在pt初始化之后添加如下分支：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">self</span> <span class="keyword">is</span> <span class="type">CombinedChartView</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> combinedChartView = <span class="keyword">self</span> <span class="keyword">as</span>! <span class="type">CombinedChartView</span></span><br><span class="line">    <span class="keyword">let</span> combinedChartData = _data <span class="keyword">as</span>! <span class="type">CombinedChartData</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">if</span> highlight.dataIndex &gt;= <span class="number">0</span> &amp;&amp; highlight.dataIndex &lt; combinedChartView.drawOrder.<span class="built_in">count</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> chartType =  <span class="type">CombinedChartView</span>.<span class="type">DrawOrder</span>(rawValue: combinedChartView.drawOrder.<span class="built_in">reverse</span>()[highlight.dataIndex])!</span><br><span class="line">        <span class="keyword">var</span> axisDependency = <span class="type">ChartYAxis</span>.<span class="type">AxisDependency</span>.<span class="type">Left</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">switch</span> chartType &#123;</span><br><span class="line">        <span class="keyword">case</span> .<span class="type">Bar</span>:</span><br><span class="line">            axisDependency = combinedChartData.barData.getDataSetByIndex(dataSetIndex)!.axisDependency</span><br><span class="line">        <span class="keyword">case</span> .<span class="type">Line</span>:</span><br><span class="line">            axisDependency = combinedChartData.lineData.getDataSetByIndex(dataSetIndex)!.axisDependency</span><br><span class="line">        <span class="keyword">case</span> .<span class="type">Bubble</span>:</span><br><span class="line">            axisDependency = combinedChartData.bubbleData.getDataSetByIndex(dataSetIndex)!.axisDependency</span><br><span class="line">        <span class="keyword">case</span> .<span class="type">Candle</span>:</span><br><span class="line">            axisDependency = combinedChartData.candleData.getDataSetByIndex(dataSetIndex)!.axisDependency</span><br><span class="line">        <span class="keyword">case</span> .<span class="type">Scatter</span>:</span><br><span class="line">            axisDependency = combinedChartData.scatterData.getDataSetByIndex(dataSetIndex)!.axisDependency</span><br><span class="line">        &#125;</span><br><span class="line">        getTransformer(axisDependency).pointValueToPixel(&amp;pt)</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    getTransformer(data.getDataSetByIndex(dataSetIndex)!.axisDependency).pointValueToPixel(&amp;pt)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>此处drawOrder.reverse()要做reverse的原因是highlight里面记录的dataIndex的顺序正好与drawOrder数组的顺序相反，例如drawOrder为[Bar, Line],那么对应的Bar的dataIndex为1，Line的dataIndex为0。</p>
 </blockquote>
-<h4 id="总结分析"><a href="#总结分析" class="headerlink" title="总结分析"></a>总结分析</h4><p>CombinedChartView中包含的各类图形的数据会保存在独立的data属性中，例如柱状图的barData,折线图的lineData。因此原有的从统一data属性取得dataSet对应参考轴的操作就会返回错误的结果，以致因为选错了参考轴计算出了错误的Marker绘制位置。</p>
-<h3 id="病症2-堆积图弹出MarkerView数值不对"><a href="#病症2-堆积图弹出MarkerView数值不对" class="headerlink" title="病症2.堆积图弹出MarkerView数值不对"></a>病症2.堆积图弹出MarkerView数值不对</h3><h4 id="病症表象如下图：-1"><a href="#病症表象如下图：-1" class="headerlink" title="病症表象如下图："></a>病症表象如下图：</h4><p><img src="http://alithink.com/img/4charts/stack.png" alt="stack.png"></p>
+<h3 id="总结分析"><a href="#总结分析" class="headerlink" title="总结分析"></a>总结分析</h3><p>CombinedChartView中包含的各类图形的数据会保存在独立的data属性中，例如柱状图的barData,折线图的lineData。因此原有的从统一data属性取得dataSet对应参考轴的操作就会返回错误的结果，以致因为选错了参考轴计算出了错误的Marker绘制位置。</p>
+<h2 id="病症2-堆积图弹出MarkerView数值不对"><a href="#病症2-堆积图弹出MarkerView数值不对" class="headerlink" title="病症2.堆积图弹出MarkerView数值不对"></a>病症2.堆积图弹出MarkerView数值不对</h2><h3 id="病症表象如下图：-1"><a href="#病症表象如下图：-1" class="headerlink" title="病症表象如下图："></a>病症表象如下图：</h3><p><img src="http://alithink.com/img/4charts/stack.png" alt="stack.png"></p>
 <p>截图为想要的结果（修复后的效果），实际情况为弹出的Marker总是显示所有柱子的叠加值。</p>
-<h4 id="治疗方案：-1"><a href="#治疗方案：-1" class="headerlink" title="治疗方案："></a>治疗方案：</h4><p>BalloonMarker -&gt; refreshContent</p>
+<h3 id="治疗方案：-1"><a href="#治疗方案：-1" class="headerlink" title="治疗方案："></a>治疗方案：</h3><p>BalloonMarker -&gt; refreshContent</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> entry <span class="keyword">is</span> <span class="type">BarChartDataEntry</span> &amp;&amp; highlight.stackIndex != -<span class="number">1</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> chartEntry = entry <span class="keyword">as</span>! <span class="type">BarChartDataEntry</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> values = chartEntry.values &#123;</span><br><span class="line">        configLabelns(entry, value: values[highlight.stackIndex])</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    configLabelns(entry)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>首先目前只有柱状图支持堆积展现，并且进行堆积展示的BarChartDataEntry有一个values属性用于存放该列的所有堆积值；stackIndex用于标示当前点击的柱子从下往上的序列，例如最下面的柱子为0，之上一个为1，依次递增。</p>
 </blockquote>
-<h4 id="总结分析-1"><a href="#总结分析-1" class="headerlink" title="总结分析"></a>总结分析</h4><p>默认的Marker处理值展示的时候，没有考虑到堆积图的特殊性，统一从entry的value属性进行取值，导致最终展现的数值不是我们想要的结果。</p>
+<h3 id="总结分析-1"><a href="#总结分析-1" class="headerlink" title="总结分析"></a>总结分析</h3><p>默认的Marker处理值展示的时候，没有考虑到堆积图的特殊性，统一从entry的value属性进行取值，导致最终展现的数值不是我们想要的结果。</p>
 
     
   </div>
