@@ -1,21 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
-  <html class="light page-post">
+
+  
 
 
+<html class="theme-next pisces use-motion">
 <head>
-  <meta charset="utf-8">
-  
-  <title>BI APP图形库选型 | AliThink&#39;s Blog</title>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
 
   
-    <meta name="keywords" content="AliThink,iOS,xcode,blog,JavaScript" />
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
   
 
-  <meta name="description" content="背景BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="背景BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。
 涉及的图形类型
 BI 中的各种图形图表都封装成了对应的卡片类型，根据接口的卡片类型描述动态生成对应的数据卡片进行展示。
 开源库选型1.Charts
@@ -34,7 +103,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
 <meta property="og:image" content="http://alithink.com/img/3bi/3.png">
 <meta property="og:image" content="http://alithink.com/img/3bi/4.png">
 <meta property="og:image" content="http://alithink.com/img/3bi/5.png">
-<meta property="og:updated_time" content="2016-06-28T07:09:34.000Z">
+<meta property="og:updated_time" content="2016-08-02T07:57:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BI APP图形库选型">
 <meta name="twitter:description" content="背景BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。
@@ -44,153 +113,234 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
 传送门：https://github.com/daniel">
 <meta name="twitter:image" content="http://alithink.com/img/3bi/1.png">
 
-  
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6307056474677839000,
+      author: 'AliThink'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.alithink.com/2016/06/28/BI APP图形库选型/"/>
+
+  <title> BI APP图形库选型 | AliThink's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
-  <link href="/css/styles.css?v=eaf5ab1e" rel="stylesheet">
 
 
-  
-    <link rel="stylesheet" href="/css/personal-style.css">
-  
-
-  
-
-  
-  <script>
+  <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?ddd5ea8fb6af25af228cf11a240076e8";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?ddd5ea8fb6af25af228cf11a240076e8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
     })();
   </script>
 
 
-</head>
 
-<body>
+
+
+
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+    
   
 
-  <div class="post-header CENTER">
-   
-  <div class="toolbox">
-    <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">≡</span>
-      <i class="icon-angle-down"></i>
-      <i class="icon-home"></i>
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AliThink's Blog</span>
+      <span class="logo-line-after"><i></i></span>
     </a>
-    <ul class="list-toolbox">
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/archives/"
-            target="_self"
-            >
-            博客
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-desktop"></i> <br />
+            
+            首页
           </a>
         </li>
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            target="_self"
-            >
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
             分类
           </a>
         </li>
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/about/"
-            target="_self"
-            >
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
             关于
           </a>
         </li>
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/atom.xml"
-            target="_blank"
-            >
-            RSS
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/search/"
-            target="_self"
-            >
-            搜索
-          </a>
-        </li>
+
       
     </ul>
-  </div>
+  
 
+  
+</nav>
 
-</div>
+ </div>
+    </header>
 
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
-  <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#涉及的图形类型"><span class="toc-text">涉及的图形类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开源库选型"><span class="toc-text">开源库选型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Charts"><span class="toc-text">1.Charts</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#应用场景："><span class="toc-text">应用场景：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优势："><span class="toc-text">优势：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-ESArcProgressView"><span class="toc-text">2.ESArcProgressView</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#应用场景：-1"><span class="toc-text">应用场景：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优势：-1"><span class="toc-text">优势：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-XCL-Charts"><span class="toc-text">3.XCL-Charts</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#应用场景：-2"><span class="toc-text">应用场景：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-展示图形中的最后几个元素"><span class="toc-text">1. 展示图形中的最后几个元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-完整显示x轴所有的元素标签"><span class="toc-text">2. 完整显示x轴所有的元素标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-设置为可拖动的图形与tableview的滑动存在冲突"><span class="toc-text">3. 设置为可拖动的图形与tableview的滑动存在冲突</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存在的不足"><span class="toc-text">存在的不足</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-组合图包含grouped柱状图时存在bug"><span class="toc-text">1. 组合图包含grouped柱状图时存在bug</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-堆积图缺失线性堆积图"><span class="toc-text">2. 堆积图缺失线性堆积图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-ChartMarker堆积图功能缺失"><span class="toc-text">3. ChartMarker堆积图功能缺失</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol>
-  </div>
-
-
-
-<div class="content content-post CENTER">
-   <article id="post-BI APP图形库选型" class="article article-type-post" itemprop="blogPost">
-  <header class="article-header">
-    <h1 class="post-title">BI APP图形库选型</h1>
-
-    <div class="article-meta">
-      <span>
-        <i class="icon-calendar"></i>
-        <span>2016.06.28</span>
-      </span>
-
-      
-        <span class="article-author">
-          <i class="icon-user"></i>
-          <span>AliThink</span>
-        </span>
-      
-
-      
-  <span class="article-category">
-    <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </span>
-
-
-
-      
-        <span>
-          <i class="icon-comment"></i>
-          <a href="http://www.alithink.com/2016/06/28/BI APP图形库选型/#ds-thread"></a>
-        </span>
-      
-
-    </div>
-  </header>
-
-  <div class="article-content">
+  <div id="posts" class="posts-expand">
     
-      <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。</p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                BI APP图形库选型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-28T09:55:04+08:00" content="2016-06-28">
+              2016-06-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/28/BI APP图形库选型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/28/BI APP图形库选型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。</p>
 <h3 id="涉及的图形类型"><a href="#涉及的图形类型" class="headerlink" title="涉及的图形类型"></a>涉及的图形类型</h3><p><img src="http://alithink.com/img/3bi/1.png" alt="BI show.png"></p>
 <p>BI 中的各种图形图表都封装成了对应的卡片类型，根据接口的卡片类型描述动态生成对应的数据卡片进行展示。</p>
 <h3 id="开源库选型"><a href="#开源库选型" class="headerlink" title="开源库选型"></a>开源库选型</h3><h4 id="1-Charts"><a href="#1-Charts" class="headerlink" title="1.Charts"></a>1.Charts</h4><blockquote>
@@ -218,155 +368,351 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
 <h5 id="应用场景：-2"><a href="#应用场景：-2" class="headerlink" title="应用场景："></a>应用场景：</h5><p><img src="http://alithink.com/img/3bi/3.png" alt="android circle.png"></p>
 <p>Android的多层环形图解决方案，XCL也是一个较为完备的Android图形库，不过相较来说库的成熟度没有Charts高，一些细节功能也存在一定程度的缺失。</p>
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>这里主要就Charts的问题解决方案进行一些分享：</p>
-<h4 id="1-展示图形中的最后几个元素"><a href="#1-展示图形中的最后几个元素" class="headerlink" title="1. 展示图形中的最后几个元素"></a>1. 展示图形中的最后几个元素</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示可视区域的元素个数</span></span><br><span class="line">chartView?.setVisibleXRangeMaximum(<span class="number">6</span>)</span><br><span class="line">            </span><br><span class="line"><span class="comment">/*</span><br><span class="line"> * moveViewToX存在bug无法正确切换位置</span><br><span class="line"> * 调用此方法的前提条件是需要预先提供一个确定的frame</span><br><span class="line"> * xIndex为显示到的x元素的序列</span><br><span class="line"> */</span></span><br><span class="line">chartView?.moveViewToAnimated(xIndex: <span class="type">CGFloat</span>(xVals.<span class="built_in">count</span> - <span class="number">1</span>), yValue: <span class="number">0</span>, axis: <span class="type">ChartYAxis</span>.<span class="type">AxisDependency</span>.<span class="type">Left</span>, duration: <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="1-展示图形中的最后几个元素"><a href="#1-展示图形中的最后几个元素" class="headerlink" title="1. 展示图形中的最后几个元素"></a>1. 展示图形中的最后几个元素</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//显示可视区域的元素个数</span></div><div class="line">chartView?.setVisibleXRangeMaximum(<span class="number">6</span>)</div><div class="line">            </div><div class="line"><span class="comment">/*</span></div><div class="line"> * moveViewToX存在bug无法正确切换位置</div><div class="line"> * 调用此方法的前提条件是需要预先提供一个确定的frame</div><div class="line"> * xIndex为显示到的x元素的序列</div><div class="line"> */</div><div class="line">chartView?.moveViewToAnimated(xIndex: <span class="type">CGFloat</span>(xVals.<span class="built_in">count</span> - <span class="number">1</span>), yValue: <span class="number">0</span>, axis: <span class="type">ChartYAxis</span>.<span class="type">AxisDependency</span>.<span class="type">Left</span>, duration: <span class="number">1</span>)</div></pre></td></tr></table></figure>
 <p>这里setVisibleXRangeMaximum设置的数目在grouped柱状图配置的时候记得要乘以单位组内柱子的数目并包含组之间间隔的空间（往往间隔的空间也算做一个柱子）。</p>
-<h4 id="2-完整显示x轴所有的元素标签"><a href="#2-完整显示x轴所有的元素标签" class="headerlink" title="2. 完整显示x轴所有的元素标签"></a>2. 完整显示x轴所有的元素标签</h4><p>Charts默认自动计算相邻x轴元素标签的距离, 控制x轴部分标签的隐藏以达到较好的现实效果。但实际需求中往往会要求展示所有x轴的元素标签，那么就可以通过以下配置禁用默认的计算。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xAxis?.setLabelsToSkip(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-完整显示x轴所有的元素标签"><a href="#2-完整显示x轴所有的元素标签" class="headerlink" title="2. 完整显示x轴所有的元素标签"></a>2. 完整显示x轴所有的元素标签</h4><p>Charts默认自动计算相邻x轴元素标签的距离, 控制x轴部分标签的隐藏以达到较好的现实效果。但实际需求中往往会要求展示所有x轴的元素标签，那么就可以通过以下配置禁用默认的计算。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xAxis?.setLabelsToSkip(<span class="number">0</span>)</div></pre></td></tr></table></figure></p>
 <h4 id="3-设置为可拖动的图形与tableview的滑动存在冲突"><a href="#3-设置为可拖动的图形与tableview的滑动存在冲突" class="headerlink" title="3. 设置为可拖动的图形与tableview的滑动存在冲突"></a>3. 设置为可拖动的图形与tableview的滑动存在冲突</h4><p>暂时的解决办法是在可拖动的图形顶部覆盖一层隐藏层，需要看全局数据的用户需要先进行一步点击才能进行图形的拖动操作。</p>
 <h3 id="存在的不足"><a href="#存在的不足" class="headerlink" title="存在的不足"></a>存在的不足</h3><h4 id="1-组合图包含grouped柱状图时存在bug"><a href="#1-组合图包含grouped柱状图时存在bug" class="headerlink" title="1. 组合图包含grouped柱状图时存在bug"></a>1. 组合图包含grouped柱状图时存在bug</h4><p><img src="http://alithink.com/img/3bi/4.png" alt="problem.png"><br><img src="http://alithink.com/img/3bi/5.png" alt="solution.png"><br>尚未解决，暂时只能将grouped柱状图跟线形图分开成两个图进行展示。。。<br>或者研究下liuxuan30的这个PR<br><a href="https://github.com/danielgindi/Charts/issues/1159#issuecomment-228954675" target="_blank" rel="external">issue传送门</a></p>
 <h4 id="2-堆积图缺失线性堆积图"><a href="#2-堆积图缺失线性堆积图" class="headerlink" title="2. 堆积图缺失线性堆积图"></a>2. 堆积图缺失线性堆积图</h4><p>目前只提供柱状堆积图的支持。</p>
 <h4 id="3-ChartMarker堆积图功能缺失"><a href="#3-ChartMarker堆积图功能缺失" class="headerlink" title="3. ChartMarker堆积图功能缺失"></a>3. ChartMarker堆积图功能缺失</h4><p>堆积图的ChartMarker目前只能展示堆积后的总值，而不能展示分项的值。</p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>目前的这套方案可以满足基本的数据可视化需求，对于一些较为复杂灵活的图形展示需求，也可以封装一个单独的web类型的卡片，对于这部分需求采用web相关的图形可视化解决方案进行处理。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.png" alt="AliThink Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/11/工作与生活的平衡/" rel="next" title="工作与生活的平衡">
+                <i class="fa fa-chevron-left"></i> 工作与生活的平衡
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/01/《禅与 Objective-C 编程艺术》读书拾遗/" rel="prev" title="《禅与 Objective-C 编程艺术》读书拾遗">
+                《禅与 Objective-C 编程艺术》读书拾遗 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/28/BI APP图形库选型/"
+           data-title="BI APP图形库选型" data-url="http://blog.alithink.com/2016/06/28/BI APP图形库选型/">
+      </div>
     
   </div>
-</article>
 
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="AliThink" />
+          <p class="site-author-name" itemprop="name">AliThink</p>
+          <p class="site-description motion-element" itemprop="description">热爱生活，乐于分享，时而沉默寡言，时而嘻哈扯淡的两面派
+</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/AliThink" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及的图形类型"><span class="nav-number">2.</span> <span class="nav-text">涉及的图形类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源库选型"><span class="nav-number">3.</span> <span class="nav-text">开源库选型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Charts"><span class="nav-number">3.1.</span> <span class="nav-text">1.Charts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景："><span class="nav-number">3.1.1.</span> <span class="nav-text">应用场景：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优势："><span class="nav-number">3.1.2.</span> <span class="nav-text">优势：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ESArcProgressView"><span class="nav-number">3.2.</span> <span class="nav-text">2.ESArcProgressView</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景：-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">应用场景：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优势：-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">优势：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-XCL-Charts"><span class="nav-number">3.3.</span> <span class="nav-text">3.XCL-Charts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景：-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">应用场景：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">4.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-展示图形中的最后几个元素"><span class="nav-number">4.1.</span> <span class="nav-text">1. 展示图形中的最后几个元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-完整显示x轴所有的元素标签"><span class="nav-number">4.2.</span> <span class="nav-text">2. 完整显示x轴所有的元素标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-设置为可拖动的图形与tableview的滑动存在冲突"><span class="nav-number">4.3.</span> <span class="nav-text">3. 设置为可拖动的图形与tableview的滑动存在冲突</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存在的不足"><span class="nav-number">5.</span> <span class="nav-text">存在的不足</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-组合图包含grouped柱状图时存在bug"><span class="nav-number">5.1.</span> <span class="nav-text">1. 组合图包含grouped柱状图时存在bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-堆积图缺失线性堆积图"><span class="nav-number">5.2.</span> <span class="nav-text">2. 堆积图缺失线性堆积图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ChartMarker堆积图功能缺失"><span class="nav-number">5.3.</span> <span class="nav-text">3. ChartMarker堆积图功能缺失</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AliThink</span>
 </div>
 
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
 
-  <a id="backTop" class="back-top">
-    <i class="icon-angle-up"></i>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
   </a>
-
-
-
-
-  <div class="modal" id="modal">
-  <span id="cover" class="cover hide"></span>
-  <div id="modal-dialog" class="modal-dialog hide-dialog">
-    <div class="modal-header">
-      <span id="close" class="btn-close">关闭</span>
-    </div>
-    <hr>
-    <div class="modal-body">
-      <ul class="list-toolbox">
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/archives/"
-              target="_self"
-              >
-              博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/about/"
-              target="_self"
-              >
-              关于
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/atom.xml"
-              target="_blank"
-              >
-              RSS
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/search/"
-              target="_self"
-              >
-              搜索
-            </a>
-          </li>
-        
-      </ul>
-
-    </div>
-  </div>
 </div>
 
+        
 
+        
+      </div>
+    </footer>
 
-  
-      <div class="fexo-comments comments-post">
-    
-  <section class="duoshuo-comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="" data-title="BI APP图形库选型" data-url="http://blog.alithink.com/2016/06/28/BI APP图形库选型/index.html"></div>
-    <!-- 多说评论框 end -->
-  </section>
-
-
-
-
-  <script type="text/javascript">
-  var duoshuoQuery = {short_name:"alithinkblog"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-
-
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
   
 
-  <script type="text/javascript">
-  function loadScript(url, callback) {
-    var script = document.createElement('script')
-    script.type = 'text/javascript';
-
-    if (script.readyState) { //IE
-      script.onreadystatechange = function() {
-        if (script.readyState == 'loaded' ||
-          script.readyState == 'complete') {
-          script.onreadystatechange = null;
-          callback();
-        }
-      };
-    } else { //Others
-      script.onload = function() {
-        callback();
-      };
-    }
-
-    script.src = url;
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
-
-  window.onload = function() {
-    loadScript('/js/bundle.js?235683', function() {
-      // load success
-    });
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
 </script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"alithinkblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>

@@ -1,21 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
-  <html class="light page-post">
+
+  
 
 
+<html class="theme-next pisces use-motion">
 <head>
-  <meta charset="utf-8">
-  
-  <title>cocoapods私有仓库封装过程中的思考 | AliThink&#39;s Blog</title>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
 
   
-    <meta name="keywords" content="AliThink,iOS,xcode,blog,JavaScript" />
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
   
 
-  <meta name="description" content="背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。
 
 Why
 给工作中封装的组件一个沉淀的地方。
@@ -53,153 +122,234 @@ Why
 知识储备搭建的过程大致参考了这篇教程：使">
 <meta name="twitter:image" content="http://alithink.com/img/2cocoapods/1.png">
 
-  
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6307056474677839000,
+      author: 'AliThink'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.alithink.com/2016/06/04/cocoapods私有仓库封装过程中的思考/"/>
+
+  <title> cocoapods私有仓库封装过程中的思考 | AliThink's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
-  <link href="/css/styles.css?v=eaf5ab1e" rel="stylesheet">
 
 
-  
-    <link rel="stylesheet" href="/css/personal-style.css">
-  
-
-  
-
-  
-  <script>
+  <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?ddd5ea8fb6af25af228cf11a240076e8";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?ddd5ea8fb6af25af228cf11a240076e8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
     })();
   </script>
 
 
-</head>
 
-<body>
+
+
+
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+    
   
 
-  <div class="post-header CENTER">
-   
-  <div class="toolbox">
-    <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">≡</span>
-      <i class="icon-angle-down"></i>
-      <i class="icon-home"></i>
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AliThink's Blog</span>
+      <span class="logo-line-after"><i></i></span>
     </a>
-    <ul class="list-toolbox">
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/archives/"
-            target="_self"
-            >
-            博客
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-desktop"></i> <br />
+            
+            首页
           </a>
         </li>
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            target="_self"
-            >
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
             分类
           </a>
         </li>
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/about/"
-            target="_self"
-            >
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
             关于
           </a>
         </li>
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/atom.xml"
-            target="_blank"
-            >
-            RSS
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/search/"
-            target="_self"
-            >
-            搜索
-          </a>
-        </li>
+
       
     </ul>
-  </div>
+  
 
+  
+</nav>
 
-</div>
+ </div>
+    </header>
 
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
-  <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Why"><span class="toc-text">Why</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识储备"><span class="toc-text">知识储备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Podfile中specs引入方式"><span class="toc-text">Podfile中specs引入方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-path-gt-的引入方式"><span class="toc-text">1. :path =>的引入方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-常规的引入方式"><span class="toc-text">2. 常规的引入方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子模块划分思路"><span class="toc-text">子模块划分思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-网络（剔除具体API调用部分）"><span class="toc-text">1. 网络（剔除具体API调用部分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-模型映射"><span class="toc-text">2. 模型映射</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Hybrid"><span class="toc-text">3. Hybrid</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-UI"><span class="toc-text">4. UI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-安全"><span class="toc-text">5. 安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-统计"><span class="toc-text">6. 统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-动态性"><span class="toc-text">7. 动态性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下一步"><span class="toc-text">下一步</span></a></li></ol></li></ol>
-  </div>
-
-
-
-<div class="content content-post CENTER">
-   <article id="post-cocoapods私有仓库封装过程中的思考" class="article article-type-post" itemprop="blogPost">
-  <header class="article-header">
-    <h1 class="post-title">cocoapods私有仓库封装过程中的思考</h1>
-
-    <div class="article-meta">
-      <span>
-        <i class="icon-calendar"></i>
-        <span>2016.06.04</span>
-      </span>
-
-      
-        <span class="article-author">
-          <i class="icon-user"></i>
-          <span>AliThink</span>
-        </span>
-      
-
-      
-  <span class="article-category">
-    <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </span>
-
-
-
-      
-        <span>
-          <i class="icon-comment"></i>
-          <a href="http://www.alithink.com/2016/06/04/cocoapods私有仓库封装过程中的思考/#ds-thread"></a>
-        </span>
-      
-
-    </div>
-  </header>
-
-  <div class="article-content">
+  <div id="posts" class="posts-expand">
     
-      <blockquote>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                cocoapods私有仓库封装过程中的思考
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-04T21:33:11+08:00" content="2016-06-04">
+              2016-06-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/04/cocoapods私有仓库封装过程中的思考/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/cocoapods私有仓库封装过程中的思考/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
 <p>背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。</p>
 </blockquote>
 <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><ul>
@@ -254,150 +404,346 @@ Why
 <li>热部署方案</li>
 </ul>
 <p>主要基于目前涉及项目主要关注的部分进行了一些拆解，每个模块直接可能存在依赖关系，这块cocoapods也贴心的帮忙搞定了，例如:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">s.subspec <span class="string">'APIModule'</span> <span class="keyword">do</span> <span class="params">|ss|</span></span><br><span class="line">    ss.source_files = <span class="string">'Classes/APIModule/**/*.&#123;swift,h,m&#125;'</span></span><br><span class="line">    ss.dependency <span class="string">'Moya'</span>, <span class="string">'~&gt; 6.5.0'</span></span><br><span class="line">    ss.dependency <span class="string">'HanekeSwift'</span>, <span class="string">'~&gt; 0.10.1'</span></span><br><span class="line">    ss.dependency <span class="string">'NetworkActivityIndicator'</span>, <span class="string">'~&gt; 0.1.6'</span></span><br><span class="line">    ss.dependency <span class="string">'MonkeyKit/UtilModule'</span></span><br><span class="line">    ss.dependency <span class="string">'MonkeyKit/ModelMapperModule'</span></span><br><span class="line">    ss.dependency <span class="string">'MonkeyKit/SecurityModule'</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">s.subspec <span class="string">'APIModule'</span> <span class="keyword">do</span> <span class="params">|ss|</span></div><div class="line">    ss.source_files = <span class="string">'Classes/APIModule/**/*.&#123;swift,h,m&#125;'</span></div><div class="line">    ss.dependency <span class="string">'Moya'</span>, <span class="string">'~&gt; 6.5.0'</span></div><div class="line">    ss.dependency <span class="string">'HanekeSwift'</span>, <span class="string">'~&gt; 0.10.1'</span></div><div class="line">    ss.dependency <span class="string">'NetworkActivityIndicator'</span>, <span class="string">'~&gt; 0.1.6'</span></div><div class="line">    ss.dependency <span class="string">'MonkeyKit/UtilModule'</span></div><div class="line">    ss.dependency <span class="string">'MonkeyKit/ModelMapperModule'</span></div><div class="line">    ss.dependency <span class="string">'MonkeyKit/SecurityModule'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 <p>框架会根据将来的实际使用情况再进行优化调整，逐渐完善起来。  </p>
 <h3 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h3><p>本轮主要是基于基础功能模块的拆分封装，其实对于APP群常用的业务模块也可以做相同的工作，比如登录验证模块或者逻辑的封装等。通过对于公用业务场景的思考，逐渐提炼出可以产品化的地方，然后塞入公用库，将大大提升相关APP群的开发效率与产品质量。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.png" alt="AliThink Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/24/理性的你和猴子还有惊慌怪兽/" rel="next" title="理性的你和猴子还有惊慌怪兽">
+                <i class="fa fa-chevron-left"></i> 理性的你和猴子还有惊慌怪兽
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/11/工作与生活的平衡/" rel="prev" title="工作与生活的平衡">
+                工作与生活的平衡 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/04/cocoapods私有仓库封装过程中的思考/"
+           data-title="cocoapods私有仓库封装过程中的思考" data-url="http://blog.alithink.com/2016/06/04/cocoapods私有仓库封装过程中的思考/">
+      </div>
     
   </div>
-</article>
 
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="AliThink" />
+          <p class="site-author-name" itemprop="name">AliThink</p>
+          <p class="site-description motion-element" itemprop="description">热爱生活，乐于分享，时而沉默寡言，时而嘻哈扯淡的两面派
+</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/AliThink" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识储备"><span class="nav-number">2.</span> <span class="nav-text">知识储备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Podfile中specs引入方式"><span class="nav-number">2.1.</span> <span class="nav-text">Podfile中specs引入方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-path-gt-的引入方式"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. :path =>的引入方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-常规的引入方式"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 常规的引入方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子模块划分思路"><span class="nav-number">2.2.</span> <span class="nav-text">子模块划分思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-网络（剔除具体API调用部分）"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. 网络（剔除具体API调用部分）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-模型映射"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 模型映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Hybrid"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. Hybrid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-UI"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. UI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-安全"><span class="nav-number">2.2.5.</span> <span class="nav-text">5. 安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-统计"><span class="nav-number">2.2.6.</span> <span class="nav-text">6. 统计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-动态性"><span class="nav-number">2.2.7.</span> <span class="nav-text">7. 动态性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下一步"><span class="nav-number">2.3.</span> <span class="nav-text">下一步</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AliThink</span>
 </div>
 
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
 
-  <a id="backTop" class="back-top">
-    <i class="icon-angle-up"></i>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
   </a>
-
-
-
-
-  <div class="modal" id="modal">
-  <span id="cover" class="cover hide"></span>
-  <div id="modal-dialog" class="modal-dialog hide-dialog">
-    <div class="modal-header">
-      <span id="close" class="btn-close">关闭</span>
-    </div>
-    <hr>
-    <div class="modal-body">
-      <ul class="list-toolbox">
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/archives/"
-              target="_self"
-              >
-              博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/about/"
-              target="_self"
-              >
-              关于
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/atom.xml"
-              target="_blank"
-              >
-              RSS
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/search/"
-              target="_self"
-              >
-              搜索
-            </a>
-          </li>
-        
-      </ul>
-
-    </div>
-  </div>
 </div>
 
+        
 
+        
+      </div>
+    </footer>
 
-  
-      <div class="fexo-comments comments-post">
-    
-  <section class="duoshuo-comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="" data-title="cocoapods私有仓库封装过程中的思考" data-url="http://blog.alithink.com/2016/06/04/cocoapods私有仓库封装过程中的思考/index.html"></div>
-    <!-- 多说评论框 end -->
-  </section>
-
-
-
-
-  <script type="text/javascript">
-  var duoshuoQuery = {short_name:"alithinkblog"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-
-
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
   
 
-  <script type="text/javascript">
-  function loadScript(url, callback) {
-    var script = document.createElement('script')
-    script.type = 'text/javascript';
-
-    if (script.readyState) { //IE
-      script.onreadystatechange = function() {
-        if (script.readyState == 'loaded' ||
-          script.readyState == 'complete') {
-          script.onreadystatechange = null;
-          callback();
-        }
-      };
-    } else { //Others
-      script.onload = function() {
-        callback();
-      };
-    }
-
-    script.src = url;
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
-
-  window.onload = function() {
-    loadScript('/js/bundle.js?235683', function() {
-      // load success
-    });
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
 </script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"alithinkblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
