@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>AliThink&#39;s Blog</title>
+<search>
   
-  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://alithink.com/"/>
-  <updated>2016-08-02T07:55:55.000Z</updated>
-  <id>http://alithink.com/</id>
-  
-  <author>
-    <name>AliThink</name>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>iOS屏幕旋转那些事</title>
-    <link href="http://alithink.com/2016/08/01/iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
-    <id>http://alithink.com/2016/08/01/iOS屏幕旋转那些事/</id>
-    <published>2016-08-01T13:10:55.000Z</published>
-    <updated>2016-08-02T07:55:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
+    <entry>
+      <title><![CDATA[iOS屏幕旋转那些事]]></title>
+      <url>http://alithink.com/2016/08/01/iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
+      <content type="html"><![CDATA[<blockquote>
 <p>本文屏幕旋转方案仅限于兼容iOS8+</p>
 </blockquote>
 <h3 id="1-从APP层次谈起"><a href="#1-从APP层次谈起" class="headerlink" title="1. 从APP层次谈起"></a>1. 从APP层次谈起</h3><p>APP常见的布局层次如下图所示：<br><img src="http://alithink.com/img/5rotate/app layer.png" alt="app layer.png"><br>当工程目标开启了多个屏幕方向之后，具体类中有关屏幕旋转的配置其实只与当前屏幕展示模块的最外层VC容器有关。<br>但由于往往存在容器中某些VC针对屏幕旋转的个性化配置，所以需要进行从里层VC到外层容器的旋转状态传递。例如： </p>
@@ -53,29 +37,12 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">forceLandScape</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">let</span> width = <span class="type">UIScreen</span>.mainScreen().bounds.size.width</div><div class="line">    <span class="keyword">let</span> height = <span class="type">UIScreen</span>.mainScreen().bounds.size.height</div><div class="line">    </div><div class="line">    <span class="keyword">let</span> isLandscape = width &lt; height</div><div class="line">    <span class="keyword">if</span> isLandscape &#123;</div><div class="line">        <span class="keyword">let</span> device = <span class="type">UIDevice</span>.currentDevice()</div><div class="line">        <span class="keyword">let</span> number = <span class="type">NSNumber</span>(integer: <span class="type">UIInterfaceOrientation</span>.<span class="type">LandscapeRight</span>.rawValue)</div><div class="line">        device.setValue(number, forKey: <span class="string">"orientation"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上方案基本可以搞定大部分的屏幕旋转场景了。如果APP的产品需求中主体为固定方向，只要求对弹出(present)模态视图进行旋转的话，可以参考下面这篇文章：<br><a href="http://swiftiostutorials.com/ios-orientations-landscape-orientation-one-view-controller/" target="_blank" rel="external">iOS Orientations: Landscape orientation for only one View Controller</a><br>这么做会更加方便一些，但问题是这种方案对于push模式的场景并不适用，需要结合以上方案综合解决。  </p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;本文屏幕旋转方案仅限于兼容iOS8+&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;1-从APP层次谈起&quot;&gt;&lt;a href=&quot;#1-从APP层次谈起&quot; class=&quot;headerlink&quot; title=&quot;1. 从APP层次谈起&quot;&gt;&lt;/a&gt;1.
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Charts诊疗日志</title>
-    <link href="http://alithink.com/2016/07/25/Charts%E8%AF%8A%E7%96%97%E6%97%A5%E5%BF%97/"/>
-    <id>http://alithink.com/2016/07/25/Charts诊疗日志/</id>
-    <published>2016-07-25T07:41:16.000Z</published>
-    <updated>2016-07-26T06:57:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
+    <entry>
+      <title><![CDATA[Charts诊疗日志]]></title>
+      <url>http://alithink.com/2016/07/25/Charts%E8%AF%8A%E7%96%97%E6%97%A5%E5%BF%97/</url>
+      <content type="html"><![CDATA[<blockquote>
 <p>用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。<br><a href="https://github.com/danielgindi/Charts" target="_blank" rel="external">Charts传送门</a></p>
 </blockquote>
 <h2 id="病症1-组合图-CombinedChartView-弹出MarkerView位置不对"><a href="#病症1-组合图-CombinedChartView-弹出MarkerView位置不对" class="headerlink" title="病症1.组合图(CombinedChartView)弹出MarkerView位置不对"></a>病症1.组合图(CombinedChartView)弹出MarkerView位置不对</h2><h3 id="病症表象如下图："><a href="#病症表象如下图：" class="headerlink" title="病症表象如下图："></a>病症表象如下图：</h3><p><img src="http://alithink.com/img/4charts/combine.png" alt="combine.png"></p>
@@ -98,27 +65,12 @@
 </blockquote>
 <h3 id="总结分析-1"><a href="#总结分析-1" class="headerlink" title="总结分析"></a>总结分析</h3><p>默认的Marker处理值展示的时候，没有考虑到堆积图的特殊性，统一从entry的value属性进行取值，导致最终展现的数值不是我们想要的结果。</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;用Charts有一段时间了，期间遇到了一些现有版本存在的问题，特作此记录。&lt;br&gt;&lt;a href=&quot;https://github.com/danielgindi/Charts&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Char
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>《世界简史》略读</title>
-    <link href="http://alithink.com/2016/07/20/%E3%80%8A%E4%B8%96%E7%95%8C%E7%AE%80%E5%8F%B2%E3%80%8B%E7%95%A5%E8%AF%BB/"/>
-    <id>http://alithink.com/2016/07/20/《世界简史》略读/</id>
-    <published>2016-07-20T12:50:49.000Z</published>
-    <updated>2016-07-25T07:30:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="生命的起源"><a href="#生命的起源" class="headerlink" title="生命的起源"></a>生命的起源</h3><ul>
+    <entry>
+      <title><![CDATA[《世界简史》略读]]></title>
+      <url>http://alithink.com/2016/07/20/%E3%80%8A%E4%B8%96%E7%95%8C%E7%AE%80%E5%8F%B2%E3%80%8B%E7%95%A5%E8%AF%BB/</url>
+      <content type="html"><![CDATA[<h3 id="生命的起源"><a href="#生命的起源" class="headerlink" title="生命的起源"></a>生命的起源</h3><ul>
 <li>沉积岩（岩石记录）大致可以了解到16亿年前的生命形态。</li>
 <li>包含着生命迹象的最初的岩石称为原生岩。</li>
 </ul>
@@ -168,28 +120,12 @@
 <li>每四年在奥林匹亚举行一次奥运会</li>
 </ul>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;生命的起源&quot;&gt;&lt;a href=&quot;#生命的起源&quot; class=&quot;headerlink&quot; title=&quot;生命的起源&quot;&gt;&lt;/a&gt;生命的起源&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;沉积岩（岩石记录）大致可以了解到16亿年前的生命形态。&lt;/li&gt;
-&lt;li&gt;包含着生命迹象的最初的岩石称为
-    
-    </summary>
-    
-      <category term="读过的书" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>联通旧事</title>
-    <link href="http://alithink.com/2016/07/08/%E8%81%94%E9%80%9A%E6%97%A7%E4%BA%8B/"/>
-    <id>http://alithink.com/2016/07/08/联通旧事/</id>
-    <published>2016-07-08T12:37:56.000Z</published>
-    <updated>2016-07-11T06:04:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
+    <entry>
+      <title><![CDATA[联通旧事]]></title>
+      <url>http://alithink.com/2016/07/08/%E8%81%94%E9%80%9A%E6%97%A7%E4%BA%8B/</url>
+      <content type="html"><![CDATA[<blockquote>
 <p>时间：2011.3~2013.6</p>
 </blockquote>
 <h3 id="初来乍到"><a href="#初来乍到" class="headerlink" title="初来乍到"></a>初来乍到</h3><blockquote>
@@ -240,30 +176,12 @@
 <p>后记：<br>在联通工作的这段日子，结识了伙伴，扩展了视野，最重要的是确定了自己下一步该走的路。<br>感谢那段时光，感谢那段日子有你们相伴。年轻万岁，青春无悔。</p>
 </blockquote>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;时间：2011.3~2013.6&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;初来乍到&quot;&gt;&lt;a href=&quot;#初来乍到&quot; class=&quot;headerlink&quot; title=&quot;初来乍到&quot;&gt;&lt;/a&gt;初来乍到&lt;/h3&gt;&lt;blockquote&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="回忆录" scheme="http://alithink.com/categories/%E5%9B%9E%E5%BF%86%E5%BD%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>《禅与 Objective-C 编程艺术》读书拾遗</title>
-    <link href="http://alithink.com/2016/07/01/%E3%80%8A%E7%A6%85%E4%B8%8E%20Objective-C%20%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%8B%BE%E9%81%97/"/>
-    <id>http://alithink.com/2016/07/01/《禅与 Objective-C 编程艺术》读书拾遗/</id>
-    <published>2016-07-01T02:49:23.000Z</published>
-    <updated>2016-08-02T08:17:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
+    <entry>
+      <title><![CDATA[《禅与 Objective-C 编程艺术》读书拾遗]]></title>
+      <url>http://alithink.com/2016/07/01/%E3%80%8A%E7%A6%85%E4%B8%8E%20Objective-C%20%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%8B%BE%E9%81%97/</url>
+      <content type="html"><![CDATA[<blockquote>
 <p>纯粹拾遗性质的读书笔记，只记录知识体系尚模糊的内容<br>原文链接：<a href="https://github.com/oa414/objc-zen-book-cn#%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B" target="_blank" rel="external">《禅与 Objective-C 编程艺术》</a></p>
 </blockquote>
 <h3 id="1-条件语句"><a href="#1-条件语句" class="headerlink" title="1.条件语句"></a>1.条件语句</h3><ul>
@@ -367,27 +285,12 @@
 </li>
 </ul>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;纯粹拾遗性质的读书笔记，只记录知识体系尚模糊的内容&lt;br&gt;原文链接：&lt;a href=&quot;https://github.com/oa414/objc-zen-book-cn#%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7
-    
-    </summary>
-    
-      <category term="读过的书" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>BI APP图形库选型</title>
-    <link href="http://alithink.com/2016/06/28/BI%20APP%E5%9B%BE%E5%BD%A2%E5%BA%93%E9%80%89%E5%9E%8B/"/>
-    <id>http://alithink.com/2016/06/28/BI APP图形库选型/</id>
-    <published>2016-06-28T01:55:04.000Z</published>
-    <updated>2016-08-02T07:57:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。</p>
+    <entry>
+      <title><![CDATA[BI APP图形库选型]]></title>
+      <url>http://alithink.com/2016/06/28/BI%20APP%E5%9B%BE%E5%BD%A2%E5%BA%93%E9%80%89%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的图形可视化解决方案（当然Swift优先^_^）。</p>
 <h3 id="涉及的图形类型"><a href="#涉及的图形类型" class="headerlink" title="涉及的图形类型"></a>涉及的图形类型</h3><p><img src="http://alithink.com/img/3bi/1.png" alt="BI show.png"></p>
 <p>BI 中的各种图形图表都封装成了对应的卡片类型，根据接口的卡片类型描述动态生成对应的数据卡片进行展示。</p>
 <h3 id="开源库选型"><a href="#开源库选型" class="headerlink" title="开源库选型"></a>开源库选型</h3><h4 id="1-Charts"><a href="#1-Charts" class="headerlink" title="1.Charts"></a>1.Charts</h4><blockquote>
@@ -424,26 +327,12 @@
 <h4 id="3-ChartMarker堆积图功能缺失"><a href="#3-ChartMarker堆积图功能缺失" class="headerlink" title="3. ChartMarker堆积图功能缺失"></a>3. ChartMarker堆积图功能缺失</h4><p>堆积图的ChartMarker目前只能展示堆积后的总值，而不能展示分项的值。</p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>目前的这套方案可以满足基本的数据可视化需求，对于一些较为复杂灵活的图形展示需求，也可以封装一个单独的web类型的卡片，对于这部分需求采用web相关的图形可视化解决方案进行处理。</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;BI中会涉及到不少图形可视化的应用，因为考虑到APP用户体验方面的需求（移动端版本主要面向集团领导使用），BI APP主要采用Native的
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>工作与生活的平衡</title>
-    <link href="http://alithink.com/2016/06/11/%E5%B7%A5%E4%BD%9C%E4%B8%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B9%B3%E8%A1%A1/"/>
-    <id>http://alithink.com/2016/06/11/工作与生活的平衡/</id>
-    <published>2016-06-11T13:43:53.000Z</published>
-    <updated>2016-06-11T14:30:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>对应视频的传送门：</p>
+    <entry>
+      <title><![CDATA[工作与生活的平衡]]></title>
+      <url>http://alithink.com/2016/06/11/%E5%B7%A5%E4%BD%9C%E4%B8%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B9%B3%E8%A1%A1/</url>
+      <content type="html"><![CDATA[<p>对应视频的传送门：</p>
 <p><a href="http://open.163.com/movie/2011/2/D/L/M77U1DAGR_M77U1L2DL.html" target="_blank" rel="external">如何实现工作与生活的平衡</a></p>
 <h3 id="平衡的四个关键"><a href="#平衡的四个关键" class="headerlink" title="平衡的四个关键"></a>平衡的四个关键</h3><h4 id="1-有些职业的选择与生活具有不可调和性"><a href="#1-有些职业的选择与生活具有不可调和性" class="headerlink" title="1.有些职业的选择与生活具有不可调和性"></a>1.有些职业的选择与生活具有不可调和性</h4><p>这种不可调和跟周五允许不穿工装、育儿假等生活福利没有多大联系。很多人一直从事着自己痛恨着的工作，目的只是为了买一些没有多大用处的东西，以此博得自己的邻居朋友的羡慕而已。  </p>
 <blockquote>
@@ -466,27 +355,12 @@
 <p>共勉，为“美好生活“而努力。</p>
 </blockquote>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;对应视频的传送门：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://open.163.com/movie/2011/2/D/L/M77U1DAGR_M77U1L2DL.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何实现工作与生活的平衡&lt;/a&gt;&lt;
-    
-    </summary>
-    
-      <category term="鸡汤乱炖" scheme="http://alithink.com/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>cocoapods私有仓库封装过程中的思考</title>
-    <link href="http://alithink.com/2016/06/04/cocoapods%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%B0%81%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%80%9D%E8%80%83/"/>
-    <id>http://alithink.com/2016/06/04/cocoapods私有仓库封装过程中的思考/</id>
-    <published>2016-06-04T13:33:11.000Z</published>
-    <updated>2016-06-28T07:11:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
+    <entry>
+      <title><![CDATA[cocoapods私有仓库封装过程中的思考]]></title>
+      <url>http://alithink.com/2016/06/04/cocoapods%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%B0%81%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%80%9D%E8%80%83/</url>
+      <content type="html"><![CDATA[<blockquote>
 <p>背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。</p>
 </blockquote>
 <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><ul>
@@ -545,29 +419,12 @@
 <p>框架会根据将来的实际使用情况再进行优化调整，逐渐完善起来。  </p>
 <h3 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h3><p>本轮主要是基于基础功能模块的拆分封装，其实对于APP群常用的业务模块也可以做相同的工作，比如登录验证模块或者逻辑的封装等。通过对于公用业务场景的思考，逐渐提炼出可以产品化的地方，然后塞入公用库，将大大提升相关APP群的开发效率与产品质量。</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 i
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>理性的你和猴子还有惊慌怪兽</title>
-    <link href="http://alithink.com/2016/05/24/%E7%90%86%E6%80%A7%E7%9A%84%E4%BD%A0%E5%92%8C%E7%8C%B4%E5%AD%90%E8%BF%98%E6%9C%89%E6%83%8A%E6%85%8C%E6%80%AA%E5%85%BD/"/>
-    <id>http://alithink.com/2016/05/24/理性的你和猴子还有惊慌怪兽/</id>
-    <published>2016-05-24T13:50:25.000Z</published>
-    <updated>2016-05-24T14:21:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>TED上面关于拖延症的两个视频很简短但确实分析的比较合理。  </p>
+    <entry>
+      <title><![CDATA[理性的你和猴子还有惊慌怪兽]]></title>
+      <url>http://alithink.com/2016/05/24/%E7%90%86%E6%80%A7%E7%9A%84%E4%BD%A0%E5%92%8C%E7%8C%B4%E5%AD%90%E8%BF%98%E6%9C%89%E6%83%8A%E6%85%8C%E6%80%AA%E5%85%BD/</url>
+      <content type="html"><![CDATA[<p>TED上面关于拖延症的两个视频很简短但确实分析的比较合理。  </p>
 <h3 id="第一段讲述中主要点出了几个拖延期间的影响角色"><a href="#第一段讲述中主要点出了几个拖延期间的影响角色" class="headerlink" title="第一段讲述中主要点出了几个拖延期间的影响角色"></a>第一段讲述中主要点出了几个拖延期间的影响角色</h3><ol>
 <li>理性的你：<br>初期愿景的发起者，确立的目标，并制定了简单的规划，促使目标完成的积极分子。</li>
 <li>享乐的猴子：<br>用各种有意思的东西去吸引你，打断任务的执行，它出现的时候往往会感觉日子会过的很舒服，理性的你拿他没有办法，但它胆子小，最怕怪兽。</li>
@@ -579,54 +436,23 @@
 <p>博客写作也是拖延了好久了，今天开始一周至少一篇吧，周末就是Deadline ^_^ 共勉</p>
 </blockquote>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;TED上面关于拖延症的两个视频很简短但确实分析的比较合理。  &lt;/p&gt;
-&lt;h3 id=&quot;第一段讲述中主要点出了几个拖延期间的影响角色&quot;&gt;&lt;a href=&quot;#第一段讲述中主要点出了几个拖延期间的影响角色&quot; class=&quot;headerlink&quot; title=&quot;第一段讲述中主要点
-    
-    </summary>
-    
-      <category term="鸡汤乱炖" scheme="http://alithink.com/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Swifter Tips阅读随想1</title>
-    <link href="http://alithink.com/2016/05/10/Swifter%20Tips%E9%98%85%E8%AF%BB%E9%9A%8F%E6%83%B31/"/>
-    <id>http://alithink.com/2016/05/10/Swifter Tips阅读随想1/</id>
-    <published>2016-05-10T09:43:00.000Z</published>
-    <updated>2016-05-10T09:56:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/img/1operator/1.png" alt=""></p>
+    <entry>
+      <title><![CDATA[Swifter Tips阅读随想1]]></title>
+      <url>http://alithink.com/2016/05/10/Swifter%20Tips%E9%98%85%E8%AF%BB%E9%9A%8F%E6%83%B31/</url>
+      <content type="html"><![CDATA[<p><img src="/img/1operator/1.png" alt=""></p>
 <blockquote>
 <p>这样可以很自然的想到<br>aaa ?? (a<em>b</em>c)<br>比<br>var default = a<em>b</em>c<br>aaa ?? default<br>性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值 </p>
 </blockquote>
 <p>在 Swift 中，其实 &amp;&amp; 和 || 这两个操作符里也用到了 @autoclosure。作为练习，不妨打开 Playground，试试看怎么实现这两个操作符<br><img src="/img/1operator/2.png" alt=""><br>按照这个思路，就可以轻松的定制操作符啦<br>比如这个&amp;&amp;的就这么简单<br>swift这个操作符只能接受bool类型<br>那么其实知道怎么实现的了就可以尝试给他扩展<br><img src="/img/1operator/3.png" alt=""><br>默认的是不支持的<br>这样这一块的知识点就通过一轮探索就都搞通了，还能加强记忆</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/img/1operator/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这样可以很自然的想到&lt;br&gt;aaa ?? (a&lt;em&gt;b&lt;/em&gt;c)&lt;br&gt;比&lt;br&gt;var default = a&lt;em&gt;b&lt;/em&gt;c&lt;br&gt;aaa
-    
-    </summary>
-    
-      <category term="Swift" scheme="http://alithink.com/categories/Swift/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>《三体》浅读梳理</title>
-    <link href="http://alithink.com/2015/06/06/%E3%80%8A%E4%B8%89%E4%BD%93%E3%80%8B%E6%B5%85%E8%AF%BB%E6%A2%B3%E7%90%86/"/>
-    <id>http://alithink.com/2015/06/06/《三体》浅读梳理/</id>
-    <published>2015-06-06T06:45:34.000Z</published>
-    <updated>2016-04-27T14:00:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
+    <entry>
+      <title><![CDATA[《三体》浅读梳理]]></title>
+      <url>http://alithink.com/2015/06/06/%E3%80%8A%E4%B8%89%E4%BD%93%E3%80%8B%E6%B5%85%E8%AF%BB%E6%A2%B3%E7%90%86/</url>
+      <content type="html"><![CDATA[<blockquote>
 <p>弱小和无知不是生存的障碍，傲慢才是</p>
 </blockquote>
 <hr>
@@ -655,30 +481,12 @@
 <li>云天明</li>
 </ol>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;弱小和无知不是生存的障碍，傲慢才是&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;三体中的经典宇宙观点：&quot;&gt;&lt;a href=&quot;#三体中的经典宇宙观点：&quot; class=&quot;headerlink&quot; title=&quot;三体中的经典宇宙观点：&quot;&gt;
-    
-    </summary>
-    
-      <category term="读过的书" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>IPA 企业证书重新签名</title>
-    <link href="http://alithink.com/2014/07/21/IPA%20%E4%BC%81%E4%B8%9A%E8%AF%81%E4%B9%A6%E9%87%8D%E6%96%B0%E7%AD%BE%E5%90%8D/"/>
-    <id>http://alithink.com/2014/07/21/IPA 企业证书重新签名/</id>
-    <published>2014-07-21T09:33:40.000Z</published>
-    <updated>2016-06-05T13:32:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ul>
+    <entry>
+      <title><![CDATA[IPA 企业证书重新签名]]></title>
+      <url>http://alithink.com/2014/07/21/IPA%20%E4%BC%81%E4%B8%9A%E8%AF%81%E4%B9%A6%E9%87%8D%E6%96%B0%E7%AD%BE%E5%90%8D/</url>
+      <content type="html"><![CDATA[<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ul>
 <li>Step1 : 解压IPA</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unzip MYAPP.ipa</div></pre></td></tr></table></figure>
@@ -712,29 +520,12 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate /usr/bin</div></pre></td></tr></table></figure>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;操作步骤&quot;&gt;&lt;a href=&quot;#操作步骤&quot; class=&quot;headerlink&quot; title=&quot;操作步骤&quot;&gt;&lt;/a&gt;操作步骤&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Step1 : 解压IPA&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;ta
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cocos2D简单iPhone游戏【入门教程】</title>
-    <link href="http://alithink.com/2014/07/17/cocos2d%E6%95%99%E7%A8%8B/"/>
-    <id>http://alithink.com/2014/07/17/cocos2d教程/</id>
-    <published>2014-07-17T09:33:40.000Z</published>
-    <updated>2016-06-04T13:33:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>我想没有什么比更新入门教程更适合用来庆祝具有标志性的Cocos2D 3.0的诞生了。</p>
+    <entry>
+      <title><![CDATA[Cocos2D简单iPhone游戏【入门教程】]]></title>
+      <url>http://alithink.com/2014/07/17/cocos2d%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<p>我想没有什么比更新入门教程更适合用来庆祝具有标志性的Cocos2D 3.0的诞生了。</p>
 <p>Cocos2D 3.0是iOS平台一款2D游戏开发框架的最新版本。App Store上数以千计的游戏不乏一些排行前十的游戏都是用它来进行开发的。</p>
 <p>它对sprite有很好的支持,包含一个完美的Chipmunk2D physics类库，支持OpenAL声音类库，诸多有趣的效果，让你可以用它做更多事情。</p>
 <p>通过本Cocos2D 3.0的入门教程，你将会学习从头到尾的编写一个简单有趣的iPhone 2D游戏。如果你之前已经学习过了Cocos2D 2.0的教程，那么将会将会对本教程感觉比较熟悉，但是你仍然可以通过本教程学习利用物理引擎实现一些好玩的东西。</p>
@@ -922,28 +713,12 @@
 <p>如果你对这篇教程有任何疑问或者建议请一起讨论！</p>
 <p><a href="http://www.raywenderlich.com/61391/how-to-make-a-simple-iphone-game-with-cocos2d-3-0-tutorial" target="_blank" rel="external">英文原文链接</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;我想没有什么比更新入门教程更适合用来庆祝具有标志性的Cocos2D 3.0的诞生了。&lt;/p&gt;
-&lt;p&gt;Cocos2D 3.0是iOS平台一款2D游戏开发框架的最新版本。App Store上数以千计的游戏不乏一些排行前十的游戏都是用它来进行开发的。&lt;/p&gt;
-&lt;p&gt;它对sprit
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>NSNull 找不到指定方法解决方案</title>
-    <link href="http://alithink.com/2014/07/14/NSNull%E6%89%A9%E5%B1%95/"/>
-    <id>http://alithink.com/2014/07/14/NSNull扩展/</id>
-    <published>2014-07-14T09:33:40.000Z</published>
-    <updated>2016-06-05T13:32:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="近期遇到一个问题："><a href="#近期遇到一个问题：" class="headerlink" title="近期遇到一个问题："></a>近期遇到一个问题：</h3><blockquote>
+    <entry>
+      <title><![CDATA[NSNull 找不到指定方法解决方案]]></title>
+      <url>http://alithink.com/2014/07/14/NSNull%E6%89%A9%E5%B1%95/</url>
+      <content type="html"><![CDATA[<h3 id="近期遇到一个问题："><a href="#近期遇到一个问题：" class="headerlink" title="近期遇到一个问题："></a>近期遇到一个问题：</h3><blockquote>
 <p>由于后台人员对于接口数据没有做空值处理，导致客户端接收到的有些数据为空（NSNull），而针对此类数据恰好客户端的存储结构为int和float类型，类型转换时报出了[NSNull intValue]或者[NSNull floatValue] unrecognized selector sent to instance 的错误。</p>
 </blockquote>
 <h3 id="解决此问题尝试了以下思路："><a href="#解决此问题尝试了以下思路：" class="headerlink" title="解决此问题尝试了以下思路："></a>解决此问题尝试了以下思路：</h3><blockquote>
@@ -953,27 +728,12 @@
 <h3 id="扩展NSNull代码如下："><a href="#扩展NSNull代码如下：" class="headerlink" title="扩展NSNull代码如下："></a>扩展NSNull代码如下：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"NSNull+NullCast.h"</span> </span></div><div class="line"></div><div class="line">- (<span class="keyword">float</span>)floatValue &#123;</div><div class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125; </div><div class="line"></div><div class="line">- (<span class="keyword">int</span>)intValue &#123;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在可能出现类似问题的类中引入NSNull+NullCast这个类问题就解决了，无需修改逻辑代码。</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;近期遇到一个问题：&quot;&gt;&lt;a href=&quot;#近期遇到一个问题：&quot; class=&quot;headerlink&quot; title=&quot;近期遇到一个问题：&quot;&gt;&lt;/a&gt;近期遇到一个问题：&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;由于后台人员对于接口数据没有做空值处理，导致客户端接收到的
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>“简密”App Store处女作</title>
-    <link href="http://alithink.com/2014/05/22/%E7%AE%80%E5%AF%86/"/>
-    <id>http://alithink.com/2014/05/22/简密/</id>
-    <published>2014-05-22T09:33:40.000Z</published>
-    <updated>2016-08-02T08:18:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今天是我的iOS App Store上架应用处女作“简密”第一天上线的日子，简密是我从事iOS开发三年以来的第一款个人上架应用，之前做过两年的企业级应用开发以及公司的电商应用开发，有不少应用上架的经验，但要是论完全从头到尾，设计、制图、开发、测试、文案、广告以及部署上架完全由自己一人完成，“简密”确实是我的处女作。不论上架之后销售效果如何，这次开发的过程帮我重新梳理了一遍iOS App Store应用开发上架的整个流程，这点是我觉得做这件事意义最大的地方，当然如果有那么点微薄收入的话，我会更加欣慰的^_^。</p>
+    <entry>
+      <title><![CDATA[“简密”App Store处女作]]></title>
+      <url>http://alithink.com/2014/05/22/%E7%AE%80%E5%AF%86/</url>
+      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今天是我的iOS App Store上架应用处女作“简密”第一天上线的日子，简密是我从事iOS开发三年以来的第一款个人上架应用，之前做过两年的企业级应用开发以及公司的电商应用开发，有不少应用上架的经验，但要是论完全从头到尾，设计、制图、开发、测试、文案、广告以及部署上架完全由自己一人完成，“简密”确实是我的处女作。不论上架之后销售效果如何，这次开发的过程帮我重新梳理了一遍iOS App Store应用开发上架的整个流程，这点是我觉得做这件事意义最大的地方，当然如果有那么点微薄收入的话，我会更加欣慰的^_^。</p>
 <h3 id="回顾一下App创作的过程，有这么几块感觉需要梳理总结："><a href="#回顾一下App创作的过程，有这么几块感觉需要梳理总结：" class="headerlink" title="回顾一下App创作的过程，有这么几块感觉需要梳理总结："></a>回顾一下App创作的过程，有这么几块感觉需要梳理总结：</h3><h3 id="App原始矛盾的发掘"><a href="#App原始矛盾的发掘" class="headerlink" title="App原始矛盾的发掘"></a>App原始矛盾的发掘</h3><p>说白了就是应用要解决什么问题，能用来做些什么。这点很重要，“简密”这点做的不是特别好，因为当时做这款应用其实多半是想把平时工作学习中用到见到过的个人感觉比较好的体验效果做一个集合展示，由于最近做过二维码与加密解密模块的研究开发，所以就草率的选定了带加密功能的二维码这个核心需求。但现在回想过来这样做其实是有点本末倒置了，还是应该从用户的角度出发，从问题出发，然后再组织解决用户问题的功能实现、模块组合。</p>
 <h4 id="拿“简密”来说的话，需求经过后期整理文案如下："><a href="#拿“简密”来说的话，需求经过后期整理文案如下：" class="headerlink" title="拿“简密”来说的话，需求经过后期整理文案如下："></a>拿“简密”来说的话，需求经过后期整理文案如下：</h4><blockquote>
 <p>简密：秘密的创造原来可以如此简单</p>
@@ -1021,16 +781,8 @@
 <p><a href="https://itunes.apple.com/cn/app/jian-mi-bao-chi-yi-dian-shen/id879758988?mt=8" target="_blank" rel="external">https://itunes.apple.com/cn/app/jian-mi-bao-chi-yi-dian-shen/id879758988?mt=8</a></p>
 </blockquote>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;今天是我的iOS App Store上架应用处女作“简密”第一天上线的日子，简密是我从事iOS开发三年以来的第一款个人上架应用，之前做过两年
-    
-    </summary>
-    
-      <category term="个人作品" scheme="http://alithink.com/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
-    
-    
-  </entry>
   
-</feed>
+  
+</search>
