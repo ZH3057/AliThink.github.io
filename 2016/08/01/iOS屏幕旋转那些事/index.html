@@ -34,7 +34,7 @@
 
 1234567891011overri">
 <meta property="og:image" content="http://alithink.com/img/5rotate/app layer.png">
-<meta property="og:updated_time" content="2016-08-02T03:28:00.000Z">
+<meta property="og:updated_time" content="2016-08-02T03:32:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS屏幕旋转那些事">
 <meta name="twitter:description" content="本文屏幕旋转方案仅限于兼容iOS8+
@@ -221,7 +221,7 @@
 <li>强制横屏</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">func forceLandScape()&#123;</span><br><span class="line">    let width = UIScreen.mainScreen().bounds.size.width</span><br><span class="line">    let height = UIScreen.mainScreen().bounds.size.height</span><br><span class="line">    </span><br><span class="line">    let isLandscape = width &lt; height</span><br><span class="line">    if isLandscape &#123;</span><br><span class="line">        let device = UIDevice.currentDevice()</span><br><span class="line">        let number = NSNumber(integer: UIInterfaceOrientation.LandscapeRight.rawValue)</span><br><span class="line">        device.setValue(number, forKey: &quot;orientation&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上方案基本可以搞定大部分的屏幕旋转场景了。如果APP的产品需求中主体为固定方向，只要求对弹出(present)模态视图进行旋转的话，可以参考下面这篇文章：<br><a href="http://swiftiostutorials.com/ios-orientations-landscape-orientation-one-view-controller/" target="_blank" rel="external">iOS Orientations: Landscape orientation for only one View Controller</a><br>这么做会更加方便一下，但问题是对于push模式的场景并不适用，需要结合以上方案综合解决。  </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上方案基本可以搞定大部分的屏幕旋转场景了。如果APP的产品需求中主体为固定方向，只要求对弹出(present)模态视图进行旋转的话，可以参考下面这篇文章：<br><a href="http://swiftiostutorials.com/ios-orientations-landscape-orientation-one-view-controller/" target="_blank" rel="external">iOS Orientations: Landscape orientation for only one View Controller</a><br>这么做会更加方便一些，但问题是这种方案对于push模式的场景并不适用，需要结合以上方案综合解决。  </p>
 
     
   </div>

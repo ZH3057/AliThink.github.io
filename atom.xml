@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.alithink.com/"/>
-  <updated>2016-08-02T03:28:00.000Z</updated>
+  <updated>2016-08-02T03:32:06.000Z</updated>
   <id>http://blog.alithink.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.alithink.com/2016/08/01/iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
     <id>http://blog.alithink.com/2016/08/01/iOS屏幕旋转那些事/</id>
     <published>2016-08-01T13:10:55.000Z</published>
-    <updated>2016-08-02T03:28:00.000Z</updated>
+    <updated>2016-08-02T03:32:06.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;本文屏幕旋转方案仅限于兼容iOS8+&lt;/p&gt;
@@ -51,7 +51,7 @@
 &lt;li&gt;强制横屏&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;func forceLandScape()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    let width = UIScreen.mainScreen().bounds.size.width&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    let height = UIScreen.mainScreen().bounds.size.height&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    let isLandscape = width &amp;lt; height&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if isLandscape &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        let device = UIDevice.currentDevice()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        let number = NSNumber(integer: UIInterfaceOrientation.LandscapeRight.rawValue)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        device.setValue(number, forKey: &amp;quot;orientation&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;以上方案基本可以搞定大部分的屏幕旋转场景了。如果APP的产品需求中主体为固定方向，只要求对弹出(present)模态视图进行旋转的话，可以参考下面这篇文章：&lt;br&gt;&lt;a href=&quot;http://swiftiostutorials.com/ios-orientations-landscape-orientation-one-view-controller/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS Orientations: Landscape orientation for only one View Controller&lt;/a&gt;&lt;br&gt;这么做会更加方便一下，但问题是对于push模式的场景并不适用，需要结合以上方案综合解决。  &lt;/p&gt;
+&lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;以上方案基本可以搞定大部分的屏幕旋转场景了。如果APP的产品需求中主体为固定方向，只要求对弹出(present)模态视图进行旋转的话，可以参考下面这篇文章：&lt;br&gt;&lt;a href=&quot;http://swiftiostutorials.com/ios-orientations-landscape-orientation-one-view-controller/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS Orientations: Landscape orientation for only one View Controller&lt;/a&gt;&lt;br&gt;这么做会更加方便一些，但问题是这种方案对于push模式的场景并不适用，需要结合以上方案综合解决。  &lt;/p&gt;
 </content>
     
     <summary type="html">
