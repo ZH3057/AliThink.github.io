@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://alithink.com/"/>
-  <updated>2016-08-18T09:44:07.000Z</updated>
+  <updated>2016-08-18T09:44:56.000Z</updated>
   <id>http://alithink.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://alithink.com/2016/08/16/%E3%80%8A%E5%87%BD%E6%95%B0%E5%BC%8FSwift%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%8B%BE%E9%81%97/"/>
     <id>http://alithink.com/2016/08/16/《函数式Swift》读书拾遗/</id>
     <published>2016-08-16T03:18:26.000Z</published>
-    <updated>2016-08-18T09:44:07.000Z</updated>
+    <updated>2016-08-18T09:44:56.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>设计良好的Swift函数式程序应该具有的一些特质：</p>
 <ul>
@@ -30,7 +30,7 @@
 <li>类型</li>
 </ul>
 <blockquote>
-<p>避免使用程序状态和可变对象，是降低程序复杂度的有效方式之一，而这也正是函数式变成的精髓。</p>
+<p>避免使用程序状态和可变对象，是降低程序复杂度的有效方式之一，而这也正是函数式编程的精髓。</p>
 </blockquote>
 <h3 id="函数式思想"><a href="#函数式思想" class="headerlink" title="函数式思想"></a>函数式思想</h3><h4 id="1-常规的重构思路"><a href="#1-常规的重构思路" class="headerlink" title="1. 常规的重构思路"></a>1. 常规的重构思路</h4><p>抽象实体，扩展方法，逻辑复杂之后抽象出辅助方法</p>
 <h4 id="2-函数式"><a href="#2-函数式" class="headerlink" title="2. 函数式"></a>2. 函数式</h4><blockquote>
