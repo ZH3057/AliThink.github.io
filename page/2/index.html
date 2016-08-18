@@ -286,6 +286,130 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/10/Swifter Tips阅读随想1/" itemprop="url">
+                  Swifter Tips阅读随想1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-10T17:43:00+08:00" content="2016-05-10">
+              2016-05-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/10/Swifter Tips阅读随想1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/10/Swifter Tips阅读随想1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/img/1operator/1.png" alt=""></p>
+<blockquote>
+<p>这样可以很自然的想到<br>aaa ?? (a<em>b</em>c)<br>比<br>var default = a<em>b</em>c<br>aaa ?? default<br>性能上要优越，规避了一次计算，只有在真正需要的时候才会去计算默认值 </p>
+</blockquote>
+<p>在 Swift 中，其实 &amp;&amp; 和 || 这两个操作符里也用到了 @autoclosure。作为练习，不妨打开 Playground，试试看怎么实现这两个操作符<br><img src="/img/1operator/2.png" alt=""><br>按照这个思路，就可以轻松的定制操作符啦<br>比如这个&amp;&amp;的就这么简单<br>swift这个操作符只能接受bool类型<br>那么其实知道怎么实现的了就可以尝试给他扩展<br><img src="/img/1operator/3.png" alt=""><br>默认的是不支持的<br>这样这一块的知识点就通过一轮探索就都搞通了，还能加强记忆</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/06/06/《三体》浅读梳理/" itemprop="url">
                   《三体》浅读梳理
                 </a>
@@ -1210,7 +1334,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
