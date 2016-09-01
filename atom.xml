@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://alithink.com/"/>
-  <updated>2016-09-01T06:41:27.000Z</updated>
+  <updated>2016-09-01T06:48:57.000Z</updated>
   <id>http://alithink.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://alithink.com/2016/09/01/CTMediator%E6%BA%90%E7%A0%81%E6%8B%BE%E9%81%97/"/>
     <id>http://alithink.com/2016/09/01/CTMediator源码拾遗/</id>
     <published>2016-09-01T02:13:59.000Z</published>
-    <updated>2016-09-01T06:41:27.000Z</updated>
+    <updated>2016-09-01T06:48:57.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>一句话简介：CTMediator为casa大神针对iOS组件化方案的一个架构实例。</p>
