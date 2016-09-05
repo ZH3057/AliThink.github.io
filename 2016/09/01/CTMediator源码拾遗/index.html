@@ -89,7 +89,7 @@
 Github: 传送门
 PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。
 
-1. UIViewController常用分段123456#pragma mark - lif cycle#pragma mark - UITableViewDelega">
+1. UIViewController常用分段123456#pragma mark - life cycle#pragma mark - UITableViewDeleg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CTMediator源码拾遗">
 <meta property="og:url" content="http://alithink.com/2016/09/01/CTMediator源码拾遗/index.html">
@@ -100,8 +100,8 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
 Github: 传送门
 PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。
 
-1. UIViewController常用分段123456#pragma mark - lif cycle#pragma mark - UITableViewDelega">
-<meta property="og:updated_time" content="2016-09-01T06:48:57.000Z">
+1. UIViewController常用分段123456#pragma mark - life cycle#pragma mark - UITableViewDeleg">
+<meta property="og:updated_time" content="2016-09-05T01:52:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CTMediator源码拾遗">
 <meta name="twitter:description" content="一句话简介：CTMediator为casa大神针对iOS组件化方案的一个架构实例。
@@ -109,7 +109,7 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
 Github: 传送门
 PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。
 
-1. UIViewController常用分段123456#pragma mark - lif cycle#pragma mark - UITableViewDelega">
+1. UIViewController常用分段123456#pragma mark - life cycle#pragma mark - UITableViewDeleg">
 
 
 
@@ -369,7 +369,7 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
 <p>Github: <a href="https://github.com/casatwy/CTMediator" target="_blank" rel="external">传送门</a></p>
 <p>PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。</p>
 </blockquote>
-<h3 id="1-UIViewController常用分段"><a href="#1-UIViewController常用分段" class="headerlink" title="1. UIViewController常用分段"></a>1. UIViewController常用分段</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#pragma mark - lif cycle</div><div class="line">#pragma mark - UITableViewDelegate</div><div class="line">#pragma mark - CustomDelegate</div><div class="line">#pragma mark - event response</div><div class="line">#pragma mark - private methods</div><div class="line">#pragma mark - getters and setters</div></pre></td></tr></table></figure>
+<h3 id="1-UIViewController常用分段"><a href="#1-UIViewController常用分段" class="headerlink" title="1. UIViewController常用分段"></a>1. UIViewController常用分段</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#pragma mark - life cycle</div><div class="line">#pragma mark - UITableViewDelegate</div><div class="line">#pragma mark - CustomDelegate</div><div class="line">#pragma mark - event response</div><div class="line">#pragma mark - private methods</div><div class="line">#pragma mark - getters and setters</div></pre></td></tr></table></figure>
 <p>这里有个争论就是关于是不是应该将属性实例的初始化放在getter中，这里个人倾向于casa的做法（放在getter中），所以贴一下相关的解释：</p>
 <blockquote>
 <p>我比较习惯一个对象的”私有”属性写在extension里面，然后这些属性的初始化全部放在getter里面做，在init和dealloc之外，是不会出现任何类似<code>_property</code>这样的写法的。</p>
