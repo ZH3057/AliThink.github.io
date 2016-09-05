@@ -286,6 +286,168 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/05/CTNetworking源码拾遗/" itemprop="url">
+                  CTNetworking源码拾遗
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-05T14:17:07+08:00" content="2016-09-05">
+              2016-09-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/读过的源码/" itemprop="url" rel="index">
+                    <span itemprop="name">读过的源码</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/05/CTNetworking源码拾遗/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/05/CTNetworking源码拾遗/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p> 一句话简介：CTNetworking为casa大神针对iOS网络层方案的一个架构实例。</p>
+<p>架构详解: <a href="http://casatwy.com/iosying-yong-jia-gou-tan-wang-luo-ceng-she-ji-fang-an.html" target="_blank" rel="external">传送门</a></p>
+<p>Github: <a href="https://github.com/casatwy/RTNetworking" target="_blank" rel="external">传送门</a></p>
+<p>PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。</p>
+</blockquote>
+<h3 id="1-宏相关"><a href="#1-宏相关" class="headerlink" title="1. 宏相关"></a>1. 宏相关</h3><ul>
+<li><p>预防重复引入导致的重定义问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#ifndef CTNetworking_CTNetworkingConfiguration_h</div><div class="line">#define CTNetworking_CTNetworkingConfiguration_h</div><div class="line"></div><div class="line">typedef NS_ENUM(NSInteger, CTAppType) &#123;</div><div class="line">    CTAppTypexxx</div><div class="line">&#125;;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">static NSString *CTKeychainServiceName = @&quot;xxxxx&quot;;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">extern NSString * const kCTServiceGDMapV3;</div><div class="line"></div><div class="line">#endif</div></pre></td></tr></table></figure>
+<p>CTNetworking_CTNetworkingConfiguration_h这块的命名没有什么特别的规范，往往是将点替换为下划线，开头添加一条下划线。（casa这里是在最前面又加了工程名，AFNetworking则是省略了扩展名）</p>
+</li>
+<li><p>巧妙的宏替换：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#define AXCallAPI(REQUEST_METHOD, REQUEST_ID)\</div><div class="line">&#123;\</div><div class="line">    __weak typeof(self) weakSelf = self;\</div><div class="line">    REQUEST_ID = [[CTApiProxy sharedInstance] call##REQUEST_METHOD##WithParams:apiParams serviceIdentifier:self.child.serviceType methodName:self.child.methodName success:^(CTURLResponse *response) &#123;\</div><div class="line">        __strong typeof(weakSelf) strongSelf = weakSelf;\</div><div class="line">        [strongSelf successedOnCallingAPI:response];\</div><div class="line">    &#125; fail:^(CTURLResponse *response) &#123;\</div><div class="line">        __strong typeof(weakSelf) strongSelf = weakSelf;\</div><div class="line">        [strongSelf failedOnCallingAPI:response withErrorType:CTAPIManagerErrorTypeDefault]; \</div><div class="line">    &#125;];\</div><div class="line">    [self.requestIdList addObject:@(REQUEST_ID)];\</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 通过##REQUEST_METHOD##包裹的变量将进行宏替换，进而达到根据约定区分方法调用的目的</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-UDID"><a href="#2-UDID" class="headerlink" title="2. UDID"></a>2. UDID</h3><p>常规的UUID+keychain的策略：</p>
+<ul>
+<li><p>创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (NSString *)CT_createUUID</div><div class="line">&#123;</div><div class="line">    CFUUIDRef uuid = CFUUIDCreate(NULL);</div><div class="line">    CFStringRef string = CFUUIDCreateString(NULL, uuid);</div><div class="line">    CFRelease(uuid);</div><div class="line">    return (__bridge_transfer NSString *)string;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>保存读取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">- (void)saveUDID:(NSString *)udid</div><div class="line">&#123;</div><div class="line">    BOOL saveOk = NO;</div><div class="line">    NSData *udidData = [self searchKeychainCopyMatching:CTUDIDName];</div><div class="line">    if (udidData == nil) &#123;</div><div class="line">        saveOk = [self createKeychainValue:udid forIdentifier:CTUDIDName];</div><div class="line">    &#125;else&#123;</div><div class="line">        saveOk = [self updateKeychainValue:udid forIdentifier:CTUDIDName];</div><div class="line">    &#125;</div><div class="line">    if (!saveOk) &#123;</div><div class="line">        [self createPasteBoradValue:udid forIdentifier:CTUDIDName];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (NSString *)UDID</div><div class="line">&#123;</div><div class="line">    NSData *udidData = [self searchKeychainCopyMatching:CTUDIDName];</div><div class="line">    NSString *udid = nil;</div><div class="line">    if (udidData != nil) &#123;</div><div class="line">        NSString *temp = [[NSString alloc] initWithData:udidData encoding:NSUTF8StringEncoding];</div><div class="line">        udid = [NSString stringWithFormat:@&quot;%@&quot;, temp];</div><div class="line">    &#125;</div><div class="line">    if (udid.length == 0) &#123;</div><div class="line">        udid = [self readPasteBoradforIdentifier:CTUDIDName];</div><div class="line">    &#125;</div><div class="line">    return udid;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-内存管理权转移标记"><a href="#3-内存管理权转移标记" class="headerlink" title="3. 内存管理权转移标记"></a>3. 内存管理权转移标记</h3><ul>
+<li>__bridge: 不涉及管理所有权的转移。</li>
+<li>__bridge_transfer: CF对象转成OC对象时，顺便交出内存管理权。（ARC）</li>
+<li>__bridge_retained: OC对象转成CF对象时，顺便交出内存管理权。（CFRelease(xxx)）</li>
+</ul>
+<h3 id="4-DECORATOR-PATTERN小解"><a href="#4-DECORATOR-PATTERN小解" class="headerlink" title="4. DECORATOR PATTERN小解"></a>4. DECORATOR PATTERN小解</h3><p><img src="http://alithink.com/img/6ctnetworking/decorator.jpg" alt="BI show.png"></p>
+<p>适用场景：</p>
+<ul>
+<li>在不影响其他对象的情况下,以动态、透明的方式给单个对象添加职责。</li>
+<li>处理那些可以撤消的职责。</li>
+<li>当不能采用生成子类的方法进行扩充时。一种情况是,可能有大量独立的扩展,为支持每一种组合将产生大量的子类,使得子类数目呈爆炸性增长。另一种情况可能是因为类定义被隐藏,或类定义不能用于生成子类。                </li>
+</ul>
+<blockquote>
+<p> 一个专门讲解OC设计模式的开源库—<a href="https://github.com/huang303513/Design-Pattern-For-iOS" target="_blank" rel="external">传送门</a>                </p>
+</blockquote>
+<h3 id="5-闭包的三元操作"><a href="#5-闭包的三元操作" class="headerlink" title="5. 闭包的三元操作"></a>5. 闭包的三元操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fail?fail(CTResponse):nil</div></pre></td></tr></table></figure>
+<h3 id="6-封装一个统一的空值处理"><a href="#6-封装一个统一的空值处理" class="headerlink" title="6. 封装一个统一的空值处理"></a>6. 封装一个统一的空值处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">#import &quot;NSObject+AXNetworkingMethods.h&quot;</div><div class="line">@implementation NSObject (AXNetworkingMethods)</div><div class="line"></div><div class="line">- (id)CT_defaultValue:(id)defaultData</div><div class="line">&#123;</div><div class="line">    if (![defaultData isKindOfClass:[self class]]) &#123;</div><div class="line">        return defaultData;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    if ([self CT_isEmptyObject]) &#123;</div><div class="line">        return defaultData;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (BOOL)CT_isEmptyObject</div><div class="line">&#123;</div><div class="line">    if ([self isEqual:[NSNull null]]) &#123;</div><div class="line">        return YES;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    if ([self isKindOfClass:[NSString class]]) &#123;</div><div class="line">        if ([(NSString *)self length] == 0) &#123;</div><div class="line">            return YES;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    if ([self isKindOfClass:[NSArray class]]) &#123;</div><div class="line">        if ([(NSArray *)self count] == 0) &#123;</div><div class="line">            return YES;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    if ([self isKindOfClass:[NSDictionary class]]) &#123;</div><div class="line">        if ([(NSDictionary *)self count] == 0) &#123;</div><div class="line">            return YES;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return NO;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>如果要是Swift的话其实就不用这么搞啦^_^</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">optionalVarA ?? <span class="string">"为空的时候我就派上用场啦"</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/01/CTMediator源码拾遗/" itemprop="url">
                   CTMediator源码拾遗
                 </a>
@@ -1731,183 +1893,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/04/cocoapods私有仓库封装过程中的思考/" itemprop="url">
-                  cocoapods私有仓库封装过程中的思考
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-04T21:33:11+08:00" content="2016-06-04">
-              2016-06-04
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/04/cocoapods私有仓库封装过程中的思考/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/cocoapods私有仓库封装过程中的思考/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>背景：随着公司相关APP项目的开展，公用框架的创建与维护越发显得迫切起来。因为工作中经常接触使用cocoapods,也知道她其实可以搞定这件事，所以就首当其冲的选择了基于cocoapods的封装方案。</p>
-</blockquote>
-<h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><ul>
-<li>给工作中封装的组件一个沉淀的地方。</li>
-<li>为新项目的开展提供高效的支撑。</li>
-<li>框架代码单独维护，功能点升级更新快捷。</li>
-<li>一定程度督促自己代码的组织与优化。</li>
-</ul>
-<h2 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a>知识储备</h2><p>搭建的过程大致参考了这篇教程：<a href="http://blog.wtlucky.com/blog/2015/02/26/create-private-podspec/" target="_blank" rel="external">使用Cocoapods创建私有podspec</a><br>教程非常的细致，很赞的分享。其中有几个地方可能会有点疑惑：</p>
-<h3 id="Podfile中specs引入方式"><a href="#Podfile中specs引入方式" class="headerlink" title="Podfile中specs引入方式"></a>Podfile中specs引入方式</h3><h4 id="1-path-gt-的引入方式"><a href="#1-path-gt-的引入方式" class="headerlink" title="1. :path =&gt;的引入方式"></a>1. :path =&gt;的引入方式</h4><ul>
-<li>会添加到Development Pods中，并且复制整个私有库的文件组织结构（文件夹嵌套关系都会保留）,这种引入方式非常适合于私有库的开发阶段，因为这种方式引入的其实就是实际私有库的源文件，在demo项目中通过这种方式引入，充分测试私有库的相关功能会非常方便快捷。</li>
-<li>对强迫症患者来说可能会觉得有点不完美的地方，就是当specs中包含subspecs的时候，用这种方式引入时，会出现一些多余的文件层次嵌套。。。感兴趣的患者们可以去试一下。。。</li>
-</ul>
-<h4 id="2-常规的引入方式"><a href="#2-常规的引入方式" class="headerlink" title="2. 常规的引入方式"></a>2. 常规的引入方式</h4><p>常规的引入方式这里就不多说了，它走的是另一个极端，会剔除库中的文件组织结构，而简单的划分了源文件与资源文件，如果包含subspecs，只保留子模块名一级的文件层次，模块内部的文件结构将不复存在，这里暂时没有找到合适的解决办法保留原有组织结构。</p>
-<p><img src="http://alithink.com/img/2cocoapods/1.png" alt="1.png"></p>
-<p>比如上图的结构，发布之后将改变为：</p>
-<p><img src="http://alithink.com/img/2cocoapods/2.png" alt="2.png"></p>
-<h3 id="子模块划分思路"><a href="#子模块划分思路" class="headerlink" title="子模块划分思路"></a>子模块划分思路</h3><p>先说结果，大致是按照这个思路进行划分的：  </p>
-<h4 id="1-网络（剔除具体API调用部分）"><a href="#1-网络（剔除具体API调用部分）" class="headerlink" title="1. 网络（剔除具体API调用部分）"></a>1. 网络（剔除具体API调用部分）</h4><ul>
-<li>添加样例</li>
-<li>包含常用插件（network状态标识等）</li>
-<li>缓存</li>
-</ul>
-<h4 id="2-模型映射"><a href="#2-模型映射" class="headerlink" title="2. 模型映射"></a>2. 模型映射</h4><ul>
-<li>统一API调用规则</li>
-<li>封装公共响应处理逻辑</li>
-<li>对于错误类型的统一处理</li>
-</ul>
-<h4 id="3-Hybrid"><a href="#3-Hybrid" class="headerlink" title="3. Hybrid"></a>3. Hybrid</h4><ul>
-<li>资源的预加载（js, css等）</li>
-<li>native能力开放</li>
-</ul>
-<h4 id="4-UI"><a href="#4-UI" class="headerlink" title="4. UI"></a>4. UI</h4><ul>
-<li>HUD</li>
-<li>Tab</li>
-<li>侧边栏</li>
-<li>Nav常用操作</li>
-<li>下拉上拉</li>
-<li>Autolayout封装</li>
-<li>datasource封装</li>
-<li>常用动画转场</li>
-</ul>
-<h4 id="5-安全"><a href="#5-安全" class="headerlink" title="5. 安全"></a>5. 安全</h4><ul>
-<li>加密解密</li>
-</ul>
-<h4 id="6-统计"><a href="#6-统计" class="headerlink" title="6. 统计"></a>6. 统计</h4><ul>
-<li>swizzling添加打点入口</li>
-<li>日志记录模块封装</li>
-<li>bug收集分析</li>
-</ul>
-<h4 id="7-动态性"><a href="#7-动态性" class="headerlink" title="7. 动态性"></a>7. 动态性</h4><ul>
-<li>热部署方案</li>
-</ul>
-<p>主要基于目前涉及项目主要关注的部分进行了一些拆解，每个模块直接可能存在依赖关系，这块cocoapods也贴心的帮忙搞定了，例如:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">s.subspec <span class="string">'APIModule'</span> <span class="keyword">do</span> <span class="params">|ss|</span></div><div class="line">    ss.source_files = <span class="string">'Classes/APIModule/**/*.&#123;swift,h,m&#125;'</span></div><div class="line">    ss.dependency <span class="string">'Moya'</span>, <span class="string">'~&gt; 6.5.0'</span></div><div class="line">    ss.dependency <span class="string">'HanekeSwift'</span>, <span class="string">'~&gt; 0.10.1'</span></div><div class="line">    ss.dependency <span class="string">'NetworkActivityIndicator'</span>, <span class="string">'~&gt; 0.1.6'</span></div><div class="line">    ss.dependency <span class="string">'MonkeyKit/UtilModule'</span></div><div class="line">    ss.dependency <span class="string">'MonkeyKit/ModelMapperModule'</span></div><div class="line">    ss.dependency <span class="string">'MonkeyKit/SecurityModule'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>框架会根据将来的实际使用情况再进行优化调整，逐渐完善起来。  </p>
-<h3 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h3><p>本轮主要是基于基础功能模块的拆分封装，其实对于APP群常用的业务模块也可以做相同的工作，比如登录验证模块或者逻辑的封装等。通过对于公用业务场景的思考，逐渐提炼出可以产品化的地方，然后塞入公用库，将大大提升相关APP群的开发效率与产品质量。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1954,7 +1939,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
