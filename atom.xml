@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://alithink.com/"/>
-  <updated>2016-09-12T09:32:55.000Z</updated>
+  <updated>2016-10-16T14:13:43.000Z</updated>
   <id>http://alithink.com/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学做父亲</title>
+    <link href="http://alithink.com/2016/10/16/%E5%AD%A6%E5%81%9A%E7%88%B6%E4%BA%B2/"/>
+    <id>http://alithink.com/2016/10/16/学做父亲/</id>
+    <published>2016-10-16T14:05:51.000Z</published>
+    <updated>2016-10-16T14:13:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>最近看了本书，孙云晓的《好好做父亲》，书中的几个原则比较有指导意义，罗列出来，各位爸爸学徒们一起努力吧^_^</p>
+</blockquote>
+<h3 id="重要原则"><a href="#重要原则" class="headerlink" title="重要原则"></a>重要原则</h3><p>在家庭关系中，不宜把亲子关系放在第一位，而应该是夫妻关系第一，亲子关系第二。因为，夫妻关系的稳定最有利于孩子健康成长。</p>
+<h3 id="好父亲的8种品质"><a href="#好父亲的8种品质" class="headerlink" title="好父亲的8种品质"></a>好父亲的8种品质</h3><ol>
+<li>认真负责</li>
+<li>意志坚定</li>
+<li>勇敢独立</li>
+<li>目光远大，影响孩子作出积极的人生选择</li>
+<li>是非分明</li>
+<li>胸怀宽广，富有包容精神</li>
+<li>勤劳自律</li>
+<li>爱好运动，父亲是孩子最好的教练</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近看了本书，孙云晓的《好好做父亲》，书中的几个原则比较有指导意义，罗列出来，各位爸爸学徒们一起努力吧^_^&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;重要原则&quot;&gt;&lt;a href=&quot;#重要原则&quot; class=&quot;headerlink&quot; ti
+    
+    </summary>
+    
+      <category term="鸡汤乱炖" scheme="http://alithink.com/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>AFNetworking源码拾遗</title>
