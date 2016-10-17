@@ -4,6 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[小试设计]]></title>
+      <url>http://alithink.com/2016/10/17/%E5%B0%8F%E8%AF%95%E8%AE%BE%E8%AE%A1/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>公司的产品兄弟走了，有需求，只能自己操刀了。</p>
+<p>Sketch的综合体验还是很不错的，功能发现自然流畅，没有看过教程，也能无阻碍的进行设计。</p>
+</blockquote>
+<h3 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h3><p><img src="http://of71dfqgz.bkt.clouddn.com/1111small.png" alt="双十一"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>大致划分展示区域：上部为纯数据点展示；下部为图形图表。</li>
+<li>背景高斯模糊用于进行模块划分。</li>
+<li>对于基础色的选择，以及字号的梳理，让页面不会显得特别凌乱。</li>
+<li>PC端、移动端的风格统一化。</li>
+<li>内容导向，拒绝杂乱的背景。</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[学做父亲]]></title>
       <url>http://alithink.com/2016/10/16/%E5%AD%A6%E5%81%9A%E7%88%B6%E4%BA%B2/</url>
       <content type="html"><![CDATA[<blockquote>

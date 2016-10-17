@@ -84,32 +84,46 @@
 
 
 
-<meta name="description" content="一句话简介：CTMediator为casa大神针对iOS组件化方案的一个架构实例。
-架构详解: 传送门
-Github: 传送门
-PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。
+<meta name="description" content="公司的产品兄弟走了，有需求，只能自己操刀了。
+Sketch的综合体验还是很不错的，功能发现自然流畅，没有看过教程，也能无阻碍的进行设计。
 
-1. UIViewController常用分段123456#pragma mark - life cycle#pragma mark - UITableViewDeleg">
+成果
+小结
+大致划分展示区域：上部为纯数据点展示；下部为图形图表。
+背景高斯模糊用于进行模块划分。
+对于基础色的选择，以及字号的梳理，让页面不会显得特别凌乱。
+PC端、移动端的风格统一化。
+内容导向，拒绝杂乱的背景。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CTMediator源码拾遗">
-<meta property="og:url" content="http://alithink.com/2016/09/01/CTMediator源码拾遗/index.html">
+<meta property="og:title" content="小试设计">
+<meta property="og:url" content="http://alithink.com/2016/10/17/小试设计/index.html">
 <meta property="og:site_name" content="The  Force  Awakens
 ">
-<meta property="og:description" content="一句话简介：CTMediator为casa大神针对iOS组件化方案的一个架构实例。
-架构详解: 传送门
-Github: 传送门
-PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。
+<meta property="og:description" content="公司的产品兄弟走了，有需求，只能自己操刀了。
+Sketch的综合体验还是很不错的，功能发现自然流畅，没有看过教程，也能无阻碍的进行设计。
 
-1. UIViewController常用分段123456#pragma mark - life cycle#pragma mark - UITableViewDeleg">
-<meta property="og:updated_time" content="2016-09-05T01:52:54.000Z">
+成果
+小结
+大致划分展示区域：上部为纯数据点展示；下部为图形图表。
+背景高斯模糊用于进行模块划分。
+对于基础色的选择，以及字号的梳理，让页面不会显得特别凌乱。
+PC端、移动端的风格统一化。
+内容导向，拒绝杂乱的背景。">
+<meta property="og:image" content="http://of71dfqgz.bkt.clouddn.com/1111small.png">
+<meta property="og:updated_time" content="2016-10-17T13:47:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CTMediator源码拾遗">
-<meta name="twitter:description" content="一句话简介：CTMediator为casa大神针对iOS组件化方案的一个架构实例。
-架构详解: 传送门
-Github: 传送门
-PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。
+<meta name="twitter:title" content="小试设计">
+<meta name="twitter:description" content="公司的产品兄弟走了，有需求，只能自己操刀了。
+Sketch的综合体验还是很不错的，功能发现自然流畅，没有看过教程，也能无阻碍的进行设计。
 
-1. UIViewController常用分段123456#pragma mark - life cycle#pragma mark - UITableViewDeleg">
+成果
+小结
+大致划分展示区域：上部为纯数据点展示；下部为图形图表。
+背景高斯模糊用于进行模块划分。
+对于基础色的选择，以及字号的梳理，让页面不会显得特别凌乱。
+PC端、移动端的风格统一化。
+内容导向，拒绝杂乱的背景。">
+<meta name="twitter:image" content="http://of71dfqgz.bkt.clouddn.com/1111small.png">
 
 
 
@@ -130,9 +144,9 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
 
 
 
-  <link rel="canonical" href="http://alithink.com/2016/09/01/CTMediator源码拾遗/"/>
+  <link rel="canonical" href="http://alithink.com/2016/10/17/小试设计/"/>
 
-  <title> CTMediator源码拾遗 | The  Force  Awakens
+  <title> 小试设计 | The  Force  Awakens
  </title>
 </head>
 
@@ -297,7 +311,7 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
             
             
               
-                CTMediator源码拾遗
+                小试设计
               
             
           </h1>
@@ -309,8 +323,8 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-01T10:13:59+08:00" content="2016-09-01">
-              2016-09-01
+            <time itemprop="dateCreated" datetime="2016-10-17T21:34:27+08:00" content="2016-10-17">
+              2016-10-17
             </time>
           </span>
 
@@ -323,8 +337,8 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/读过的源码/" itemprop="url" rel="index">
-                    <span itemprop="name">读过的源码</span>
+                  <a href="/categories/sketch/" itemprop="url" rel="index">
+                    <span itemprop="name">sketch</span>
                   </a>
                 </span>
 
@@ -339,8 +353,8 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/01/CTMediator源码拾遗/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/01/CTMediator源码拾遗/" itemprop="commentsCount"></span>
+                <a href="/2016/10/17/小试设计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/小试设计/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -364,37 +378,17 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
 
       
         <blockquote>
-<p>一句话简介：CTMediator为casa大神针对iOS组件化方案的一个架构实例。</p>
-<p>架构详解: <a href="http://casatwy.com/iOS-Modulization.html" target="_blank" rel="external">传送门</a></p>
-<p>Github: <a href="https://github.com/casatwy/CTMediator" target="_blank" rel="external">传送门</a></p>
-<p>PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，架构层面作者文章已经进行了详细的讲解。</p>
+<p>公司的产品兄弟走了，有需求，只能自己操刀了。</p>
+<p>Sketch的综合体验还是很不错的，功能发现自然流畅，没有看过教程，也能无阻碍的进行设计。</p>
 </blockquote>
-<h3 id="1-UIViewController常用分段"><a href="#1-UIViewController常用分段" class="headerlink" title="1. UIViewController常用分段"></a>1. UIViewController常用分段</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#pragma mark - life cycle</div><div class="line">#pragma mark - UITableViewDelegate</div><div class="line">#pragma mark - CustomDelegate</div><div class="line">#pragma mark - event response</div><div class="line">#pragma mark - private methods</div><div class="line">#pragma mark - getters and setters</div></pre></td></tr></table></figure>
-<p>这里有个争论就是关于是不是应该将属性实例的初始化放在getter中，这里个人倾向于casa的做法（放在getter中），所以贴一下相关的解释：</p>
-<blockquote>
-<p>我比较习惯一个对象的”私有”属性写在extension里面，然后这些属性的初始化全部放在getter里面做，在init和dealloc之外，是不会出现任何类似<code>_property</code>这样的写法的。</p>
-<p>唐巧说他喜欢的做法是用<code>_property</code>这种，然后关于<code>_property</code>的初始化通过<code>[self setupProperty]</code>这种做法去做。从刚才上面的代码来看，就是要在viewDidLoad里面多调用一个setup方法而已，然后我推荐的方法就是不用多调一个setup方法，直接走getter。</p>
-<p>嗯，怎么说呢，其实两种做法都能完成需求。但是从另一个角度看，苹果之所以选择让<code>[self getProperty]</code>和<code>self.property</code>可以互相通用，这种做法已经很明显地表达了苹果的倾向：<code>希望每个property都是通过getter方法来获得</code>。</p>
-<p>早在2003年，Allen Holub就发了篇文章《<a href="http://www.javaworld.com/article/2073723/core-java/why-getter-and-setter-methods-are-evil.html" target="_blank" rel="external">Why getter and setter methods are evil</a>》，自此之后，业界就对此产生了各种争议，虽然是从Java开始说的，但是发展到后面各种语言也参与了进来。然后虽然现在关于这个问题讨论得少了，但是依旧属于没有定论的状态。setter的情况比较复杂，也不是我这一节的重点，我这边还是主要说getter。我们从objc的设计来看，苹果的设计者更加倾向于<code>getter is not evil</code>。</p>
-<p>认为<code>getter is evil</code>的原因有非常之多，或大或小，随着争论的进行，大家慢慢就聚焦到这样的一个原因：<code>Getter和Setter提供了一个能让外部修改对象内部数据的方式，这是evil的，正常情况下，一个对象自己私有的变量应该是只有自己关心</code>。</p>
-<p>然后我们回到iOS领域来，objc也同样面临了这样的问题，甚至更加严重：<code>objc并没有像Java那么严格的私有概念</code>。但在实际工作中，我们不太会去操作头文件里面没有的变量，这是从规范上就被禁止的。</p>
-<p>认为<code>getter is not evil</code>的原因也可以聚焦到一个：<code>高度的封装性</code>。getter事实上是工厂方法，有了getter之后，业务逻辑可以更加专注于调用，而不必担心当前变量是否可用。我们可以想一下，假设一个ViewController有20个subview要加入view中，这20个subview的初始化代码是肯定逃不掉的，放在哪里比较好？放在哪里都比放在addsubview的地方好，我个人认为最好的地方还是放在getter里面，结合单例模式之后，代码会非常整齐，生产的地方和使用的地方得到了很好的区分。</p>
-<p>所以放到iOS来说，我还是觉得使用getter会比较好，因为evil的地方在iOS这边基本都避免了，not evil的地方都能享受到，还是不错的。</p>
-</blockquote>
-<h3 id="2-应该在哪里配置View的位置？（-继续引用casa的原文）"><a href="#2-应该在哪里配置View的位置？（-继续引用casa的原文）" class="headerlink" title="2. 应该在哪里配置View的位置？（^_^继续引用casa的原文）"></a>2. 应该在哪里配置View的位置？（^_^继续引用casa的原文）</h3><ul>
-<li><p>关于在哪儿写Constraints?</p>
-<p>苹果在文档中指出，<code>updateViewConstraints</code>是用来做add constraints的地方。</p>
-<p>但是在<a href="http://stackoverflow.com/questions/17497002/when-will-or-wont-updateviewconstraints-be-called-on-my-view-controller-for-m" target="_blank" rel="external">这里</a>有一个回答者说<code>updateViewConstraints</code>并不适合做添加Constraints的事情。</p>
-<p>综合我自己和评论区各位关心这个问题的兄弟们的各种测试和各种文档，我现在觉得还是在<code>viewDidLoad</code>里面开一个layoutPageSubviews的方法，然后在这个里面创建Constraints并添加，会比较好。就是像下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [super viewDidLoad];</div><div class="line"></div><div class="line">    [self.view addSubview:self.firstView];</div><div class="line">    [self.view addSubview:self.secondView];</div><div class="line">    [self.view addSubview:self.thirdView];</div><div class="line"></div><div class="line">    [self layoutPageSubviews];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)layoutPageSubviews</div><div class="line">&#123;</div><div class="line">    [self.view addConstraints:xxxConstraints];</div><div class="line">    [self.view addConstraints:yyyConstraints];</div><div class="line">    [self.view addConstraints:zzzConstraints];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>生命周期方法选择</p>
-<p>其实在viewWillAppear这里改变UI元素不是很可靠，Autolayout发生在viewWillAppear之后，严格来说这里通常不做视图位置的修改，而用来更新Form数据。改变位置可以放在viewWilllayoutSubview或者didLayoutSubview里，而且在viewDidLayoutSubview确定UI位置关系之后设置autoLayout比较稳妥。另外，viewWillAppear在每次页面即将显示都会调用，viewWillLayoutSubviews虽然在lifeCycle里调用顺序在viewWillAppear之后，但是只有在页面元素需要调整时才会调用，避免了Constraints的重复添加。</p>
-</li>
+<h3 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h3><p><img src="http://of71dfqgz.bkt.clouddn.com/1111small.png" alt="双十一"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>大致划分展示区域：上部为纯数据点展示；下部为图形图表。</li>
+<li>背景高斯模糊用于进行模块划分。</li>
+<li>对于基础色的选择，以及字号的梳理，让页面不会显得特别凌乱。</li>
+<li>PC端、移动端的风格统一化。</li>
+<li>内容导向，拒绝杂乱的背景。</li>
 </ul>
-<h3 id="3-TableView-didSelect习惯"><a href="#3-TableView-didSelect习惯" class="headerlink" title="3. TableView didSelect习惯"></a>3. TableView didSelect习惯</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 选择的开始先取消选择状态</div><div class="line">[tableView deselectRowAtIndexPath:indexPath animated:YES]</div></pre></td></tr></table></figure>
-<h4 id="4-URL相关api"><a href="#4-URL相关api" class="headerlink" title="4. URL相关api"></a>4. URL相关api</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">NSMutableDictionary *params = [[NSMutableDictionary alloc] init];</div><div class="line"></div><div class="line">// 1. query: key1=value1&amp;key2=value2</div><div class="line">NSString *urlString = [url query];</div><div class="line"></div><div class="line">// 2. 解析参数</div><div class="line">for (NSString *param in [urlString componentsSeparatedByString:@&quot;&amp;&quot;]) &#123;</div><div class="line">    NSArray *elts = [param componentsSeparatedByString:@&quot;=&quot;];</div><div class="line">    if([elts count] &lt; 2) continue;</div><div class="line">    [params setObject:[elts lastObject] forKey:[elts firstObject]];</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 3. path: /index.html</div><div class="line">NSString *actionName = [url.path stringByReplacingOccurrencesOfString:@&quot;/&quot; withString:@&quot;&quot;];</div><div class="line">if ([actionName hasPrefix:@&quot;native&quot;]) &#123;</div><div class="line">    return @(NO);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="5-忽略不必要的警告⚠️"><a href="#5-忽略不必要的警告⚠️" class="headerlink" title="5. 忽略不必要的警告⚠️"></a>5. 忽略不必要的警告⚠️</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#pragma clang diagnostic push</div><div class="line">#pragma clang diagnostic ignored &quot;-Warc-performSelector-leaks&quot;</div><div class="line">        return [target performSelector:action withObject:params];</div><div class="line">#pragma clang diagnostic pop</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -436,17 +430,13 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/16/《函数式Swift》读书拾遗/" rel="next" title="《函数式Swift》读书拾遗">
-                <i class="fa fa-chevron-left"></i> 《函数式Swift》读书拾遗
+              <a href="/2016/10/16/学做父亲/" rel="next" title="学做父亲">
+                <i class="fa fa-chevron-left"></i> 学做父亲
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/05/CTNetworking源码拾遗/" rel="prev" title="CTNetworking源码拾遗">
-                CTNetworking源码拾遗 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -478,8 +468,8 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/01/CTMediator源码拾遗/"
-           data-title="CTMediator源码拾遗" data-url="http://alithink.com/2016/09/01/CTMediator源码拾遗/">
+      <div class="ds-thread" data-thread-key="2016/10/17/小试设计/"
+           data-title="小试设计" data-url="http://alithink.com/2016/10/17/小试设计/">
       </div>
     
   </div>
@@ -575,7 +565,7 @@ PS: 本拾遗系列文章只专注于代码以及工程层面知识点拾遗，�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-UIViewController常用分段"><span class="nav-number">1.</span> <span class="nav-text">1. UIViewController常用分段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-应该在哪里配置View的位置？（-继续引用casa的原文）"><span class="nav-number">2.</span> <span class="nav-text">2. 应该在哪里配置View的位置？（^_^继续引用casa的原文）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-TableView-didSelect习惯"><span class="nav-number">3.</span> <span class="nav-text">3. TableView didSelect习惯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-URL相关api"><span class="nav-number">3.1.</span> <span class="nav-text">4. URL相关api</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-忽略不必要的警告⚠️"><span class="nav-number">4.</span> <span class="nav-text">5. 忽略不必要的警告⚠️</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#成果"><span class="nav-number">1.</span> <span class="nav-text">成果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">2.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
           </div>
         </section>
