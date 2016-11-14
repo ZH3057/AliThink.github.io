@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title><![CDATA[next、空白与404]]></title>
+      <url>/2016/11/14/next%E4%B8%8E404/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>有没有发现最近github pages访问特别慢，是不是发现自己挂在github pages上的东东变成一片空白啦，那么这篇文章也许能帮助到你。</p>
+</blockquote>
+<h2 id="Github-pages访问速度慢"><a href="#Github-pages访问速度慢" class="headerlink" title="Github pages访问速度慢"></a>Github pages访问速度慢</h2><p>也不知道是不是美国大选的原因（胡诌模式），最近自己挂在github pages上面的博客访问速度特别慢。解决方案大致搜了下，还是选择一个国内的pages服务靠谱一些，毕竟不是自己的服务器，可以控制的东西确实有限。</p>
+<p>那么国内提供这种服务的自然就想到了coding。</p>
+<p>至于coding里面如何搭建pages服务就不再冗述了，网上的文章一大把，只在这里标记几个特别点的小坑：</p>
+<ul>
+<li>建pages的项目名一定要跟coding用户名同名。</li>
+<li>开始部署pages服务时，项目分支一定要写对（额。。默认的跟填充的名字竟然不是主分支。。。）。</li>
+</ul>
+<p>剩下的呢，基本就是对于域名的处理了，对于同一个CNAME分别创建默认线路跟海外线路两条解析，默认的对应到coding的pages服务地址，海外的对应github的pages服务地址即可。</p>
+<h2 id="页面好白好白"><a href="#页面好白好白" class="headerlink" title="页面好白好白"></a>页面好白好白</h2><p>突然间自己的博客变成了一大片空白，赶紧打开开发者工具看了下，发现有好多vender下面的js、css都加载不出来了。。。</p>
+<p>稍微研究了一下，原来是github pages的jekyll新版本会忽略掉vender目录。然后看了下next的更新，其实新版的next（5.1.0）已经对于这种情况进行了处理，将原有vender目录下的东东迁移到了lib目录。那么按说问题应该解决了，于是赶紧下载了next最新的主题源码，将原有配置迁移好了之后，发布测试一看还是白花花的一片。WTF …</p>
+<p>那么记录下这里的坑:</p>
+<ul>
+<li><p>新版本的next虽然修复了这个问题，但是主题配置文件里面的vender默认路径依然没有指向lib，于是果断修改，问题解决。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">vendors:</span></div><div class="line">  <span class="comment"># Internal path prefix. Please do not edit it.</span></div><div class="line">  <span class="symbol">_internal:</span> lib</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>经此一役，问题就应该都解决了，继续码字吧，骚年们。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[小试设计]]></title>
       <url>/2016/10/17/%E5%B0%8F%E8%AF%95%E8%AE%BE%E8%AE%A1/</url>
       <content type="html"><![CDATA[<blockquote>

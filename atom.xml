@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2016-10-17T13:47:03.000Z</updated>
+  <updated>2016-11-14T08:55:56.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>next、空白与404</title>
+    <link href="/2016/11/14/next%E4%B8%8E404/"/>
+    <id>/2016/11/14/next与404/</id>
+    <published>2016-11-14T08:24:13.000Z</published>
+    <updated>2016-11-14T08:55:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>有没有发现最近github pages访问特别慢，是不是发现自己挂在github pages上的东东变成一片空白啦，那么这篇文章也许能帮助到你。</p>
+</blockquote>
+<h2 id="Github-pages访问速度慢"><a href="#Github-pages访问速度慢" class="headerlink" title="Github pages访问速度慢"></a>Github pages访问速度慢</h2><p>也不知道是不是美国大选的原因（胡诌模式），最近自己挂在github pages上面的博客访问速度特别慢。解决方案大致搜了下，还是选择一个国内的pages服务靠谱一些，毕竟不是自己的服务器，可以控制的东西确实有限。</p>
+<p>那么国内提供这种服务的自然就想到了coding。</p>
+<p>至于coding里面如何搭建pages服务就不再冗述了，网上的文章一大把，只在这里标记几个特别点的小坑：</p>
+<ul>
+<li>建pages的项目名一定要跟coding用户名同名。</li>
+<li>开始部署pages服务时，项目分支一定要写对（额。。默认的跟填充的名字竟然不是主分支。。。）。</li>
+</ul>
+<p>剩下的呢，基本就是对于域名的处理了，对于同一个CNAME分别创建默认线路跟海外线路两条解析，默认的对应到coding的pages服务地址，海外的对应github的pages服务地址即可。</p>
+<h2 id="页面好白好白"><a href="#页面好白好白" class="headerlink" title="页面好白好白"></a>页面好白好白</h2><p>突然间自己的博客变成了一大片空白，赶紧打开开发者工具看了下，发现有好多vender下面的js、css都加载不出来了。。。</p>
+<p>稍微研究了一下，原来是github pages的jekyll新版本会忽略掉vender目录。然后看了下next的更新，其实新版的next（5.1.0）已经对于这种情况进行了处理，将原有vender目录下的东东迁移到了lib目录。那么按说问题应该解决了，于是赶紧下载了next最新的主题源码，将原有配置迁移好了之后，发布测试一看还是白花花的一片。WTF …</p>
+<p>那么记录下这里的坑:</p>
+<ul>
+<li><p>新版本的next虽然修复了这个问题，但是主题配置文件里面的vender默认路径依然没有指向lib，于是果断修改，问题解决。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">vendors:</span></div><div class="line">  <span class="comment"># Internal path prefix. Please do not edit it.</span></div><div class="line">  <span class="symbol">_internal:</span> lib</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>经此一役，问题就应该都解决了，继续码字吧，骚年们。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;有没有发现最近github pages访问特别慢，是不是发现自己挂在github pages上的东东变成一片空白啦，那么这篇文章也许能帮助到你。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Github-pages访问速度慢&quot;&gt;&lt;a hre
+    
+    </summary>
+    
+      <category term="疑难杂症" scheme="/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>小试设计</title>
@@ -1244,36 +1287,6 @@
       &lt;p&gt;我想没有什么比更新入门教程更适合用来庆祝具有标志性的Cocos2D 3.0的诞生了。&lt;/p&gt;
 &lt;p&gt;Cocos2D 3.0是iOS平台一款2D游戏开发框架的最新版本。App Store上数以千计的游戏不乏一些排行前十的游戏都是用它来进行开发的。&lt;/p&gt;
 &lt;p&gt;它对sprit
-    
-    </summary>
-    
-      <category term="iOS" scheme="/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>NSNull 找不到指定方法解决方案</title>
-    <link href="/2014/07/14/NSNull%E6%89%A9%E5%B1%95/"/>
-    <id>/2014/07/14/NSNull扩展/</id>
-    <published>2014-07-14T09:33:40.000Z</published>
-    <updated>2016-06-05T13:32:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="近期遇到一个问题："><a href="#近期遇到一个问题：" class="headerlink" title="近期遇到一个问题："></a>近期遇到一个问题：</h3><blockquote>
-<p>由于后台人员对于接口数据没有做空值处理，导致客户端接收到的有些数据为空（NSNull），而针对此类数据恰好客户端的存储结构为int和float类型，类型转换时报出了[NSNull intValue]或者[NSNull floatValue] unrecognized selector sent to instance 的错误。</p>
-</blockquote>
-<h3 id="解决此问题尝试了以下思路："><a href="#解决此问题尝试了以下思路：" class="headerlink" title="解决此问题尝试了以下思路："></a>解决此问题尝试了以下思路：</h3><blockquote>
-<p>1 添加returnObject == [NSNull null] 判断，NSNull的元素配置一个目标类型的初始值。<br>问题解决了，但这样做的话对于应用需要修改的地方较多，想想比较烦。</p>
-<p>2 想到此问题的引起原因是NSNull缺失这两种方法，也就是说只要为NSNull扩展补充缺失的方法就不会有问题了。</p>
-</blockquote>
-<h3 id="扩展NSNull代码如下："><a href="#扩展NSNull代码如下：" class="headerlink" title="扩展NSNull代码如下："></a>扩展NSNull代码如下：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"NSNull+NullCast.h"</span> </span></div><div class="line"></div><div class="line">- (<span class="keyword">float</span>)floatValue &#123;</div><div class="line">	<span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">&#125; </div><div class="line"></div><div class="line">- (<span class="keyword">int</span>)intValue &#123;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在可能出现类似问题的类中引入NSNull+NullCast这个类问题就解决了，无需修改逻辑代码。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;近期遇到一个问题：&quot;&gt;&lt;a href=&quot;#近期遇到一个问题：&quot; class=&quot;headerlink&quot; title=&quot;近期遇到一个问题：&quot;&gt;&lt;/a&gt;近期遇到一个问题：&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;由于后台人员对于接口数据没有做空值处理，导致客户端接收到的
     
     </summary>
     
