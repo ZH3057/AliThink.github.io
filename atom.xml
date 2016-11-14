@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://alithink.com/"/>
+  <link href="/"/>
   <updated>2016-10-17T13:47:03.000Z</updated>
-  <id>http://alithink.com/</id>
+  <id>/</id>
   
   <author>
     <name>AliThink</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>小试设计</title>
-    <link href="http://alithink.com/2016/10/17/%E5%B0%8F%E8%AF%95%E8%AE%BE%E8%AE%A1/"/>
-    <id>http://alithink.com/2016/10/17/小试设计/</id>
+    <link href="/2016/10/17/%E5%B0%8F%E8%AF%95%E8%AE%BE%E8%AE%A1/"/>
+    <id>/2016/10/17/小试设计/</id>
     <published>2016-10-17T13:34:27.000Z</published>
     <updated>2016-10-17T13:47:03.000Z</updated>
     
@@ -47,15 +47,15 @@
     
     </summary>
     
-      <category term="sketch" scheme="http://alithink.com/categories/sketch/"/>
+      <category term="sketch" scheme="/categories/sketch/"/>
     
     
   </entry>
   
   <entry>
     <title>学做父亲</title>
-    <link href="http://alithink.com/2016/10/16/%E5%AD%A6%E5%81%9A%E7%88%B6%E4%BA%B2/"/>
-    <id>http://alithink.com/2016/10/16/学做父亲/</id>
+    <link href="/2016/10/16/%E5%AD%A6%E5%81%9A%E7%88%B6%E4%BA%B2/"/>
+    <id>/2016/10/16/学做父亲/</id>
     <published>2016-10-16T14:05:51.000Z</published>
     <updated>2016-10-16T14:13:43.000Z</updated>
     
@@ -84,15 +84,15 @@
     
     </summary>
     
-      <category term="鸡汤乱炖" scheme="http://alithink.com/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
+      <category term="鸡汤乱炖" scheme="/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
     
     
   </entry>
   
   <entry>
     <title>AFNetworking源码拾遗</title>
-    <link href="http://alithink.com/2016/09/12/AFNetworking%E6%BA%90%E7%A0%81%E6%8B%BE%E9%81%97/"/>
-    <id>http://alithink.com/2016/09/12/AFNetworking源码拾遗/</id>
+    <link href="/2016/09/12/AFNetworking%E6%BA%90%E7%A0%81%E6%8B%BE%E9%81%97/"/>
+    <id>/2016/09/12/AFNetworking源码拾遗/</id>
     <published>2016-09-12T01:47:29.000Z</published>
     <updated>2016-09-12T09:32:55.000Z</updated>
     
@@ -129,15 +129,15 @@
     
     </summary>
     
-      <category term="读过的源码" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E6%BA%90%E7%A0%81/"/>
+      <category term="读过的源码" scheme="/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E6%BA%90%E7%A0%81/"/>
     
     
   </entry>
   
   <entry>
     <title>CTNetworking源码拾遗</title>
-    <link href="http://alithink.com/2016/09/05/CTNetworking%E6%BA%90%E7%A0%81%E6%8B%BE%E9%81%97/"/>
-    <id>http://alithink.com/2016/09/05/CTNetworking源码拾遗/</id>
+    <link href="/2016/09/05/CTNetworking%E6%BA%90%E7%A0%81%E6%8B%BE%E9%81%97/"/>
+    <id>/2016/09/05/CTNetworking源码拾遗/</id>
     <published>2016-09-05T06:17:07.000Z</published>
     <updated>2016-09-05T08:57:55.000Z</updated>
     
@@ -197,15 +197,15 @@
     
     </summary>
     
-      <category term="读过的源码" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E6%BA%90%E7%A0%81/"/>
+      <category term="读过的源码" scheme="/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E6%BA%90%E7%A0%81/"/>
     
     
   </entry>
   
   <entry>
     <title>CTMediator源码拾遗</title>
-    <link href="http://alithink.com/2016/09/01/CTMediator%E6%BA%90%E7%A0%81%E6%8B%BE%E9%81%97/"/>
-    <id>http://alithink.com/2016/09/01/CTMediator源码拾遗/</id>
+    <link href="/2016/09/01/CTMediator%E6%BA%90%E7%A0%81%E6%8B%BE%E9%81%97/"/>
+    <id>/2016/09/01/CTMediator源码拾遗/</id>
     <published>2016-09-01T02:13:59.000Z</published>
     <updated>2016-09-05T01:52:54.000Z</updated>
     
@@ -251,15 +251,15 @@
     
     </summary>
     
-      <category term="读过的源码" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E6%BA%90%E7%A0%81/"/>
+      <category term="读过的源码" scheme="/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E6%BA%90%E7%A0%81/"/>
     
     
   </entry>
   
   <entry>
     <title>《函数式Swift》读书拾遗</title>
-    <link href="http://alithink.com/2016/08/16/%E3%80%8A%E5%87%BD%E6%95%B0%E5%BC%8FSwift%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%8B%BE%E9%81%97/"/>
-    <id>http://alithink.com/2016/08/16/《函数式Swift》读书拾遗/</id>
+    <link href="/2016/08/16/%E3%80%8A%E5%87%BD%E6%95%B0%E5%BC%8FSwift%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%8B%BE%E9%81%97/"/>
+    <id>/2016/08/16/《函数式Swift》读书拾遗/</id>
     <published>2016-08-16T03:18:26.000Z</published>
     <updated>2016-08-18T09:44:56.000Z</updated>
     
@@ -326,15 +326,15 @@
     
     </summary>
     
-      <category term="读过的书" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
+      <category term="读过的书" scheme="/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>iOS屏幕旋转那些事</title>
-    <link href="http://alithink.com/2016/08/01/iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
-    <id>http://alithink.com/2016/08/01/iOS屏幕旋转那些事/</id>
+    <link href="/2016/08/01/iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
+    <id>/2016/08/01/iOS屏幕旋转那些事/</id>
     <published>2016-08-01T13:10:55.000Z</published>
     <updated>2016-08-02T07:55:55.000Z</updated>
     
@@ -379,15 +379,15 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
+      <category term="iOS" scheme="/categories/iOS/"/>
     
     
   </entry>
   
   <entry>
     <title>Charts诊疗日志</title>
-    <link href="http://alithink.com/2016/07/25/Charts%E8%AF%8A%E7%96%97%E6%97%A5%E5%BF%97/"/>
-    <id>http://alithink.com/2016/07/25/Charts诊疗日志/</id>
+    <link href="/2016/07/25/Charts%E8%AF%8A%E7%96%97%E6%97%A5%E5%BF%97/"/>
+    <id>/2016/07/25/Charts诊疗日志/</id>
     <published>2016-07-25T07:41:16.000Z</published>
     <updated>2016-07-26T06:57:43.000Z</updated>
     
@@ -422,15 +422,15 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
+      <category term="iOS" scheme="/categories/iOS/"/>
     
     
   </entry>
   
   <entry>
     <title>《世界简史》略读</title>
-    <link href="http://alithink.com/2016/07/20/%E3%80%8A%E4%B8%96%E7%95%8C%E7%AE%80%E5%8F%B2%E3%80%8B%E7%95%A5%E8%AF%BB/"/>
-    <id>http://alithink.com/2016/07/20/《世界简史》略读/</id>
+    <link href="/2016/07/20/%E3%80%8A%E4%B8%96%E7%95%8C%E7%AE%80%E5%8F%B2%E3%80%8B%E7%95%A5%E8%AF%BB/"/>
+    <id>/2016/07/20/《世界简史》略读/</id>
     <published>2016-07-20T12:50:49.000Z</published>
     <updated>2016-07-25T07:30:16.000Z</updated>
     
@@ -493,15 +493,15 @@
     
     </summary>
     
-      <category term="读过的书" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
+      <category term="读过的书" scheme="/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>联通旧事</title>
-    <link href="http://alithink.com/2016/07/08/%E8%81%94%E9%80%9A%E6%97%A7%E4%BA%8B/"/>
-    <id>http://alithink.com/2016/07/08/联通旧事/</id>
+    <link href="/2016/07/08/%E8%81%94%E9%80%9A%E6%97%A7%E4%BA%8B/"/>
+    <id>/2016/07/08/联通旧事/</id>
     <published>2016-07-08T12:37:56.000Z</published>
     <updated>2016-07-11T06:04:31.000Z</updated>
     
@@ -567,15 +567,15 @@
     
     </summary>
     
-      <category term="回忆录" scheme="http://alithink.com/categories/%E5%9B%9E%E5%BF%86%E5%BD%95/"/>
+      <category term="回忆录" scheme="/categories/%E5%9B%9E%E5%BF%86%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>《禅与 Objective-C 编程艺术》读书拾遗</title>
-    <link href="http://alithink.com/2016/07/01/%E3%80%8A%E7%A6%85%E4%B8%8E%20Objective-C%20%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%8B%BE%E9%81%97/"/>
-    <id>http://alithink.com/2016/07/01/《禅与 Objective-C 编程艺术》读书拾遗/</id>
+    <link href="/2016/07/01/%E3%80%8A%E7%A6%85%E4%B8%8E%20Objective-C%20%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%8B%BE%E9%81%97/"/>
+    <id>/2016/07/01/《禅与 Objective-C 编程艺术》读书拾遗/</id>
     <published>2016-07-01T02:49:23.000Z</published>
     <updated>2016-08-02T08:17:41.000Z</updated>
     
@@ -691,15 +691,15 @@
     
     </summary>
     
-      <category term="读过的书" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
+      <category term="读过的书" scheme="/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>BI APP图形库选型</title>
-    <link href="http://alithink.com/2016/06/28/BI%20APP%E5%9B%BE%E5%BD%A2%E5%BA%93%E9%80%89%E5%9E%8B/"/>
-    <id>http://alithink.com/2016/06/28/BI APP图形库选型/</id>
+    <link href="/2016/06/28/BI%20APP%E5%9B%BE%E5%BD%A2%E5%BA%93%E9%80%89%E5%9E%8B/"/>
+    <id>/2016/06/28/BI APP图形库选型/</id>
     <published>2016-06-28T01:55:04.000Z</published>
     <updated>2016-08-02T07:57:17.000Z</updated>
     
@@ -747,15 +747,15 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
+      <category term="iOS" scheme="/categories/iOS/"/>
     
     
   </entry>
   
   <entry>
     <title>工作与生活的平衡</title>
-    <link href="http://alithink.com/2016/06/11/%E5%B7%A5%E4%BD%9C%E4%B8%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B9%B3%E8%A1%A1/"/>
-    <id>http://alithink.com/2016/06/11/工作与生活的平衡/</id>
+    <link href="/2016/06/11/%E5%B7%A5%E4%BD%9C%E4%B8%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E5%B9%B3%E8%A1%A1/"/>
+    <id>/2016/06/11/工作与生活的平衡/</id>
     <published>2016-06-11T13:43:53.000Z</published>
     <updated>2016-06-11T14:30:11.000Z</updated>
     
@@ -790,15 +790,15 @@
     
     </summary>
     
-      <category term="鸡汤乱炖" scheme="http://alithink.com/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
+      <category term="鸡汤乱炖" scheme="/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
     
     
   </entry>
   
   <entry>
     <title>cocoapods私有仓库封装过程中的思考</title>
-    <link href="http://alithink.com/2016/06/04/cocoapods%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%B0%81%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%80%9D%E8%80%83/"/>
-    <id>http://alithink.com/2016/06/04/cocoapods私有仓库封装过程中的思考/</id>
+    <link href="/2016/06/04/cocoapods%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%B0%81%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%80%9D%E8%80%83/"/>
+    <id>/2016/06/04/cocoapods私有仓库封装过程中的思考/</id>
     <published>2016-06-04T13:33:11.000Z</published>
     <updated>2016-06-28T07:11:28.000Z</updated>
     
@@ -871,15 +871,15 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
+      <category term="iOS" scheme="/categories/iOS/"/>
     
     
   </entry>
   
   <entry>
     <title>理性的你和猴子还有惊慌怪兽</title>
-    <link href="http://alithink.com/2016/05/24/%E7%90%86%E6%80%A7%E7%9A%84%E4%BD%A0%E5%92%8C%E7%8C%B4%E5%AD%90%E8%BF%98%E6%9C%89%E6%83%8A%E6%85%8C%E6%80%AA%E5%85%BD/"/>
-    <id>http://alithink.com/2016/05/24/理性的你和猴子还有惊慌怪兽/</id>
+    <link href="/2016/05/24/%E7%90%86%E6%80%A7%E7%9A%84%E4%BD%A0%E5%92%8C%E7%8C%B4%E5%AD%90%E8%BF%98%E6%9C%89%E6%83%8A%E6%85%8C%E6%80%AA%E5%85%BD/"/>
+    <id>/2016/05/24/理性的你和猴子还有惊慌怪兽/</id>
     <published>2016-05-24T13:50:25.000Z</published>
     <updated>2016-05-24T14:21:17.000Z</updated>
     
@@ -903,15 +903,15 @@
     
     </summary>
     
-      <category term="鸡汤乱炖" scheme="http://alithink.com/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
+      <category term="鸡汤乱炖" scheme="/categories/%E9%B8%A1%E6%B1%A4%E4%B9%B1%E7%82%96/"/>
     
     
   </entry>
   
   <entry>
     <title>Swifter Tips阅读随想1</title>
-    <link href="http://alithink.com/2016/05/10/Swifter%20Tips%E9%98%85%E8%AF%BB%E9%9A%8F%E6%83%B31/"/>
-    <id>http://alithink.com/2016/05/10/Swifter Tips阅读随想1/</id>
+    <link href="/2016/05/10/Swifter%20Tips%E9%98%85%E8%AF%BB%E9%9A%8F%E6%83%B31/"/>
+    <id>/2016/05/10/Swifter Tips阅读随想1/</id>
     <published>2016-05-10T09:43:00.000Z</published>
     <updated>2016-05-10T09:56:41.000Z</updated>
     
@@ -930,15 +930,15 @@
     
     </summary>
     
-      <category term="Swift" scheme="http://alithink.com/categories/Swift/"/>
+      <category term="Swift" scheme="/categories/Swift/"/>
     
     
   </entry>
   
   <entry>
     <title>《三体》浅读梳理</title>
-    <link href="http://alithink.com/2015/06/06/%E3%80%8A%E4%B8%89%E4%BD%93%E3%80%8B%E6%B5%85%E8%AF%BB%E6%A2%B3%E7%90%86/"/>
-    <id>http://alithink.com/2015/06/06/《三体》浅读梳理/</id>
+    <link href="/2015/06/06/%E3%80%8A%E4%B8%89%E4%BD%93%E3%80%8B%E6%B5%85%E8%AF%BB%E6%A2%B3%E7%90%86/"/>
+    <id>/2015/06/06/《三体》浅读梳理/</id>
     <published>2015-06-06T06:45:34.000Z</published>
     <updated>2016-04-27T14:00:12.000Z</updated>
     
@@ -982,15 +982,15 @@
     
     </summary>
     
-      <category term="读过的书" scheme="http://alithink.com/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
+      <category term="读过的书" scheme="/categories/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>IPA 企业证书重新签名</title>
-    <link href="http://alithink.com/2014/07/21/IPA%20%E4%BC%81%E4%B8%9A%E8%AF%81%E4%B9%A6%E9%87%8D%E6%96%B0%E7%AD%BE%E5%90%8D/"/>
-    <id>http://alithink.com/2014/07/21/IPA 企业证书重新签名/</id>
+    <link href="/2014/07/21/IPA%20%E4%BC%81%E4%B8%9A%E8%AF%81%E4%B9%A6%E9%87%8D%E6%96%B0%E7%AD%BE%E5%90%8D/"/>
+    <id>/2014/07/21/IPA 企业证书重新签名/</id>
     <published>2014-07-21T09:33:40.000Z</published>
     <updated>2016-06-05T13:32:34.000Z</updated>
     
@@ -1038,15 +1038,15 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
+      <category term="iOS" scheme="/categories/iOS/"/>
     
     
   </entry>
   
   <entry>
     <title>Cocos2D简单iPhone游戏【入门教程】</title>
-    <link href="http://alithink.com/2014/07/17/cocos2d%E6%95%99%E7%A8%8B/"/>
-    <id>http://alithink.com/2014/07/17/cocos2d教程/</id>
+    <link href="/2014/07/17/cocos2d%E6%95%99%E7%A8%8B/"/>
+    <id>/2014/07/17/cocos2d教程/</id>
     <published>2014-07-17T09:33:40.000Z</published>
     <updated>2016-06-04T13:33:47.000Z</updated>
     
@@ -1247,15 +1247,15 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
+      <category term="iOS" scheme="/categories/iOS/"/>
     
     
   </entry>
   
   <entry>
     <title>NSNull 找不到指定方法解决方案</title>
-    <link href="http://alithink.com/2014/07/14/NSNull%E6%89%A9%E5%B1%95/"/>
-    <id>http://alithink.com/2014/07/14/NSNull扩展/</id>
+    <link href="/2014/07/14/NSNull%E6%89%A9%E5%B1%95/"/>
+    <id>/2014/07/14/NSNull扩展/</id>
     <published>2014-07-14T09:33:40.000Z</published>
     <updated>2016-06-05T13:32:40.000Z</updated>
     
@@ -1277,7 +1277,7 @@
     
     </summary>
     
-      <category term="iOS" scheme="http://alithink.com/categories/iOS/"/>
+      <category term="iOS" scheme="/categories/iOS/"/>
     
     
   </entry>
