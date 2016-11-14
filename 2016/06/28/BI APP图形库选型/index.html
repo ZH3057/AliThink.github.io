@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -63,9 +63,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -74,10 +74,13 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="The  Force  Awakens
+" type="application/atom+xml" />
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -116,24 +119,35 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 6307056474677839000,
+      userId: '6307056474677839000',
       author: 'AliThink'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="/2016/06/28/BI APP图形库选型/"/>
+
+
+
+
 
   <title> BI APP图形库选型 | The  Force  Awakens
  </title>
@@ -270,6 +284,8 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -283,13 +299,28 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="/2016/06/28/BI APP图形库选型/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="AliThink">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="The  Force  Awakens
+">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="The  Force  Awakens
+" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -312,9 +343,19 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-28T09:55:04+08:00" content="2016-06-28">
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-28T09:55:04+08:00">
               2016-06-28
             </time>
+
+            &nbsp;|&nbsp;
+
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-check-o"></i>
+            </span>
+            <time title="Post modified" itemprop="dateModified" datetime="2016-08-02T15:57:17+08:00">
+              2016-08-02
+            </time>
+            
           </span>
 
           
@@ -325,7 +366,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/iOS/" itemprop="url" rel="index">
                     <span itemprop="name">iOS</span>
                   </a>
@@ -343,7 +384,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/06/28/BI APP图形库选型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/28/BI APP图形库选型/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/28/BI APP图形库选型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -355,6 +396,9 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
           
 
           
+          
+          
+
         </div>
       </header>
     
@@ -436,6 +480,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -448,6 +493,8 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -470,7 +517,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
       
         
 <script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 
       
@@ -520,7 +567,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -551,19 +598,15 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/AliThink" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
           
         </div>
 
@@ -573,19 +616,27 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#涉及的图形类型"><span class="nav-number">2.</span> <span class="nav-text">涉及的图形类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源库选型"><span class="nav-number">3.</span> <span class="nav-text">开源库选型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Charts"><span class="nav-number">3.1.</span> <span class="nav-text">1.Charts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景："><span class="nav-number">3.1.1.</span> <span class="nav-text">应用场景：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优势："><span class="nav-number">3.1.2.</span> <span class="nav-text">优势：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ESArcProgressView"><span class="nav-number">3.2.</span> <span class="nav-text">2.ESArcProgressView</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景：-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">应用场景：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优势：-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">优势：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-XCL-Charts"><span class="nav-number">3.3.</span> <span class="nav-text">3.XCL-Charts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景：-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">应用场景：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">4.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-展示图形中的最后几个元素"><span class="nav-number">4.1.</span> <span class="nav-text">1. 展示图形中的最后几个元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-完整显示x轴所有的元素标签"><span class="nav-number">4.2.</span> <span class="nav-text">2. 完整显示x轴所有的元素标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-设置为可拖动的图形与tableview的滑动存在冲突"><span class="nav-number">4.3.</span> <span class="nav-text">3. 设置为可拖动的图形与tableview的滑动存在冲突</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存在的不足"><span class="nav-number">5.</span> <span class="nav-text">存在的不足</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-组合图包含grouped柱状图时存在bug"><span class="nav-number">5.1.</span> <span class="nav-text">1. 组合图包含grouped柱状图时存在bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-堆积图缺失线性堆积图"><span class="nav-number">5.2.</span> <span class="nav-text">2. 堆积图缺失线性堆积图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ChartMarker堆积图功能缺失"><span class="nav-number">5.3.</span> <span class="nav-text">3. ChartMarker堆积图功能缺失</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
       
 
     </div>
@@ -608,6 +659,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
   <span class="author" itemprop="copyrightHolder">AliThink</span>
 </div>
 
+
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
@@ -618,6 +670,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
     NexT.Pisces
   </a>
 </div>
+
 
         
 
@@ -672,32 +725,32 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
@@ -722,9 +775,12 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
 
   
     
+    
     <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
     <script src="/js/src/hook-duoshuo.js"></script>
   
+
+
 
 
 
@@ -739,7 +795,7 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
     // Search DB path;
     var search_path = "search.xml";
     if (search_path.length == 0) {
-       search_path = "search.xml";
+      search_path = "search.xml";
     }
     var path = "/" + search_path;
     // monitor main search box;
@@ -747,99 +803,95 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
     function proceedsearch() {
       $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
       $('.popup').toggle();
-
     }
     // search function;
     var searchFunc = function(path, search_id, content_id) {
-    'use strict';
-    $.ajax({
+      'use strict';
+      $.ajax({
         url: path,
         dataType: "xml",
         async: true,
         success: function( xmlResponse ) {
-            // get the contents from search data
-            isfetched = true;
-            $('.popup').detach().appendTo('.header-inner');
-            var datas = $( "entry", xmlResponse ).map(function() {
-                return {
-                    title: $( "title", this ).text(),
-                    content: $("content",this).text(),
-                    url: $( "url" , this).text()
-                };
-            }).get();
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function(){
-                var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length > 1) {
-                // perform local searching
-                datas.forEach(function(data) {
-                    var isMatch = true;
-                    var content_index = [];
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                    var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if(data_title != '' && data_content != '') {
-                        keywords.forEach(function(keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
-                            if( index_title < 0 && index_content < 0 ){
-                                isMatch = false;
-                            } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                            }
-                        });
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
                     }
-                    // show search results
-                    if (isMatch) {
-                        matchcounts += 1;
-                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                        var content = data.content.trim().replace(/<[^>]+>/g,"");
-                        if (first_occur >= 0) {
-                            // cut out 100 characters
-                            var start = first_occur - 20;
-                            var end = first_occur + 80;
-                            if(start < 0){
-                                start = 0;
-                            }
-                            if(start == 0){
-                                end = 50;
-                            }
-                            if(end > content.length){
-                                end = content.length;
-                            }
-                            var match_content = content.substring(start, end);
-                            // highlight all keywords
-                            keywords.forEach(function(keyword){
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                            });
 
-                            str += "<p class=\"search-result\">" + match_content +"...</p>"
-                        }
-                        str += "</li>";
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
                     }
-                })};
-                str += "</ul>";
-                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-                $resultContent.innerHTML = str;
-            });
-            proceedsearch();
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
         }
-    });}
+      });}
 
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
@@ -849,7 +901,6 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
       } else {
         proceedsearch();
       };
-
     });
 
     $('.popup-btn-close').click(function(e){
@@ -868,6 +919,9 @@ BI 中的各种图形图表都封装成了对应的卡片类型，根据接口�
   
 
   
+
+  
+
 
 </body>
 </html>
