@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2016-11-14T08:55:56.000Z</updated>
+  <updated>2016-11-15T07:15:37.000Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,100 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Focus</title>
+    <link href="/2016/11/15/Focus/"/>
+    <id>/2016/11/15/Focus/</id>
+    <published>2016-11-15T03:15:14.000Z</published>
+    <updated>2016-11-15T07:15:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>Focus一次探索watchOS的实践。再次慨叹下Apple的审核速度，just one day…</p>
+</blockquote>
+<h2 id="Focus-有些事情需要这份执着"><a href="#Focus-有些事情需要这份执着" class="headerlink" title="Focus - 有些事情需要这份执着"></a>Focus - 有些事情需要这份执着</h2><p>人这一辈子总有一些一定要去做必须要去体验的东西。</p>
+<p>对于这些事物的追求需要这份执念。</p>
+<p>Focus帮助我们专注于做最重要的事情，给她一个期限，可能是一两年，也可能只有几天或者几小时，总之一旦决定拥有她，那么中途就不要背弃她。</p>
+<p>人这一辈子不要过得太复杂，专注于现在，执着于每次的努力，当回看过往，必将为自己而骄傲。</p>
+<blockquote>
+<p>Focus App Store：<a href="https://itunes.apple.com/us/app/focus-concentrate-on-one-task/id1169917639" target="_blank" rel="external">传送门</a></p>
+</blockquote>
+<h2 id="Focus长什么样"><a href="#Focus长什么样" class="headerlink" title="Focus长什么样"></a>Focus长什么样</h2><p><img src="http://of71dfqgz.bkt.clouddn.com/focus_appstore.png" alt="focus_appstore.png"></p>
+<h2 id="Focus参数"><a href="#Focus参数" class="headerlink" title="Focus参数"></a>Focus参数</h2><ul>
+<li>Language: pure Swift3</li>
+<li>Support: iOS9+、watchOS3.0+（包含Complication、WatchConnectivity）</li>
+<li>Vender: Realm(iOS、watchOS)、DCPathButton、IQKeyboardManagerSwift、SCLAlertView、SnapKit</li>
+<li>OpenSource：梳理完毕后开源</li>
+</ul>
+<h2 id="为什么要做这么个App"><a href="#为什么要做这么个App" class="headerlink" title="为什么要做这么个App"></a>为什么要做这么个App</h2><p>Apple发布了新款的Apple Watch Series2，之前一直想涉足watchOS的领域，一看设备更新了就赶紧入手了一款。这么贵的东东，不开发点东西感觉对不起自己花出去的银子。于是在认真体验了一段时间后，进行了以下产品思考:</p>
+<p><img src="http://of71dfqgz.bkt.clouddn.com/aw_mind.png" alt="aw_mind.png"></p>
+<p>最后决定先尝试制作一款GTD类APP，跟其它同质App的区别呢就在于只关注于一件事情的实现引导。提供的Apple Watch端App包含了几乎所有iOS端的功能，同时结合Complication可以将Focus的精简信息展现到表盘中。利用Apple Watch的贴近特点，进行一些轻度提醒。（说不定过段时间可能会搞一下那个偷偷录音的APP ^_^）</p>
+<h2 id="Focus让我了解了什么"><a href="#Focus让我了解了什么" class="headerlink" title="Focus让我了解了什么"></a>Focus让我了解了什么</h2><h3 id="1-Swift3"><a href="#1-Swift3" class="headerlink" title="1. Swift3"></a>1. Swift3</h3><p>Swift3更新以来，还没有将原有的swift2项目进行迁移，正好拿个人项目进行了实践。</p>
+<p>综合体会就是更加优雅简洁了，这里就不展开描述了。推荐几个不错的教程，首先是官方文档，然后有猫神的《Swifter - <em>100</em> 个 <em>Swift</em> 必备 <em>tips</em>》（买的正版，动态更新为了swift3的版本）,还有raywenderlich的swift相关教程也在第一时间更新为了swift3版本（不过略贵，感兴趣的可以联系我，发你们）。</p>
+<h3 id="2-watchOS-3-0"><a href="#2-watchOS-3-0" class="headerlink" title="2. watchOS 3.0"></a>2. watchOS 3.0</h3><p>初涉watch SDK，现在的感觉是相较iOS SDK各有优劣，不过watch SDK的劣势多了一些。</p>
+<h4 id="几个小例子："><a href="#几个小例子：" class="headerlink" title="几个小例子："></a>几个小例子：</h4><ul>
+<li>table这一块，watchOS的处理会更“简约”一些，没有这么多的数据代理，转而采用了配置方法的调用，初始化配置更集中了。这里也是针对watch的使用场景进行了SDK层面的精简优化。</li>
+<li>自带一个计时性质的文本控件date、timer，一般的场景只需要简单配置就可以使用了（不过可定制项比较有限，Focus中为了统一，还是改为自己实现一个倒计时）</li>
+<li>感觉watchOS中的picker就是一个噩梦。。。，官方是没有提供watchOS版本的日期选择器的，所以需要自己用picker进行组装，里面好多坑，这块等开源后感兴趣的同学可以参考下。</li>
+<li>关于控件封装，原本搞完了watchOS版本的日期选择器是打算抽离封装一下的，但是发现watchOS的控件封装真的没有太好的途径，总不能把一个controller分享出来吧。。。（虽然github上有人这么搞）</li>
+</ul>
+<h4 id="几个建议："><a href="#几个建议：" class="headerlink" title="几个建议："></a>几个建议：</h4><ul>
+<li><p>将iOS与watchOS的公用模块提取为单独的framework方便复用。</p>
+</li>
+<li><p>iOS与watchOS的数据同步通过WatchConnectivity，由于一些技术文章的更新缓慢，其中介绍的appgroup方式其实已经不适用了（被坑了一轮）。</p>
+<p>同时建议除了配置自动的同步机制外，添加一个按钮触发的同步操作，以方便用户及时进行同步。例如Focus中当点击iPhone或者watch主页面中央的小漏斗时，会弹出同步提示窗口：</p>
+<p><img src="http://of71dfqgz.bkt.clouddn.com/sync.PNG" alt="sync.PNG"></p>
+</li>
+<li><p>关于文本录入这块watchOS3已经可以使用presentTextInputController(withSuggestions:allowedInputMode:)了，弹出的输入模块可以进行语音录入，建议选择以及新更新的Scribble，也建议大家使用。（虽然中文的录入还是有点难用）</p>
+</li>
+</ul>
+<h3 id="3-Realm"><a href="#3-Realm" class="headerlink" title="3. Realm"></a>3. Realm</h3><p>早就听说了realm的大名，一直想尝试一下，正好借助这个机会集成了进去。不过得出的结论是，其实就目前的realm而言，个人感觉不太适合用于watch相关的应用。主要原因就是库文件略大，watch应用四五十兆的应用大小限制，使得每一寸空间都显得特别珍贵（App Store审核的限制，其实相较Apple Watch的存储来说集成realm造成的空间占用还是可以接受的）。</p>
+<h4 id="说说使用realm的几点感受"><a href="#说说使用realm的几点感受" class="headerlink" title="说说使用realm的几点感受:"></a>说说使用realm的几点感受:</h4><ul>
+<li><p>用起来确实很爽，很容易上手，基本就是在操作对象，用过coredata的同学应该很习惯这种方式。</p>
+</li>
+<li><p>数据库版本迁移这块仔细一点也很容易搞定。</p>
+</li>
+<li><p>因为要同时集成iOS跟watchOS两个版本的realm所以不要将他们放在同一个项目文件夹下，分别创建文件夹添加引用。</p>
+</li>
+<li><p>官方的提供的run script：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bash &quot;$&#123;BUILT_PRODUCTS_DIR&#125;/$&#123;FRAMEWORKS_FOLDER_PATH&#125;/Realm.framework/strip-frameworks.sh&quot;</div></pre></td></tr></table></figure>
+<p>需要在iOS和watch extension的Build Phases中都要进行添加调用。（我就是因为没有在extension中添加调用导致模拟器真机运行正常，上传App Store却总是验证报错…）</p>
+</li>
+<li><p>对于添加了realm的watchOS项目建议打开bitcode，也是为了优化watch APP的体积。</p>
+</li>
+</ul>
+<h3 id="4-“新”产品上线"><a href="#4-“新”产品上线" class="headerlink" title="4. “新”产品上线"></a>4. “新”产品上线</h3><p>好久没有完整的操作一遍应用的上线流程了，体会有几点：</p>
+<ul>
+<li>Xcode8.1的自动管理签名还是挺好用的，尚未发现问题。使用该配置后，记得Build Settings中Code Signing Identity的子选项都要配置为iOS Developer。</li>
+<li>发现Certificate中添加了专门用于生成服务器推送证书的功能。（估计早就更新了，之前没在意）</li>
+<li>新的itunes connect功能真的挺好用，相较原来的版本慢慢的幸福感。</li>
+<li>慨叹下目前Apple的审核速度，真实快啊，上传到上架one day。</li>
+</ul>
+<h2 id="可利用的资源"><a href="#可利用的资源" class="headerlink" title="可利用的资源"></a>可利用的资源</h2><ul>
+<li><a href="https://developer.apple.com/watchos/resources/" target="_blank" rel="external">watchOS官方资源（包括Human Interface Guidelines、App Programming Guide for watchOS 等)</a></li>
+<li><a href="https://developer.apple.com/swift/resources/" target="_blank" rel="external">swift官方资源</a></li>
+<li><a href="https://www.raywenderlich.com/" target="_blank" rel="external">Raywenderlich</a></li>
+<li><a href="https://onevcat.com/2015/08/watchos2/" target="_blank" rel="external">猫神相关文章(虽然是watchOS 2的，但是很受用)</a></li>
+<li>图形素材：<a href="http://www.dribbble.com/" target="_blank" rel="external">dribbble(寻找创意)</a>、<a href="http://www.easyicon.net/" target="_blank" rel="external">easyicon(图标)</a>、<a href="http://makeappicon.com/" target="_blank" rel="external">MakeAppIcon(iPhone App图标与watch App图标生成)</a></li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Focus会持续更新，目前主要解决了我自己的一些痛点，希望她也能够帮助到你。如果有什么好的建议欢迎留言讨论。Watch中的App种类确实很有限，不像iOS的这么丰富，有好的产品创意也欢迎一起讨论。watchOS 3.0的更新让Apple Watch焕发了新的生机，有了不少新的可能，让我们一起把我们的Apple Watch丰富起来吧^_^。</p>
+<p>最后附上50个促销代码，感兴趣的同学可以下载使用。</p>
+<p><a href="http://of71dfqgz.bkt.clouddn.com/Focus%E5%85%8D%E8%B4%B9%E7%A0%81.txt" target="_blank" rel="external">促销码传送门</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Focus一次探索watchOS的实践。再次慨叹下Apple的审核速度，just one day…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Focus-有些事情需要这份执着&quot;&gt;&lt;a href=&quot;#Focus-有些事情需要这份执着&quot; cl
+    
+    </summary>
+    
+      <category term="个人作品" scheme="/categories/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>next、空白与404</title>
@@ -1078,215 +1172,6 @@
 &lt;li&gt;Step1 : 解压IPA&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&quot;highlight c&quot;&gt;&lt;ta
-    
-    </summary>
-    
-      <category term="iOS" scheme="/categories/iOS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cocos2D简单iPhone游戏【入门教程】</title>
-    <link href="/2014/07/17/cocos2d%E6%95%99%E7%A8%8B/"/>
-    <id>/2014/07/17/cocos2d教程/</id>
-    <published>2014-07-17T09:33:40.000Z</published>
-    <updated>2016-06-04T13:33:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>我想没有什么比更新入门教程更适合用来庆祝具有标志性的Cocos2D 3.0的诞生了。</p>
-<p>Cocos2D 3.0是iOS平台一款2D游戏开发框架的最新版本。App Store上数以千计的游戏不乏一些排行前十的游戏都是用它来进行开发的。</p>
-<p>它对sprite有很好的支持,包含一个完美的Chipmunk2D physics类库，支持OpenAL声音类库，诸多有趣的效果，让你可以用它做更多事情。</p>
-<p>通过本Cocos2D 3.0的入门教程，你将会学习从头到尾的编写一个简单有趣的iPhone 2D游戏。如果你之前已经学习过了Cocos2D 2.0的教程，那么将会将会对本教程感觉比较熟悉，但是你仍然可以通过本教程学习利用物理引擎实现一些好玩的东西。</p>
-<p>你可以选择跟随本教程进行学习，当然你也可以直接在本文的末尾下载例子源程序进行学习。那么接下来我们跟随忍者一起热血一下吧。</p>
-<h3 id="Cocos2D-vs-Sprite-Kit"><a href="#Cocos2D-vs-Sprite-Kit" class="headerlink" title="Cocos2D vs Sprite Kit"></a>Cocos2D vs Sprite Kit</h3><p>在你开始学习之前，你也许在想：“嘿，我已经有苹果的Sprite Kit了，还需要Cocos2D吗？我真的需要尝试一些其它的东东吗？”</p>
-<p>好吧，跟其它任何游戏框架一样，Cocos2D也有它的一些优点和缺点：</p>
-<h4 id="Cocos2D-优点"><a href="#Cocos2D-优点" class="headerlink" title="Cocos2D 优点"></a>Cocos2D 优点</h4><ul>
-<li><p>优点一: 你不再被限制在iOS平台了，想要把你的游戏发布到Android平台上吗？那么用Cocos2D可以帮你写一遍代码就可以跨平台发布了！</p>
-</li>
-<li><p>优点二: 你可以写代码自定义一些OpenGL效果了。</p>
-</li>
-<li>优点三: 它是开源的，也就是说如果你想要改造写什么或者研究一下它内部是如何运转的，你只需要深入研究一下它的源码就可以了。.</li>
-</ul>
-<h4 id="Cocos2D-缺点"><a href="#Cocos2D-缺点" class="headerlink" title="Cocos2D 缺点"></a>Cocos2D 缺点</h4><ul>
-<li><p>缺点一: 它不是内建在Xcode里面的，所以你要使用它就必须要下载安装它。</p>
-</li>
-<li><p>缺点二: 它目前还没有自带的纹理与粒子编辑器（但是已经有很多很棒的第三方编辑器了）。</p>
-</li>
-</ul>
-<p>Cocos2D拥有一个完整的社区，社区里有很多相关的教程、书籍和例子程序。Cocos2D的缔造者是一波旨在令游戏开发变得简单的游戏开发者，他们希望开发者利用它能够简单地创造很多伟大的游戏。</p>
-<h3 id="安装-Cocos2D"><a href="#安装-Cocos2D" class="headerlink" title="安装 Cocos2D"></a>安装 Cocos2D</h3><p>The new Cocos2D 3.0 Installer</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game1.png" alt=""></p>
-<p>Cocos2D 3.0 使用了一个全新的安装程序，安装起来没有比这更简单的了！</p>
-<p>只需要 下载最新的Cocos2D 安装器 (3.0版本以上), 打开DMG文件然后双击安装器。随后安装器会自动帮你配置好Xcode的Cocos2D模板并且部署好Cocos2D的Xcode文档。</p>
-<p>当安装开始的时候，你将会看到一大堆信息，待安装完成之后会自动打开Cocos2D的欢迎页面。恭喜你，你已经做好了使用Cocos2D的准备工作了！</p>
-<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>让我们使用上一步安装的Cocos2D模板搭建一个简单的Hello World游戏作为开始吧。</p>
-<p>打开Xcode，选择File\New Project, 然后选择iOS\cocos2d v3.x\cocos2d iOS 模板，点击Next:</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game2.png" alt=""></p>
-<p>Product Name 输入Cocos2DSimpleGame, 设备选择iPhone 然后点击Next:</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game3.png" alt=""></p>
-<p>选择一个位置保存你的工程，然后点击Create。然后直接点击play按钮编译运行一下项目。你会看到下面的东东:</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game4.png" alt=""></p>
-<p>点击 Simple Sprite 按钮切换到另一个测试场景,接下来我们将一起针对改场景进行改造:</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game5.png" alt=""></p>
-<p>Cocos2D引入了场景scenes的概念，你可以把它想成是游戏的多个屏幕。HelloWorld游戏的第一个场景就是它的菜单场景IntroScene, 第二个场景就是转动着Cocos2D logo标志的HelloWorldScene. 让我们仔细研究下这个场景。</p>
-<h3 id="忍者驾到"><a href="#忍者驾到" class="headerlink" title="忍者驾到!"></a>忍者驾到!</h3><p>在忍者做它漂亮的出场秀之前，你首先需要用到一些图片素材…</p>
-<ul>
-<li><p>第一步：First step, 下载本工程的资源包。解压后拖动ResourcePack到项目的工程目录中。一定要勾选上 “Copy items into destination group’s folder (if needed)”选项并且勾选上Cocos2DSimpleGame目标target。</p>
-</li>
-<li><p>第二步：打开HelloWorldScene.m。记住，这段代码是用来构建那个旋转着Cocos2D logo的场景的，这个场景可以作为游戏制作很好的起点。修改之前先看一下模板代码：</p>
-</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@implementation HelloWorldScene &#123;  </div><div class="line">    <span class="comment">// 1  </span></div><div class="line">    CCSprite *<span class="number">_</span>sprite;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">- (id)init &#123;  </div><div class="line">    <span class="comment">// 2  </span></div><div class="line">    self = [super init];  </div><div class="line">    <span class="keyword">if</span> (!self) <span class="keyword">return</span>(nil); </div><div class="line">     </div><div class="line">    <span class="comment">// 3  </span></div><div class="line">    self.userInteractionEnabled = YES;  </div><div class="line">    </div><div class="line">    <span class="comment">// 4  </span></div><div class="line">    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:<span class="number">0.2f</span> green:<span class="number">0.2f</span> blue:<span class="number">0.2f</span> alpha:<span class="number">1.0f</span>]];  </div><div class="line">    [self addChild:background];  </div><div class="line">    </div><div class="line">    <span class="comment">// 5  </span></div><div class="line">    <span class="number">_</span>sprite = [CCSprite spriteWithImageNamed:@<span class="string">"Icon-72.png"</span>];  </div><div class="line">    <span class="number">_</span>sprite.position  = ccp(self.contentSize.width/<span class="number">2</span>,self.contentSize.height/<span class="number">2</span>);  </div><div class="line">    [self addChild:<span class="number">_</span>sprite];  </div><div class="line">    </div><div class="line">    <span class="comment">// 6  </span></div><div class="line">    CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:<span class="number">1.5f</span> angle:<span class="number">360</span>];  </div><div class="line">    [<span class="number">_</span>sprite runAction:[CCActionRepeatForever actionWithAction:actionSpin]];  </div><div class="line">    </div><div class="line">    <span class="comment">// 7  </span></div><div class="line">    CCButton *backButton = [CCButton buttonWithTitle:@<span class="string">"[ Menu ]"</span> fontName:@<span class="string">"Verdana-Bold"</span> fontSize:<span class="number">18.0f</span>];  </div><div class="line">    backButton.positionType = CCPositionTypeNormalized;  </div><div class="line">    backButton.position = ccp(<span class="number">0.85f</span>, <span class="number">0.95f</span>); <span class="comment">// Top Right of screen  </span></div><div class="line">    [backButton setTarget:self selector:@selector(onBackClicked:)];  </div><div class="line">    [self addChild:backButton];  </div><div class="line">    <span class="keyword">return</span> self;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>让我们一起逐行过一下：</p>
-<p>为了接下来更方便地操作这个正在旋转的Cocos2D logo图标，我们为它声明一个私有实例。</p>
-<p>初始化 HelloWorld 场景.</p>
-<p>配置这个场景让它可以响应Cocos2D 的点击事件。在之后你会看到这这样配置使得 touchBegan:withEvent: 方法将要被调用到。</p>
-<p>创建一个 CCNodeColor, 用它来展示一种颜色（本教程中用它展示深灰色）。当这个node创建之后，你需要调用 addChild: 把它加到当前场景之后才能看到它。现在你的场景拥有一个背景色了!</p>
-<p>用 spriteWithImageNamed: 这个方法创建一个 CCSprite 并为它加载一个图片资源。通过使用这个屏幕的坐标，这个sprite的位置被放置在了屏幕的中央。再调用一下 addChild: 方法，把它也添加到场景中。</p>
-<p>创建一个 CCActionRotateBy action，我们将用它来给这个sprite做360度旋转，配置 CCActionRepeatForever 参数让这个旋转动作无限循环下去。然后调用 runAction 方法让sprite接收这个action。在接下来的讨论中会发现Actions 是Cocos2D的一项非常强大的特性。</p>
-<p>创建一个 CCButton 用以点击返回 IntroScene 场景, 你可以用这个操作作为重新初始化当前场景的一种简单方法。</p>
-<p>很棒! 首先呢，让我们把旋转着的Cocos2D logo图标替换成忍者的。</p>
-<p>想想该怎么做呢? 给你一些提示:</p>
-<p>看一看你刚刚添加到项目中的 ResourcePack ,从里面找一找忍者的图片。</p>
-<p>你只需要改动一行代码就可以了!</p>
-<p>尝试尽量自己搞定它，但是如果你实在卡在这里了，那么方法就在下面：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 5  </span></div><div class="line"><span class="number">_</span>sprite = [CCSprite spriteWithImageNamed:@<span class="string">"player.png"</span>];</div></pre></td></tr></table></figure>
-<p>这很简单， _sprite 是一个很明显的名字但是当你开始使用_sprite1, _sprite2 的时候它会显得有一点混乱，所以我们把 _sprite 改成 _player。在 @implementation 中找到第一项：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@implementation HelloWorldScene &#123;  </div><div class="line">    <span class="comment">// 1  </span></div><div class="line">    CCSprite *<span class="number">_</span>sprite;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后把它改成:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@implementation HelloWorldScene &#123;  </div><div class="line">    <span class="comment">// 1  </span></div><div class="line">    CCSprite *<span class="number">_</span>player;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>很快你就会发现Xcode给你标志出5个错误并且帮你把这错误的几行用红色高亮了。不用担心，这是因为你把 _sprite 改名成了 _player，导致 _sprite 失效的原因。所以继续把所有的 _sprite 引用都改成 _player. 就OK了。</p>
-<p>编译运行项目，让我们看一下不需要打怪的忍者的生活状态。</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game6.png" alt=""></p>
-<p>现在旋转着的Cocos2D logo图片已经被替换成忍者的了。但愿忍者不会感觉到晕。。。</p>
-<p>然而，忍者这辈子就是被训练来战斗的，所以接下来你想要搞一些怪物让忍者挑战一下!</p>
-<h3 id="疯狂的怪物出现了"><a href="#疯狂的怪物出现了" class="headerlink" title="疯狂的怪物出现了"></a>疯狂的怪物出现了</h3><p>接下来你想要添加一些怪物到你的场景中。一个不会动的怪物自然不会对一个训练有素的忍者造成任何威胁,所以为了变得更有趣一些，你将添加一些会动的怪物。你将在屏幕的右外延创建一些怪物并且给它们添加 CCAction , 命令它们从屏幕右边向屏幕左边移动。</p>
-<p>在 HelloWorldScene.m 中添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addMonster:(CCTime)dt &#123;  </div><div class="line">    CCSprite *monster = [CCSprite spriteWithImageNamed:@<span class="string">"monster.png"</span>];  </div><div class="line">    <span class="comment">// 1  </span></div><div class="line">    <span class="keyword">int</span> minY = monster.contentSize.height / <span class="number">2</span>;  </div><div class="line">    <span class="keyword">int</span> maxY = self.contentSize.height - monster.contentSize.height / <span class="number">2</span>;  </div><div class="line">    <span class="keyword">int</span> rangeY = maxY - minY;  </div><div class="line">    <span class="keyword">int</span> randomY = (arc4random() % rangeY) + minY;  </div><div class="line">   </div><div class="line">    <span class="comment">// 2  </span></div><div class="line">    monster.position = CGPointMake(self.contentSize.width + monster.contentSize.width/<span class="number">2</span>, randomY);  </div><div class="line">    [self addChild:monster];  </div><div class="line">   </div><div class="line">    <span class="comment">// 3  </span></div><div class="line">    <span class="keyword">int</span> minDuration = <span class="number">2.0</span>;  </div><div class="line">    <span class="keyword">int</span> maxDuration = <span class="number">4.0</span>;  </div><div class="line">    <span class="keyword">int</span> rangeDuration = maxDuration - minDuration;  </div><div class="line">    <span class="keyword">int</span> randomDuration = (arc4random() % rangeDuration) + minDuration;  </div><div class="line">   </div><div class="line">    <span class="comment">// 4  </span></div><div class="line">    CCAction *actionMove = [CCActionMoveTo actionWithDuration:randomDuration position:CGPointMake(-monster.contentSize.width/<span class="number">2</span>, randomY)];  </div><div class="line">    CCAction *actionRemove = [CCActionRemove action];  </div><div class="line">    [monster runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>让我们一起逐行过一下：</p>
-<p>为怪物的诞生位置定一个纵向范围。当你放置一个sprite的时候，默认的定位到的是sprite的中心坐标。所以这里为了不至于让怪物断掉，你在计算的时候需要用屏幕的高度减掉怪物的高度。</p>
-<p>用屏幕的宽度加上怪物的宽度确保把怪物恰好定位到屏幕的右外延，不让怪物露出来。</p>
-<p>现在你想要决定怪物横穿屏幕的用时，让我们定个随机时间吧，让怪物的移动更加难以预测。</p>
-<p>你将使用Cocos2D的 CCActionMoveTo: action 来快速移动怪物从起点（屏幕右外延）到目的地（屏幕左外延）。</p>
-<p>你已经看到旋转的action了，然而Cocos2D其实提供了很多非常方便的内置actions，包括移动的、旋转的、消失的、动画的等等。这里我们对怪物使用三种action:</p>
-<ul>
-<li><p>CCActionMoveTo: 这个action被用作控制怪物的移动轨迹，在本教程中用于控制它从屏幕右侧移动到左侧。这个action的duration用于控制怪物执行动作所需的时间。Duration设置的越短，怪物移动的速度将越快。在这里你把duration设置成2秒到4秒之间的随机秒数。</p>
-</li>
-<li><p>CCActionRemove: 将node从它的parent移除的好方法，可以有效地将node从场景中删除。当看不到怪物的时候（怪物移动到屏幕做外延的时候）你可以使用这个action把怪物从这个场景中移除。这步是非常重要的，如果不这么做你会发现有成千上万的怪物试图穿越你的iPhone，它们会耗光你设备的全部资源。</p>
-</li>
-<li><p>CCActionSequence: 这个序列action可以让你把一组action串在一起按序列执行，同一时间只有一个action在执行。通过这个方法你可以设置 CCActionMoveTo action 首先执行，一旦这个action执行完成了接着执行 CCActionRemove action。你可以用这个强大的action创建一组复杂的动画序列。<br>好的，现在你有了一个向场景添加怪物的方法了。然而对于一个经验丰富的忍者来说，一个怪物不足为惧，让我们写一个定时产生怪物的方法吧。</p>
-</li>
-</ul>
-<p>Cocos2D 提供了一个定时器帮助你每X.X秒调用一下回调方法，所以你可以利用它来完成每X秒生成怪物的方法。</p>
-<p>打开 HelloWorldScene.m 然后在 onEnter 方法的 [super onEnter]; 之后添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self schedule:@selector(addMonster:) interval:<span class="number">1.5</span>];</div></pre></td></tr></table></figure>
-<p>这样会创建一个每1.5秒调用 addMonster: 方法的Cocos2D 定时器。</p>
-<p>记住当你创建 addMonster 方法的时候, 会有一个额外的 dt 参数。 这代表着时间增量，也表示当前帧与之前的时间差异。定时器要求每个方法声明的时候都加上这个参数，虽然在这个教程里面你将不会使用到它。</p>
-<p>在你看到这些怪物之前，你需要做点修改。让我们带领大家从阴暗中走出来一些。为啥不把背景色从深灰改成浅灰色呢？</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 2  </span></div><div class="line">CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:<span class="number">0.6f</span> green:<span class="number">0.6f</span> blue:<span class="number">0.6f</span> alpha:<span class="number">1.0f</span>]];</div></pre></td></tr></table></figure>
-<p>目前你忍者的头一定还在旋转着，你能让它停止转动，并且把他移动到偏左一些这样便于让它做好准备面对前面的突击？</p>
-<p>禁用头的旋转 CCActionRotateBy action。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 6  </span></div><div class="line"><span class="comment">//CCActionRotateBy* actionSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];  </span></div><div class="line"><span class="comment">//[_player runAction:[CCActionRepeatForever actionWithAction:actionSpin]];</span></div></pre></td></tr></table></figure></p>
-<p>改变忍者的位置。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">_</span>player.position  = ccp(self.contentSize.width/<span class="number">8</span>,self.contentSize.height/<span class="number">2</span>);</div></pre></td></tr></table></figure></p>
-<p>你也许会疑惑为什么要把宽度除以8（屏幕的1/8）。这是因为如果图方便直接写死坐标，那么遇到不同分辨率设备的时候就需要每种设备设置不同的坐标。</p>
-<p>如果你感兴趣想要多了解一些，看一下 CCButton 的位置配置方式，注意它使用了一种不同的 positionType ，它使用了标准化的解决方案0..1，0..1针对所有设备。</p>
-<p>编译运行，你应该可以看到很多怪物穿越屏幕！</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game7.png" alt=""></p>
-<h3 id="波动拳（Hadouken）"><a href="#波动拳（Hadouken）" class="headerlink" title="波动拳（Hadouken）"></a>波动拳（Hadouken）</h3><p>不幸的是你的忍者还没有足够强大到可以发射波动拳，所以你将需要依靠你专业的投掷技巧来抵御邪恶的（或者可能只是误解）怪物。</p>
-<p>给自己那个手里剑然后添加个投掷的action</p>
-<p>你将再次使用 CCActionMoveTo: action, 然而这次不会像是从 _player.position 移动到点击位置那般简单。 你想要将你的投射物沿着点击的方向穿越整个屏幕。因此你需要用到只是一点数学知识。</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game8.png" alt=""></p>
-<p>你可以从起点到点击点的x轴、y轴的位移变化中得到一个小的三角形。你只需求得一个拥有相同角度并且终止点在屏幕边沿的大三角形就OK了。</p>
-<p>为了完成这个运算，如果你有一些向量数学的基础就轻松多了（比如知道增加和减少向量的方法）。 Cocos2D 包含了一系列方便的向量操作函数，如 ccpAdd 和 ccpSub 。</p>
-<p>如果你对接下来的计算有任何疑问，请速查 vector math explanation。关于这个方面我个人建议看一下非常好的 Khan Academy 教学视频。</p>
-<p>响应点击了!</p>
-<p>正如你所看到的HelloWorldScene 模板已经在 init 方法中允许接收touch相应了。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 3  </span></div><div class="line">self.userInteractionEnabled = YES;</div></pre></td></tr></table></figure></p>
-<p>为了处理点击相应你通常需要创建 touchBegan: 方法，不过默认模板已经很体贴地给你带来了一个简单的 touchBegan 方法实例。</p>
-<p>打开 HelloWorldScene.m 并且用下面的代码替换现有的 touchBegan: 方法内容:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event &#123;  </div><div class="line">    <span class="comment">// 1  </span></div><div class="line">    CGPoint touchLocation = [touch locationInNode:self];  </div><div class="line">   </div><div class="line">    <span class="comment">// 2  </span></div><div class="line">    CGPoint offset    = ccpSub(touchLocation, <span class="number">_</span>player.position);  </div><div class="line">    <span class="keyword">float</span>   ratio     = offset.y/offset.x;  </div><div class="line">    <span class="keyword">int</span>     targetX   = <span class="number">_</span>player.contentSize.width/<span class="number">2</span> + self.contentSize.width;  </div><div class="line">    <span class="keyword">int</span>     targetY   = (targetX*ratio) + <span class="number">_</span>player.position.y;  </div><div class="line">    CGPoint targetPosition = ccp(targetX,targetY);  </div><div class="line">   </div><div class="line">    <span class="comment">// 3  </span></div><div class="line">    CCSprite *projectile = [CCSprite spriteWithImageNamed:@<span class="string">"projectile.png"</span>];  </div><div class="line">    projectile.position = <span class="number">_</span>player.position;  </div><div class="line">    [self addChild:projectile ];  </div><div class="line">   </div><div class="line">    <span class="comment">// 4  </span></div><div class="line">    CCActionMoveTo *actionMove   = [CCActionMoveTo actionWithDuration:<span class="number">1.5f</span> position:targetPosition];  </div><div class="line">    CCActionRemove *actionRemove = [CCActionRemove action];  </div><div class="line">    [projectile runAction:[CCActionSequence actionWithArray:@[actionMove,actionRemove]]];  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>让我们一起逐行过一下：</p>
-<p>你需要将屏幕点击转化为场景的坐标系表示。Cocos2D的UITouch分类里有一个很方便的方法 locationInNode: 可以做的这一点。</p>
-<p>所以正如你所见，你得到了一个由起点到点击点的x、y轴位移组成的小三角形。你只需求得一个拥有相同角度并且终止点在屏幕边沿的大三角形就OK了。</p>
-<p>创建投掷物的sprite并且设置它的起始位置与忍者一样。你可以简单的使用 _player ，这就是你之前设置这个私有实例变量的原因。</p>
-<p>你现在应该对CCActionMoveTo 这个方法更加熟悉了。你有了之前计算的目标点和投掷物投掷完成的时间duration（duration越小，投掷物就会越快投过去）。</p>
-<p>编译运行，尽情开火吧!</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game9.png" alt=""></p>
-<p>Arggghhh 这些怪物太强大了，我们为什么不把他们给干掉呢！</p>
-<h3 id="碰撞检测和物理"><a href="#碰撞检测和物理" class="headerlink" title="碰撞检测和物理"></a>碰撞检测和物理</h3><p>那么现在你有了一个忍者、很多怪物和很多穿越屏幕的手里剑。看起来不错了，不过如果带一点摩擦的话就更好玩了，为了达成这一目的你需要在投掷物跟怪物之间做碰撞检测。</p>
-<p>Cocos2D 3.0的一个伟大的特性就是一套完整的物理引擎，有了它完成这个任务就小菜一碟了。物理引擎的伟大在于模拟了真实的移动，而且它对于处理碰撞检测也非常有用。 </p>
-<p>你现在将要使用Cocos2D的物理引擎去判定怪物和抛掷物的碰撞。完成它需要四个步骤：</p>
-<ul>
-<li><p>搭建物理世界. 物理世界是针对物理学计算的模拟空间。你将为当前场景搭建一个并且修改一些属性例如重力。物理世界搭建完成之后，你需要修改现有的游戏对象，把他们添加到物理世界中进而他们都将成为物理模拟的一部分。</p>
-</li>
-<li><p>为每个sprite创建物理主体. 使用Cocos2D你可以为每一个sprite关联物理主体用于碰撞检测并且可以设置某些属性。记住物理主体不用必须跟sprite的形状完全一样。通常它是一些简单的矩形或者圆形，甚至是一个像素清晰的轮廓。这样已经可以很好的满足大部分游戏并且可以提供更好的物理效果处理效率。<br>为每一种sprite设置CollisionType. Cocos2D物理引擎的一个方便特性是你不需要用数字定义你的碰撞类型了。你可以配置一个简单易懂的字符串定义你的碰撞类型。</p>
-</li>
-<li><p>配置碰撞相应代理. 默认当连个物理主体碰在一起他们会被物理模拟器处理，然而你想要在投掷物碰到怪物的时候做一些事情例如干掉怪物。因此你需要添加一个碰撞响应代理去处理投掷物与怪物之间的碰撞类型。</p>
-</li>
-</ul>
-<p>让我们开始吧。首先，你现在需要为你的物理世界添加另外一个私有实例变量。</p>
-<p>打开 HelloWorldScene.m 然后在 @implementation HelloWorldScene 声明里面 CCSprite 的初始化之后添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CCPhysicsNode *<span class="number">_</span>physicsWorld;</div></pre></td></tr></table></figure>
-<p>现在你需要配置并添加这个物理模拟器到你的场景中，在 init 方法的 CCNodeColor 之后添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">_</span>physicsWorld = [CCPhysicsNode node];  </div><div class="line"><span class="number">_</span>physicsWorld.gravity = ccp(<span class="number">0</span>,<span class="number">0</span>);  </div><div class="line"><span class="number">_</span>physicsWorld.debugDraw = YES;  </div><div class="line"><span class="number">_</span>physicsWorld.collisionDelegate = self;  </div><div class="line">[self addChild:<span class="number">_</span>physicsWorld];</div></pre></td></tr></table></figure>
-<p>因为你要使用物理模拟器主要为了做碰撞检测，在这里把重力（Gravity）设置成 (0,0) 。Cocos2D 有很多方便的调试函数，debugDraw 标志对于具体数字化物理世界是非常有用的。你可以看到所有被添加到模拟器上的物理主体。你同时需要设置 collisionDelegate 到 self, 这样使得你可以添加碰撞处理到场景中而且物理模拟器知道去 HelloWorldScene 中匹配碰撞的响应处理。</p>
-<p>你会注意到Xcode在 collisionDelegate 这行抛出了一个警告; 这很容易解决。打开 HelloWorldScene.h 然后标志这个 interface 实现CCPhysicsCollisionDelegate。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@interface HelloWorldScene : CCScene &lt;CCPhysicsCollisionDelegate&gt;</div></pre></td></tr></table></figure>
-<p>现在你需要为忍者配置物理主体并且将它添加到 _physicsWorld 而不是直接添加到场景中。</p>
-<p>退回到 HelloWorldScene.m, 在 init 方法中找到如下代码:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self addChild:<span class="number">_</span>player];</div></pre></td></tr></table></figure>
-<p>将它替换成如下代码:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">_</span>player.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect)&#123;CGPointZero, 	<span class="number">_</span>player.contentSize&#125; cornerRadius:<span class="number">0</span>]; <span class="comment">// 1  </span></div><div class="line"><span class="number">_</span>player.physicsBody.collisionGroup = @<span class="string">"playerGroup"</span>; <span class="comment">// 2  </span></div><div class="line">[<span class="number">_</span>physicsWorld addChild:<span class="number">_</span>player];</div></pre></td></tr></table></figure>
-<p>快速看一下这个代码片段:</p>
-<p>创建一个物理主体，在这个例子中使用忍者的 contentSize 来创建一个环绕在忍者四周的矩形主体。<br>设置物理主体的 collisionGroup, 默认所有的主体都会碰撞。如果你将一些物理主体设置成相同的 collisionGroup 他们之间就不会再互相碰撞了, 这点当你想要创建一个由多个身体组成的角色，而且不想让他的每个身体互相碰撞的时候非常有用,例如一个拿着武器的角色。你将用这个保证投掷物不会撞到角色。</p>
-<p>你已经配置好物理模拟器、为角色创建了物理主体并且把它添加到了物理模拟器中。现在想想你能不能自己为怪物也添加到物理模拟器中。</p>
-<p>查找 addMonster: 方法并且定位到如下代码:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self addChild:monster];</div></pre></td></tr></table></figure>
-<p>将它替换成:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">monster.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect)&#123;CGPointZero, 	monster.contentSize&#125; cornerRadius:<span class="number">0</span>];  </div><div class="line">monster.physicsBody.collisionGroup = @<span class="string">"monsterGroup"</span>;  </div><div class="line">monster.physicsBody.collisionType  = @<span class="string">"monsterCollision"</span>;  </div><div class="line">[<span class="number">_</span>physicsWorld addChild:monster];</div></pre></td></tr></table></figure></p>
-<p>这几乎是跟为 _player 添加物理主体的方式的一致的，但是我为了介绍一个新属性使了点小聪明。这次你设置了 collisionType 属性, 这将被用来为’monsterCollision’和’projectileCollsion’的 collisionType 搭建一个物理模拟器碰撞代理方法。</p>
-<p>你快搞定它了！这次试着把抛掷物添加到模拟器中。</p>
-<p>我会给你一个提示：搞定它需要使用到 collisionType 和 collisionGroup 属性。</p>
-<p>找到 touchBegan:withEvent 方法然后定位到如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self addChild:projectile];</div></pre></td></tr></table></figure>
-<p>将它替换成:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">projectile.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect)&#123;CGPointZero, 	projectile.contentSize&#125; cornerRadius:<span class="number">0</span>];  </div><div class="line">projectile.physicsBody.collisionGroup = @<span class="string">"playerGroup"</span>;  </div><div class="line">projectile.physicsBody.collisionType  = @<span class="string">"projectileCollision"</span>;  </div><div class="line">[<span class="number">_</span>physicsWorld addChild:projectile];</div></pre></td></tr></table></figure>
-<p>编译运行，你应该会看到很多漂亮的粉红色的小方块。</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game10.png" alt=""></p>
-<p>这些sprite周围的粉红色方块是被 _physics 的 debugDraw 属性创建的。在你首次搭建物理世界的时候他们是很有用的，你可以通过他们确认一切工作是否如你所愿的进行着。注意到在手里剑周围的方块不是很和谐；如果用圆形的话应该更合适一些。</p>
-<p>当然有这么个方法bodyWithCircleOfRadius:可以用于创建更时候你的抛掷物的圆形物理主体。将抛掷物物理主体的配置代码替换为如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">projectile.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:projectile.contentSize.width/<span class="number">2.0f</span> 	andCenter:projectile.anchorPointInPoints];</div></pre></td></tr></table></figure>
-<p>默认中心点会被设置在sprite的左下方，然而你想把圆形放置在你的sprite的中心处。</p>
-<p>好的，你现在已经把你的游戏对象改成物理模拟器的一部分了。现在你一定想要在 projectileCollision 和monsterCollison collisionType 交流的时候做一些事情。</p>
-<p>Cocos2D物理引擎有很多很好的方法去完成这个目的。只需要在 HelloWorldScene.m中添加如下方法：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair monsterCollision:(CCNode *)monster projectileCollision:(CCNode *)projectile &#123;  </div><div class="line">    [monster removeFromParent];  </div><div class="line">    [projectile removeFromParent];  </div><div class="line">    <span class="keyword">return</span> YES;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这段代码很强大。当物理模拟器被搭建完成之后，物理引擎会去查找CCPhysicsCollisionDelegate 方法，如果找到了就会触发它。参数名设置成你想要配置成的collisionType。</p>
-<p>用这个方法你把 ‘projectile’ 和 ‘monster’彻底从模拟器和场景中移除了。你当然可以添加一个计分器，添加一个特殊效果或者其它你想在抛掷物与怪物碰撞时发生的事情。</p>
-<p>编译运行，你最后应该可以毁灭这些怪物了。忍者，前进，开火！</p>
-<h3 id="收尾"><a href="#收尾" class="headerlink" title="收尾"></a>收尾</h3><p>你现在已经离完成一个简单游戏非常近了。但是 (Pew-Pew!), 添加一些音乐对于现在来说再好不过了。</p>
-<p>Cocos2D 用OpenAL声音类库提供声音支持。不需要添加任何的额外头文件，都为你准备好了。</p>
-<p>历史课程: 对于那些使用Cocos2D之前版本的用户也许会疑惑SimpleAudioEngine怎么了, 这个声音类库已经被Open AL取代了。</p>
-<p>播放一个SFX非常简单, 是时候在忍者每次发镖的时候添加一个SFX了。这个声音可能不能100%完美表现出忍者投掷手里剑的声音。:-)</p>
-<p>在创建抛掷物的 touchBegan: 方法的最后添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[OALSimpleAudio sharedInstance] playEffect:@<span class="string">"pew-pew-lei.caf"</span>];</div></pre></td></tr></table></figure>
-<p>是时候添加一些热血的音乐了，在 init 方法的 userInteractionEnabled 之后添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[OALSimpleAudio sharedInstance] playBg:@<span class="string">"background-music-aac.caf"</span> loop:YES];</div></pre></td></tr></table></figure>
-<p>最后一步，注释掉 init 方法中的调试语句：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">_</span>physicsWorld.debugDraw = YES;</div></pre></td></tr></table></figure>
-<p>编译运行, pew-pew. 你现在有声音了，简单不？</p>
-<p><img src="http://7xir36.com1.z0.glb.clouddn.com/cocos2d-game11.png" alt=""></p>
-<h3 id="搞完了去哪"><a href="#搞完了去哪" class="headerlink" title="搞完了去哪?"></a>搞完了去哪?</h3><p>完工了!  Cocos2D 3.0 game 这里有你目前编写的完整的代码。</p>
-<p>你已经在学习 Cocos2D 3.0 的道路上走了一大段路了,向你介绍了一些Cocos2D的核心内容。伟大始于渺小，所以你为什么不通过找个项目再做一些更加深入的研究呢？</p>
-<p>看一下 IntroScene 的代码你将会学到如何创建一个label。为何不加一个记录干掉怪物数量的计数器呢？</p>
-<p>当忍者碰到怪物的时候会发生什么呢？</p>
-<p>想要尝试一些更高大上的动画的话，在Xcode里面打开 Help\Documentation and API References 然后搜索 CCAction ，你会看到所有的你可以添加到你的游戏角色对象上的动画列表。</p>
-<p>我从来没有见过不会转的手里剑，为啥不尝试给它加一点旋转（我确定在这个教程开始的时候我们看到过一个现成的例子）提示：你可以对一个node多次使用 runAction 。 这些action没必要放在一个序列中。</p>
-<p>如果你想要学到更多关于Cocos2D的知识，official Cocos2D forum 是一个询问问题和学习经验的好地方。我的用户名是 @cocojoe ，随时都可以过来跟我交流。</p>
-<p>如果你对这篇教程有任何疑问或者建议请一起讨论！</p>
-<p><a href="http://www.raywenderlich.com/61391/how-to-make-a-simple-iphone-game-with-cocos2d-3-0-tutorial" target="_blank" rel="external">英文原文链接</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我想没有什么比更新入门教程更适合用来庆祝具有标志性的Cocos2D 3.0的诞生了。&lt;/p&gt;
-&lt;p&gt;Cocos2D 3.0是iOS平台一款2D游戏开发框架的最新版本。App Store上数以千计的游戏不乏一些排行前十的游戏都是用它来进行开发的。&lt;/p&gt;
-&lt;p&gt;它对sprit
     
     </summary>
     
